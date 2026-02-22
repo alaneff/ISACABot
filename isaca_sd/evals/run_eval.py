@@ -282,7 +282,10 @@ async def main() -> None:
     parser.add_argument("--filter", metavar="CATEGORY", help="Run only this category")
     parser.add_argument("--verbose", action="store_true", help="Log each case result")
     parser.add_argument("--concurrency", type=int, default=2, metavar="N",
-                        help="Max parallel eval cases (default: 3)")
+                        help="Max parallel eval cases (default: 2)")
+    parser.add_argument("--min-pass-rate", type=float, default=0.0, metavar="RATE",
+                        help="Exit with code 1 if overall pass rate is below RATE (0.0–1.0). "
+                             "Use in CI to catch regressions, e.g. --min-pass-rate 0.90")
     args = parser.parse_args()
 
     cases = load_dataset(category_filter=args.filter)
@@ -297,6 +300,13 @@ async def main() -> None:
 
     out = save_results(results, agg)
     print(f"\n  Results saved: {out}")
+
+    if args.min_pass_rate > 0 and agg["overall_pass_rate"] < args.min_pass_rate:
+        print(
+            f"\n  REGRESSION: pass rate {agg['overall_pass_rate']:.0%} is below "
+            f"threshold {args.min_pass_rate:.0%}"
+        )
+        sys.exit(1)
 
 
 if __name__ == "__main__":

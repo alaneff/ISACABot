@@ -34,3 +34,6 @@ htmlcov/
 
 # Claude Code local settings
 .claude/
+
+# Copyrighted standard documents (ISO 27001, 27002, etc.) — do not commit
+isaca_sd/knowledge/documents/

@@ -91,6 +91,15 @@ class Settings:
         """User Flow / policy name (e.g. 'B2C_1_signupsignin')."""
         return os.getenv("B2C_POLICY_NAME", "B2C_1_signupsignin")
 
+    @property
+    def api_key(self) -> str:
+        """
+        Static API key for beta / local access when Azure AD B2C is not configured.
+        Set API_KEY in .env to enable this auth mode.
+        If neither B2C nor API_KEY is configured, the /api/chat endpoint will reject all requests.
+        """
+        return os.getenv("API_KEY", "")
+
     # ── Azure ──────────────────────────────────────────────────────────────
 
     @property

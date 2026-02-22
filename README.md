@@ -1,311 +1,238 @@
-# Agentic Pipeline Factory
+# ISACA San Diego — Career Advisor Chatbot
 
-A reusable scaffolding for building and deploying AI agentic pipelines in Azure,
-powered by Claude (Anthropic) and the Microsoft Agent Framework.
+An AI-powered career and certification advisor for ISACA San Diego members.
+Ask it about cybersecurity certifications, career paths, resumes, salaries, and the job market.
 
----
-
-## Table of Contents
-
-1. [What this is](#what-this-is)
-2. [Prerequisites](#prerequisites)
-3. [First-time setup](#first-time-setup)
-4. [Running your first pipeline](#running-your-first-pipeline)
-5. [Project structure explained](#project-structure-explained)
-6. [Building a new pipeline](#building-a-new-pipeline)
-7. [Claude model options](#claude-model-options)
-8. [Deploying to Azure](#deploying-to-azure)
-9. [Troubleshooting](#troubleshooting)
+Built on the **Agentic Pipeline Factory** — a reusable scaffolding for multi-agent AI pipelines in Azure.
 
 ---
 
-## What this is
+## What it does
 
-This repo is a **starting point**, not a finished product. The idea is:
+The ISACA SD advisor helps cybersecurity professionals:
 
-- Every new AI project starts by copying this repo.
-- The scaffolding handles the boilerplate (config, agent creation, logging, Docker).
-- You focus on writing the actual pipeline logic.
+- **Understand certifications** — costs, prerequisites, exam details, study resources for 200+ certs
+- **Plan career paths** — honest timelines, experience requirements, what cert to pursue next
+- **Improve their resume** — how to position certs and experience for specific roles in San Diego
+- **Navigate the job market** — who's hiring, what skills are in demand, realistic salary ranges
 
-The example included is a **research pipeline**: ask a question, Claude searches the web and returns a structured summary.
-
----
-
-## Prerequisites
-
-| Tool | Version | Install |
-|---|---|---|
-| Python | 3.11–3.14 | [python.org](https://www.python.org/downloads/) — **install from python.org, not the Microsoft Store** |
-| pip | latest | comes with Python |
-| Docker Desktop | latest | [docker.com](https://www.docker.com/products/docker-desktop/) — optional, for Azure deploy |
-| Azure CLI | latest | [learn.microsoft.com/cli/azure](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) — optional |
-| Anthropic API key | — | [console.anthropic.com](https://console.anthropic.com/) → API Keys |
+It recommends the **best cert for your goal** — not just ISACA certs. If CompTIA, SANS, or CISSP is a better fit, it says so.
 
 ---
 
-## First-time setup
+## Quick Start
 
-### 1. Create your .env file
+### Prerequisites
 
-Copy the example config and fill in your API key:
+| Tool | Required |
+|---|---|
+| Python 3.11–3.14 | Yes |
+| Anthropic API key | Yes — [console.anthropic.com](https://console.anthropic.com/) |
+| Docker Desktop | Optional (for Azure deploy) |
+
+### Setup
 
 ```bash
-cp .env.example .env
-```
+# Clone and enter the project
+git clone https://github.com/alaneff/ISACABot.git
+cd ISACABot
 
-Open `.env` and set your key:
-
-```
-ANTHROPIC_API_KEY=sk-ant-your-key-here
-```
-
-Everything else in `.env` has defaults that work out of the box.
-
-### 2. Create a virtual environment
-
-```bash
+# Create virtual environment
 python -m venv .venv
-```
+.venv\Scripts\activate        # Windows
+# source .venv/bin/activate   # Mac/Linux
 
-Activate it:
-
-```bash
-# Windows
-.venv\Scripts\activate
-
-# Mac / Linux
-source .venv/bin/activate
-```
-
-You should see `(.venv)` in your terminal prompt.
-
-### 3. Install dependencies
-
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-This installs the Microsoft Agent Framework, the Anthropic SDK, and supporting libraries.
+# Configure environment
+cp .env.example .env
+# Open .env and set: ANTHROPIC_API_KEY=sk-ant-your-key-here
 
-### 4. Verify everything works
-
-```bash
+# Verify everything works
 python main.py verify
 ```
 
-Expected output:
-```
-Verifying environment...
-  Model   : claude-sonnet-4-6
-  Thinking: disabled
-  API test: OK
+### Run the chatbot
 
-Environment OK.
+```bash
+python main.py isaca-sd
 ```
 
-If you see an error here, check [Troubleshooting](#troubleshooting).
+You'll enter an interactive chat session:
+
+```
+You: What certification should I get if I want to move into GRC?
+Advisor: For GRC, the primary cert ladder is Security+ → CRISC...
+```
+
+Type `exit` or `quit` to end the session.
 
 ---
 
-## Running your first pipeline
+## Architecture
 
-The included example is the **research pipeline**. It takes a question,
-searches the web, and returns a structured summary.
+The advisor uses a hidden multi-agent pipeline. Every message goes through three layers:
 
-```bash
-python main.py research "What is Azure Container Apps and when should I use it?"
+```
+User message
+    │
+    ▼  Regex pre-filter (instant — no LLM cost)
+    │  Blocks obvious injection attempts (12 patterns)
+    │
+    ▼  Safety Agent  (Haiku — ~100ms)
+    │  LLM classifier: safe / injection / off_topic
+    │  Fail-CLOSED — rejects on any error
+    │
+    ▼  Orchestrator  (Haiku — ~100ms)
+    │  Routes to the best specialist agent
+    │  Falls back to "general" if confidence < 0.5
+    │
+    ▼  Specialist Agent  (Sonnet)
+    ├── General    — cert advice, comparisons, overviews
+    ├── Research   — deep cert details, exam prep, study plans
+    ├── Career     — path planning, realistic timelines, what to do next
+    ├── Resume     — positioning, formatting, salary context
+    └── Job Search — current openings, who's hiring, market data
 ```
 
-You can also run the pipeline file directly:
+Users never see the routing. They ask questions and get focused, expert answers.
 
-```bash
-python pipelines/examples/research_pipeline.py "What is Azure Container Apps?"
-```
+Every turn is audit-logged (route taken, safety result, success — no message content).
 
-To see all available pipelines:
+### Knowledge Base
 
-```bash
-python main.py --help
-```
+The advisor has structured knowledge on **30 certs** (detailed) and can answer basic questions about **211 additional certs** from the Paul Jerimy Security Certification Roadmap:
+
+| Category | Certs with Detailed KB Files |
+|---|---|
+| ISACA | CISA, CISM, CRISC, CGEIT, CDPSE, CSX-P |
+| (ISC)² | CISSP, CCSP |
+| CompTIA | Security+, CySA+, A+, Network+, PenTest+, CASP+ |
+| SANS/GIAC | GSEC, GCIH, GPEN, GWAPT |
+| Microsoft | AZ-500, SC-200, SC-100 |
+| Offensive | OSCP, PNPT |
+| Cisco | CCNA |
+| IIA | CIA |
+| IAPP | CIPP/E, CIPP/US |
+| ISO | ISO 27001 Lead Auditor/Implementer |
+
+Career paths covered: IT Audit, GRC, CISO Track, Cybersecurity Analyst.
 
 ---
 
-## Project structure explained
+## Running the eval suite
+
+The project includes a 30-case evaluation suite to measure knowledge quality:
+
+```bash
+python main.py eval                         # full suite (uses API credits)
+python main.py eval --filter entry_level    # filter by category
+python main.py eval --verbose               # show scores per question
+```
+
+Current results: 100% pass rate on tested categories.
+
+---
+
+## Project structure
 
 ```
-agentic-pipeline-factory/
+ISACABot/
 │
-├── .env.example          Your secrets template — copy to .env
-├── .env                  Your actual secrets — never commit this
-├── requirements.txt      Python dependencies
-├── main.py               CLI entrypoint — runs any pipeline by name
+├── main.py                   CLI entrypoint — runs any pipeline by name
+├── requirements.txt
+├── PROJECT_PLAN.md           Architecture and phased roadmap
 │
-├── config/
-│   └── settings.py       All config in one place. Import `settings` anywhere.
+├── isaca_sd/                 ISACA SD chatbot (the main application)
+│   ├── agents/
+│   │   ├── isaca_sd_agent.py   General advisor
+│   │   ├── orchestrator.py     Route classifier (Haiku)
+│   │   ├── career_coach.py     Career path planning
+│   │   ├── resume_agent.py     Resume and salary advice
+│   │   ├── research_agent.py   Deep cert research
+│   │   └── job_search_agent.py Job market and openings
+│   ├── tools/
+│   │   ├── cert_facts.py       Structured data for 30 certs (prereqs, costs, exam details)
+│   │   └── knowledge_base.py   Keyword search across markdown KB files
+│   ├── pipelines/
+│   │   └── isaca_sd_pipeline.py  Multi-agent pipeline with safety, routing, audit logging
+│   ├── filters/
+│   │   └── injection_filter.py   Regex pre-filter (12 patterns, no LLM cost)
+│   ├── evals/
+│   │   ├── dataset.json          30 evaluation cases
+│   │   └── run_eval.py           Evaluation runner with concurrency control + 429 retry
+│   └── knowledge/
+│       ├── cert-index.json       211 certs (Paul Jerimy roadmap)
+│       ├── salary-data.json      San Diego salary ranges by role (2025/2026)
+│       └── certs/                Detailed markdown files (30 certs across 10 categories)
 │
-├── agents/
-│   ├── base.py           create_agent() factory — use this to make all agents
-│   └── examples/
-│       └── research_agent.py   Example: agent with web search
-│
-├── tools/
-│   └── common.py         Reusable tool functions (datetime, file write, etc.)
+├── agents/                   Generic scaffolding — reusable across projects
+│   ├── base.py               create_agent() factory
+│   ├── safety_agent.py       Haiku safety classifier (fail-closed)
+│   └── quality_agent.py      Haiku output quality reviewer
 │
 ├── workflows/
-│   ├── base.py           run_sequential(), run_parallel(), run_with_retry()
-│   └── examples/
-│       └── research_workflow.py  Example: researcher → summarizer chain
+│   ├── base.py               run_sequential(), run_parallel(), run_with_retry()
+│   └── multi_agent.py        run_with_safety(), run_orchestrated()
 │
-├── pipelines/
-│   └── examples/
-│       └── research_pipeline.py  Example: full pipeline with structured output
+├── config/
+│   └── settings.py           All config in one place — reads from .env
 │
-├── Dockerfile            Container definition for Azure deployment
-└── docker-compose.yml    Local container testing
+└── api/                      FastAPI layer (in progress — see PROJECT_PLAN.md Phase D)
+    └── app.py                REST API with Azure AD B2C auth + rate limiting
 ```
-
-### The four layers
-
-Think of the project in four layers, each building on the one below:
-
-```
-[ Pipeline ]   ← top-level entry point, structured input/output
-    ↓
-[ Workflow ]   ← orchestrates multiple agents (sequential, parallel, graph)
-    ↓
-[ Agent ]      ← single Claude instance with a role and tools
-    ↓
-[ Tool ]       ← Python function Claude can call
-```
-
-A **pipeline** is what gets triggered (by CLI, HTTP, Azure queue, etc.).
-A **workflow** coordinates the agents needed to fulfill the pipeline's goal.
-An **agent** is one focused Claude instance — give it a clear single responsibility.
-A **tool** is a function Claude can invoke during its reasoning.
 
 ---
 
 ## Building a new pipeline
 
-Follow these steps to add a pipeline for a new use case.
+The `agents/`, `workflows/`, and `config/` directories are generic scaffolding — reusable for any pipeline project. The ISACA SD chatbot (`isaca_sd/`) is the first application built on top.
 
-### Step 1 — Define your tools (if needed)
+To add a new pipeline:
 
-Add functions to `tools/common.py` or create a new file in `tools/`:
-
-```python
-from agent_framework import tool
-from typing import Annotated
-
-@tool(approval_mode="never_require")   # safe read-only tool
-def lookup_customer(
-    customer_id: Annotated[str, "The customer ID to look up."],
-) -> str:
-    """Look up a customer record by ID and return their details."""
-    # your logic here
-    return f"Customer {customer_id}: ..."
-```
-
-**Approval modes:**
-- `"never_require"` — Claude calls it automatically (use for safe, read-only operations)
-- `"always_require"` — Claude pauses and asks a human before calling (use for writes, sends, deletes)
-
-### Step 2 — Create your agents
-
-Add a file to `agents/` or use the factory directly in your workflow:
-
-```python
-from agents.base import create_agent
-from tools.common import lookup_customer
-
-support_agent = create_agent(
-    name="SupportAgent",
-    instructions=(
-        "You are a customer support specialist. "
-        "Look up the customer, then answer their question clearly and briefly."
-    ),
-    tools=[lookup_customer],
-)
-```
-
-**Tip:** Give each agent a single, focused job. Two specialized agents outperform one generalist agent.
-
-### Step 3 — Create your workflow
-
-Add a file to `workflows/`:
-
-```python
-from workflows.base import run_sequential
-from agents.base import create_agent
-
-class SupportWorkflow:
-    def __init__(self):
-        self._agent = create_agent(name="SupportAgent", instructions="...")
-
-    async def run(self, customer_id: str, question: str) -> str:
-        prompt = f"Customer ID: {customer_id}\nQuestion: {question}"
-        return await run_sequential([
-            (self._agent, prompt),
-        ])
-```
-
-For multi-agent chains, pass `"{previous}"` to inject the previous agent's output:
-
-```python
-await run_sequential([
-    (researcher,  "Research this topic: {query}"),
-    (summarizer,  "Summarize these findings:\n\n{previous}"),
-    (formatter,   "Format this as a report:\n\n{previous}"),
-])
-```
-
-### Step 4 — Create your pipeline
-
-Copy `pipelines/examples/research_pipeline.py` and modify it:
-
-```python
-from dataclasses import dataclass, field
-from datetime import UTC, datetime
-from config.settings import settings
-
-@dataclass
-class PipelineResult:
-    query: str
-    answer: str
-    pipeline_name: str = "SupportPipeline"
-    model: str = field(default_factory=lambda: settings.model)
-    completed_at: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
-    success: bool = True
-    error: str | None = None
-
-class SupportPipeline:
-    def __init__(self):
-        self._workflow = SupportWorkflow()
-
-    async def run(self, query: str) -> PipelineResult:
-        try:
-            answer = await self._workflow.run(query)
-            return PipelineResult(query=query, answer=answer)
-        except Exception as e:
-            return PipelineResult(query=query, answer="", success=False, error=str(e))
-```
-
-### Step 5 — Register it in main.py
-
-Open `main.py` and add your pipeline to the registry:
+1. Create a package (e.g., `my_project/`) following the `isaca_sd/` structure
+2. Create your agents using `create_agent()` from `agents/base.py`
+3. Create your pipeline class in `my_project/pipelines/`
+4. Register it in `main.py`:
 
 ```python
 PIPELINE_REGISTRY = {
-    "research": "pipelines.examples.research_pipeline.ResearchPipeline",
-    "support":  "pipelines.examples.support_pipeline.SupportPipeline",   # add this
+    "research":   "pipelines.examples.research_pipeline.ResearchPipeline",
+    "isaca-sd":   "isaca_sd.pipelines.isaca_sd_pipeline.ISACASdPipeline",
+    "my-project": "my_project.pipelines.my_pipeline.MyPipeline",  # add this
 }
 ```
 
-Now you can run it:
+See the [research pipeline](pipelines/examples/research_pipeline.py) for a minimal single-agent example.
 
-```bash
-python main.py support "Customer ID 12345 is asking about their invoice"
+### The four layers
+
 ```
+[ Pipeline ]   top-level entry point — structured input/output, error handling
+    ↓
+[ Workflow ]   orchestrates multiple agents (sequential, parallel, graph)
+    ↓
+[ Agent ]      single Claude instance with a role and tools
+    ↓
+[ Tool ]       Python function Claude can call during its reasoning
+```
+
+### Creating agents
+
+```python
+from agents.base import create_agent
+from tools.common import my_tool
+
+agent = create_agent(
+    name="MyAgent",
+    instructions="You are a specialist in...",
+    tools=[my_tool],
+)
+```
+
+Tools use `@tool(approval_mode="never_require")` for safe read-only operations or
+`@tool(approval_mode="always_require")` for writes/sends/deletes that need human approval.
 
 ---
 
@@ -313,36 +240,17 @@ python main.py support "Customer ID 12345 is asking about their invoice"
 
 Set `ANTHROPIC_MODEL` in your `.env` file.
 
-| Model | Use when |
-|---|---|
-| `claude-sonnet-4-6` | Default — best balance of speed and quality |
-| `claude-opus-4-6` | Complex reasoning, long documents, hard problems |
-| `claude-haiku-4-5-20251001` | Simple classification, fast cheap steps in a pipeline |
-
-To use extended thinking (Claude shows its reasoning before answering):
-
-```
-EXTENDED_THINKING=true
-THINKING_BUDGET_TOKENS=5000
-```
-
-Extended thinking improves quality on complex multi-step tasks but uses more tokens.
-
-You can also override the model for a single agent without changing the global default:
-
-```python
-heavy_agent = create_agent(
-    name="Analyzer",
-    instructions="...",
-    model="claude-opus-4-6",   # only this agent uses Opus
-)
-```
+| Model | ID | Use when |
+|---|---|---|
+| Sonnet 4.6 | `claude-sonnet-4-6` | Default — specialist agents |
+| Haiku 4.5 | `claude-haiku-4-5-20251001` | Fast/cheap steps: routing, safety, grading |
+| Opus 4.6 | `claude-opus-4-6` | Complex reasoning tasks |
 
 ---
 
 ## Deploying to Azure
 
-### Build and test the container locally
+### Test locally with Docker
 
 ```bash
 docker compose up
@@ -350,63 +258,48 @@ docker compose up
 
 ### Deploy to Azure Container Apps
 
-1. Log in to Azure:
 ```bash
 az login
-```
+az group create --name isaca-sd-rg --location westus2
+az acr create --resource-group isaca-sd-rg --name isacasdregistry --sku Basic
+az acr build --registry isacasdregistry --image isaca-sd:latest .
 
-2. Create a resource group (first time only):
-```bash
-az group create --name my-resource-group --location eastus
-```
-
-3. Build and push the container image:
-```bash
-az acr create --resource-group my-resource-group --name mypipelineregistry --sku Basic
-az acr build --registry mypipelineregistry --image agentic-pipeline-factory:latest .
-```
-
-4. Deploy as a Container App:
-```bash
 az containerapp create \
-  --name my-pipeline-app \
-  --resource-group my-resource-group \
-  --image mypipelineregistry.azurecr.io/agentic-pipeline-factory:latest \
+  --name isaca-sd-app \
+  --resource-group isaca-sd-rg \
+  --image isacasdregistry.azurecr.io/isaca-sd:latest \
   --secrets anthropic-key=your-key-here \
   --env-vars ANTHROPIC_API_KEY=secretref:anthropic-key \
              ANTHROPIC_MODEL=claude-sonnet-4-6
 ```
 
-**Important:** Pass `ANTHROPIC_API_KEY` as a secret, not a plain environment variable, so it doesn't appear in logs.
+Pass `ANTHROPIC_API_KEY` as a secret, not a plain env var, so it doesn't appear in logs.
 
 ---
 
 ## Troubleshooting
 
 ### `ANTHROPIC_API_KEY is not set`
-You haven't created a `.env` file yet, or the key is blank.
 ```bash
 cp .env.example .env
-# then edit .env and add your key
+# edit .env and add your key
 ```
 
 ### `ModuleNotFoundError: No module named 'agent_framework'`
-Your virtual environment is not activated, or you haven't installed dependencies.
 ```bash
 .venv\Scripts\activate      # Windows
 pip install -r requirements.txt
 ```
 
-### `AuthenticationError` from Anthropic
-Your API key is invalid or has no credits. Check at [console.anthropic.com](https://console.anthropic.com/).
+### `AuthenticationError` / 401 from Anthropic
+API key invalid or no credits. Check at [console.anthropic.com](https://console.anthropic.com/).
+
+### Rate limited (429) during eval
+The eval suite uses `asyncio.Semaphore(2)` with automatic 20/40/60s backoff retry.
+If you hit limits frequently, add API credits or run with `--filter` to test a subset.
 
 ### Agent returns empty or truncated output
-The response hit the `MAX_TOKENS` limit. Increase it in `.env`:
+Increase the token limit in `.env`:
 ```
 MAX_TOKENS=16000
 ```
-
-### Extended thinking error
-Extended thinking requires `MAX_TOKENS > THINKING_BUDGET_TOKENS`.
-If `THINKING_BUDGET_TOKENS=5000`, set `MAX_TOKENS` to at least `9000`.
-The `settings.py` auto-corrects this, but explicit values in `.env` override it.

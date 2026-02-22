@@ -5,7 +5,7 @@ cybersecurity certifications, advance their careers, and find employment — wit
 to prevent abuse.
 
 **Date:** 2026-02-21
-**Status:** MVP complete — this document defines the path to production-grade quality.
+**Status:** Phase A (Hardening) + Phase B1/B2 (Knowledge Quality) complete. See roadmap below for current task status.
 
 ---
 
@@ -39,20 +39,20 @@ to prevent abuse.
 
 ### What Is Missing or Fragile
 
-| Gap | Severity | Impact |
+| Gap | Severity | Status |
 |---|---|---|
-| Keyword-only RAG | High | Misses semantically related content |
-| In-memory sessions only | High | Context lost on restart; no multi-device |
-| No API rate limiting | High | Single user can exhaust quota; DoS risk |
-| Hardcoded salary data in prompts | High | Data goes stale immediately |
-| Safety agent defaults to "safe" on failure | Medium | Attack surface if Haiku is unavailable |
-| No audit logging | Medium | Can't review conversations or spot abuse |
-| Orchestrator confidence score unused | Medium | Low-confidence routes always proceed |
-| get_cert_facts() DB has 15 of 35 certs | Medium | Agents miss detail for 20 KB certs |
-| No user feedback mechanism | Medium | No signal to improve quality |
-| No web UI | Medium | CLI-only limits real user adoption |
-| Static KB — no refresh process | Low | Cert details, costs, and exams change |
-| Job search agent is web-only | Low | Fails gracefully but gives shallow results |
+| Keyword-only RAG | High | Open — B3 deferred (cost/benefit; no measured retrieval failures) |
+| In-memory sessions only | High | Open — Phase C |
+| ~~No API rate limiting~~ | ~~High~~ | **Fixed (Phase A3)** — slowapi, 20 req/hr per authenticated user |
+| ~~Hardcoded salary data in prompts~~ | ~~High~~ | **Fixed (Phase B2)** — `salary-data.json`, loaded at agent init |
+| ~~Safety agent defaults to "safe" on failure~~ | ~~Medium~~ | **Fixed (Phase A2)** — fail-closed, rejects on any error |
+| ~~No audit logging~~ | ~~Medium~~ | **Fixed (Phase A4)** — structured JSON log per turn (no PII) |
+| ~~Orchestrator confidence score unused~~ | ~~Medium~~ | **Fixed (Phase A5)** — falls back to "general" if confidence < 0.5 |
+| ~~get_cert_facts() DB has 15 of 35 certs~~ | ~~Medium~~ | **Fixed (Phase B1)** — expanded to 30 certs; 5 KB files still pending |
+| No user feedback mechanism | Medium | Open — Phase D4 |
+| No web UI | Medium | Open — Phase D |
+| Static KB — no refresh process | Low | Open — Phase B5/E4 |
+| Job search agent is web-only | Low | Open — acceptable for now |
 
 ---
 
@@ -208,33 +208,35 @@ flowchart LR
 
 ### Phase A — Hardening (Controls & Reliability)
 **Target: Ready for beta users. No known abuse vectors.**
+**Status: COMPLETE**
 
-| # | Task | Effort | Priority |
-|---|------|--------|----------|
-| A1 | Add regex pre-filter before safety agent — block `ignore.*instructions`, `you are now`, `DAN`, `jailbreak` etc. | 1 day | Critical |
-| A2 | Change safety agent to fail-CLOSED (default reject on error, not default safe) | 1 hour | Critical |
-| A3 | Add `slowapi` rate limiting to FastAPI — 20 req/hr per authenticated user, 5 req/hr anonymous | 1 day | Critical |
-| A4 | Add structured audit logging per turn — session_id, route taken, safety result, token counts — to a file or App Insights | 1 day | High |
-| A5 | Add orchestrator confidence threshold — if confidence < 0.5, route to "general" instead of low-confidence specialist | 2 hours | High |
-| A6 | Add graceful error responses — catch specialist agent exceptions, return user-friendly message not stack trace | 2 hours | High |
+| # | Task | Status |
+|---|------|--------|
+| A1 | Add regex pre-filter before safety agent — block `ignore.*instructions`, `you are now`, `DAN`, `jailbreak` etc. | **Done** — `isaca_sd/filters/injection_filter.py`, 12 patterns |
+| A2 | Change safety agent to fail-CLOSED (default reject on error, not default safe) | **Done** — `agents/safety_agent.py` |
+| A3 | Add `slowapi` rate limiting to FastAPI — 20 req/hr per authenticated user | **Done** — `api/app.py`, keyed on JWT `sub` |
+| A4 | Add structured audit logging per turn — route taken, safety result, success | **Done** — `isaca_sd.audit` logger, JSON per turn, no PII |
+| A5 | Add orchestrator confidence threshold — if confidence < 0.5, route to "general" | **Done** — `isaca_sd/agents/orchestrator.py` |
+| A6 | Add graceful error responses — catch specialist agent exceptions, return user-friendly message | **Done** — `isaca_sd/pipelines/isaca_sd_pipeline.py` |
 
-**Verify:** Run adversarial input suite against the hardened pipeline. Run `python main.py eval`.
+**Verified:** Adversarial inputs rejected by regex pre-filter before LLM call. Normal queries work normally.
 
 ---
 
 ### Phase B — Knowledge Quality
 **Target: Accurate, complete, semantically searchable KB.**
+**Status: B1 + B2 complete. B3/B4 deferred. B5/B6 open.**
 
-| # | Task | Effort | Priority |
-|---|------|--------|----------|
-| B1 | Expand `get_cert_facts()` CERT_DB from 15 → 35 certs to match all KB markdown files | 1 day | High |
-| B2 | Extract salary ranges from agent system prompts → move into `isaca_sd/knowledge/salary-data.json` — load at agent init | 1 day | High |
-| B3 | Add Azure AI Search integration to `search_knowledge_base()` — hybrid BM25 + vector search — fall back to current keyword if unavailable | 3 days | High |
-| B4 | Re-embed all 35 cert files + 4 career paths + cert-index entries into Azure AI Search index | 1 day | High |
-| B5 | Write a `scripts/refresh_kb.py` script to re-chunk, re-embed, and re-upload KB — run quarterly or when certs change | 1 day | Medium |
-| B6 | Add 10–15 more detailed cert markdown files: `gcfe.md`, `cfe.md`, `cissp-issap.md`, `ccsp.md`, `gcfe.md`, `cloud+.md`, `cnd.md` | 3 days | Medium |
+| # | Task | Status |
+|---|------|--------|
+| B1 | Expand `get_cert_facts()` CERT_DB from 15 → 35 certs to match all KB markdown files | **Done (partial)** — expanded to 30 certs; 5 KB files still pending |
+| B2 | Extract salary ranges from agent system prompts → move into `isaca_sd/knowledge/salary-data.json` | **Done** — JSON loaded at resume_agent init |
+| B3 | Add Azure AI Search hybrid BM25 + vector search integration | **Deferred** — $74+/mo Basic tier not justified; no measured retrieval failures |
+| B4 | Re-embed all cert files into Azure AI Search index | **Deferred** — depends on B3 |
+| B5 | Write `scripts/refresh_kb.py` — re-chunk, re-embed, re-upload KB quarterly | Open |
+| B6 | Add 10–15 more detailed cert markdown files: `gcfe.md`, `cfe.md`, `cissp-issap.md`, `ccsp.md`, `cloud+.md`, `cnd.md` | Open |
 
-**Verify:** Manual search tests for synonyms ("risk management cert" → CRISC, "cloud security" → CCSP/AWS Security). Run full eval suite.
+**Verify:** Run `python main.py eval` after B6 to confirm no regressions.
 
 ---
 
@@ -364,7 +366,7 @@ This is a core differentiator from generic AI chatbots. It must be preserved in 
 ### Quality Metrics (Eval Suite)
 | Metric | Current | Target |
 |---|---|---|
-| Eval pass rate (all categories) | 100% on 15 tested | ≥ 90% on 60 cases |
+| Eval pass rate (all categories) | 100% on 15 tested (credit limit hit at 15/30) | ≥ 90% on 60 cases |
 | Avg eval score | ~0.85 | ≥ 0.80 |
 | Hard rule failures | 0 | 0 |
 | Factual accuracy (must_include) | 100% | 100% |
@@ -389,19 +391,18 @@ This is a core differentiator from generic AI chatbots. It must be preserved in 
 
 ## Build Order Summary
 
-| Phase | Focus | Gate to Next Phase |
+| Phase | Focus | Status |
 |---|---|---|
-| **A — Hardening** | Abuse controls, fail-closed safety, rate limiting, audit logs | All A tasks done; adversarial tests pass |
-| **B — Knowledge** | Vector search, expand cert DB, move salary data to file | Full eval suite ≥ 90% pass |
-| **C — Sessions** | Redis session store, conversation summarization | Sessions persist across restart |
-| **D — UI** | Web chat, Azure AD B2C, user feedback | Real user can log in and chat |
-| **E — Observability** | Dashboards, CI eval, KB refresh process | Weekly eval runs automated |
+| **A — Hardening** | Regex pre-filter, fail-closed safety, rate limiting, audit logs, error handling | **COMPLETE** |
+| **B — Knowledge** | Expand cert DB (15→30), salary JSON, vector search (deferred) | **Partial** — B1/B2 done; B3 deferred; B5/B6 open |
+| **C — Sessions** | Redis session store, conversation summarization | Not started |
+| **D — UI** | Web chat, Azure AD B2C, user feedback | Not started |
+| **E — Observability** | Dashboards, CI eval, KB refresh process | Not started |
 
-**Phases A and B can run in parallel** — they don't share files.
-**Phase C** depends on B (session store needs to be in place before scaling).
-**Phase D** depends on C (UI needs persistent sessions to work well).
+**Phase C** depends on a working API (Phase D in progress simultaneously).
+**Phase D** needs persistent sessions (Phase C) to work well.
 **Phase E** runs alongside D and beyond.
 
 ---
 
-*Document generated 2026-02-21. Review when architecture changes significantly.*
+*Document generated 2026-02-21. Last updated 2026-02-21 (Phase A + B1/B2 complete).*

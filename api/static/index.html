@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISACA San Diego — Career Advisor</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0f1117;
+      --surface:    #1a1d27;
+      --border:     #2a2d3a;
+      --accent:     #4a7cf7;
+      --accent-dim: #1e3a8a;
+      --text:       #e2e8f0;
+      --text-dim:   #94a3b8;
+      --user-bg:    #1e3a8a;
+      --bot-bg:     #1a1d27;
+      --danger:     #ef4444;
+      --radius:     12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    header .logo {
+      width: 36px; height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 15px; color: #fff;
+      flex-shrink: 0;
+    }
+    header h1 { font-size: 16px; font-weight: 600; }
+    header p  { font-size: 12px; color: var(--text-dim); margin-top: 1px; }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .status-dot.offline { background: var(--danger); }
+
+    /* ── Messages ── */
+    #messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      scroll-behavior: smooth;
+    }
+
+    .msg {
+      display: flex;
+      flex-direction: column;
+      max-width: 80%;
+      animation: fadeIn 0.15s ease;
+    }
+    .msg.user  { align-self: flex-end; align-items: flex-end; }
+    .msg.bot   { align-self: flex-start; align-items: flex-start; }
+
+    .msg .bubble {
+      padding: 11px 15px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .msg.user .bubble { background: var(--user-bg); border-bottom-right-radius: 3px; }
+    .msg.bot  .bubble { background: var(--bot-bg); border: 1px solid var(--border); border-bottom-left-radius: 3px; }
+    .msg .label { font-size: 11px; color: var(--text-dim); margin-bottom: 4px; }
+
+    /* Typing indicator */
+    .typing .bubble { display: flex; gap: 5px; align-items: center; padding: 14px 15px; }
+    .typing .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--text-dim);
+      animation: bounce 1.2s infinite;
+    }
+    .typing .dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30%            { transform: translateY(-6px); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Input area ── */
+    #input-area {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+    #input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 14px;
+      padding: 10px 14px;
+      resize: none;
+      max-height: 160px;
+      min-height: 42px;
+      overflow-y: auto;
+      outline: none;
+      line-height: 1.5;
+      font-family: inherit;
+      transition: border-color 0.15s;
+    }
+    #input:focus { border-color: var(--accent); }
+    #input::placeholder { color: var(--text-dim); }
+
+    #send-btn {
+      background: var(--accent);
+      border: none;
+      border-radius: var(--radius);
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s, opacity 0.15s;
+    }
+    #send-btn:hover:not(:disabled) { background: #3b6de0; }
+    #send-btn:disabled { opacity: 0.4; cursor: default; }
+
+    /* ── Auth gate ── */
+    #auth-gate {
+      position: fixed; inset: 0;
+      background: rgba(15, 17, 23, 0.95);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 100;
+    }
+    .auth-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      width: 340px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .auth-card h2 { font-size: 18px; }
+    .auth-card p  { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+    .auth-card input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 14px;
+      padding: 10px 12px;
+      outline: none;
+      width: 100%;
+      font-family: monospace;
+    }
+    .auth-card input:focus { border-color: var(--accent); }
+    .auth-card button {
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 11px;
+      transition: background 0.15s;
+    }
+    .auth-card button:hover { background: #3b6de0; }
+    .auth-error { color: var(--danger); font-size: 13px; display: none; }
+
+    /* ── Error toast ── */
+    #toast {
+      position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+      background: #7f1d1d; border: 1px solid #ef4444;
+      color: #fca5a5; padding: 10px 18px;
+      border-radius: 8px; font-size: 13px;
+      opacity: 0; transition: opacity 0.2s;
+      pointer-events: none; white-space: nowrap;
+      z-index: 50;
+    }
+    #toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- Auth gate (shown when API key needed) -->
+<div id="auth-gate" style="display:none">
+  <div class="auth-card">
+    <div>
+      <h2>ISACA SD Advisor</h2>
+      <p style="margin-top:6px">Enter your access key to continue.</p>
+    </div>
+    <input type="password" id="key-input" placeholder="Access key" autocomplete="off" />
+    <span class="auth-error" id="auth-error">Invalid key — please try again.</span>
+    <button onclick="submitKey()">Continue</button>
+  </div>
+</div>
+
+<header>
+  <div class="logo">IS</div>
+  <div>
+    <h1>ISACA San Diego — Career Advisor</h1>
+    <p>Cybersecurity certifications, career paths, resumes &amp; job market</p>
+  </div>
+  <div class="status-dot" id="status-dot" title="Connected"></div>
+</header>
+
+<div id="messages"></div>
+
+<div id="input-area">
+  <textarea
+    id="input"
+    placeholder="Ask about certifications, career paths, resumes, or salaries…"
+    rows="1"
+    aria-label="Message"
+  ></textarea>
+  <button id="send-btn" title="Send" onclick="sendMessage()">&#9658;</button>
+</div>
+
+<div id="toast"></div>
+
+<script>
+  // ── Config ────────────────────────────────────────────────────────────────
+
+  const API_BASE = window.location.origin;
+  const SESSION_KEY = "isaca_session_id";
+  const AUTH_KEY    = "isaca_api_key";
+
+  // ── Session ID ────────────────────────────────────────────────────────────
+
+  function getSessionId() {
+    let id = sessionStorage.getItem(SESSION_KEY);
+    if (!id) {
+      id = crypto.randomUUID();
+      sessionStorage.setItem(SESSION_KEY, id);
+    }
+    return id;
+  }
+
+  // ── Auth ──────────────────────────────────────────────────────────────────
+
+  function getApiKey() {
+    // Priority: ?key= URL param → sessionStorage → prompt
+    const params = new URLSearchParams(window.location.search);
+    const urlKey = params.get("key");
+    if (urlKey) {
+      sessionStorage.setItem(AUTH_KEY, urlKey);
+      // Remove key from URL bar (aesthetics + security)
+      const clean = window.location.pathname + window.location.hash;
+      history.replaceState(null, "", clean);
+      return urlKey;
+    }
+    return sessionStorage.getItem(AUTH_KEY) || null;
+  }
+
+  function buildHeaders() {
+    const key = getApiKey();
+    const headers = { "Content-Type": "application/json" };
+    if (key) headers["X-API-Key"] = key;
+    return headers;
+  }
+
+  function submitKey() {
+    const key = document.getElementById("key-input").value.trim();
+    if (!key) return;
+    sessionStorage.setItem(AUTH_KEY, key);
+    document.getElementById("auth-gate").style.display = "none";
+    addWelcome();
+  }
+
+  document.getElementById("key-input")?.addEventListener("keydown", e => {
+    if (e.key === "Enter") submitKey();
+  });
+
+  // ── Messages ──────────────────────────────────────────────────────────────
+
+  const messagesEl = document.getElementById("messages");
+
+  function addMessage(role, text) {
+    const wrapper = document.createElement("div");
+    wrapper.className = `msg ${role}`;
+
+    const label = document.createElement("div");
+    label.className = "label";
+    label.textContent = role === "user" ? "You" : "Advisor";
+
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+    bubble.textContent = text;
+
+    wrapper.appendChild(label);
+    wrapper.appendChild(bubble);
+    messagesEl.appendChild(wrapper);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return wrapper;
+  }
+
+  function addTyping() {
+    const wrapper = document.createElement("div");
+    wrapper.className = "msg bot typing";
+    wrapper.id = "typing-indicator";
+
+    const label = document.createElement("div");
+    label.className = "label";
+    label.textContent = "Advisor";
+
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+    bubble.innerHTML = `<div class="dot"></div><div class="dot"></div><div class="dot"></div>`;
+
+    wrapper.appendChild(label);
+    wrapper.appendChild(bubble);
+    messagesEl.appendChild(wrapper);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function removeTyping() {
+    document.getElementById("typing-indicator")?.remove();
+  }
+
+  function addWelcome() {
+    addMessage("bot",
+      "Hi! I'm the ISACA San Diego career advisor.\n\n" +
+      "I can help with:\n" +
+      "  • Certification advice — CISA, CISSP, CRISC, CompTIA, SANS, and 200+ more\n" +
+      "  • Career path planning — realistic timelines, what cert to pursue next\n" +
+      "  • Resume and salary questions for the San Diego market\n" +
+      "  • Job market information\n\n" +
+      "What can I help you with today?"
+    );
+  }
+
+  // ── Toast ─────────────────────────────────────────────────────────────────
+
+  let toastTimer;
+  function showToast(msg) {
+    const el = document.getElementById("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove("show"), 4000);
+  }
+
+  // ── Send ──────────────────────────────────────────────────────────────────
+
+  let busy = false;
+
+  async function sendMessage() {
+    if (busy) return;
+    const input = document.getElementById("input");
+    const text = input.value.trim();
+    if (!text) return;
+
+    input.value = "";
+    input.style.height = "auto";
+    busy = true;
+    document.getElementById("send-btn").disabled = true;
+
+    addMessage("user", text);
+    addTyping();
+
+    try {
+      const resp = await fetch(`${API_BASE}/api/chat`, {
+        method: "POST",
+        headers: buildHeaders(),
+        body: JSON.stringify({ session_id: getSessionId(), message: text }),
+      });
+
+      removeTyping();
+
+      if (resp.status === 401) {
+        // Key rejected — show auth gate again
+        sessionStorage.removeItem(AUTH_KEY);
+        document.getElementById("auth-error").style.display = "block";
+        document.getElementById("auth-gate").style.display = "flex";
+        return;
+      }
+
+      if (!resp.ok) {
+        const err = await resp.json().catch(() => ({ detail: "Unknown error" }));
+        showToast(`Error ${resp.status}: ${err.detail || "Something went wrong"}`);
+        setOffline(false);
+        return;
+      }
+
+      const data = await resp.json();
+      addMessage("bot", data.reply);
+      setOffline(false);
+
+    } catch (err) {
+      removeTyping();
+      showToast("Could not reach the server. Check your connection.");
+      setOffline(true);
+    } finally {
+      busy = false;
+      document.getElementById("send-btn").disabled = false;
+      input.focus();
+    }
+  }
+
+  function setOffline(isOffline) {
+    const dot = document.getElementById("status-dot");
+    dot.classList.toggle("offline", isOffline);
+    dot.title = isOffline ? "Disconnected" : "Connected";
+  }
+
+  // ── Input auto-resize + Enter to send ─────────────────────────────────────
+
+  const inputEl = document.getElementById("input");
+
+  inputEl.addEventListener("input", () => {
+    inputEl.style.height = "auto";
+    inputEl.style.height = Math.min(inputEl.scrollHeight, 160) + "px";
+  });
+
+  inputEl.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+
+  // ── Init ──────────────────────────────────────────────────────────────────
+
+  (function init() {
+    const key = getApiKey();
+    if (key) {
+      // Key available — go straight to chat
+      addWelcome();
+    } else {
+      // No key — check if API key mode is needed (show gate)
+      // We do a quick health check; if it responds without auth, skip the gate.
+      fetch(`${API_BASE}/api/health`)
+        .then(r => r.json())
+        .then(() => addWelcome())   // health check passed — no auth needed on health
+        .catch(() => {
+          // Can't reach server at all
+          setOffline(true);
+          addWelcome();
+        });
+      // Show the auth gate — the user can always dismiss it via ?key=
+      document.getElementById("auth-gate").style.display = "flex";
+    }
+  })();
+</script>
+
+</body>
+</html>
