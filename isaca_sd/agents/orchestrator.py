@@ -78,8 +78,11 @@ async def classify_route(agent, user_message: str, default: str = "general") -> 
         if match:
             parsed = json.loads(match.group())
             route = parsed.get("route", default)
+            confidence = parsed.get("confidence", 0.0)
             if route in valid_routes:
-                confidence = parsed.get("confidence", 0.0)
+                if confidence < 0.5:
+                    logger.warning("Low confidence route %r (%.2f) — falling back to %r", route, confidence, default)
+                    return default
                 logger.debug("Route: %s (confidence: %.2f)", route, confidence)
                 return route
 

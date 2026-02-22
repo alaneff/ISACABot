@@ -1,0 +1,21 @@
+{
+  "market": "San Diego",
+  "period": "2025/2026",
+  "note": "Guidance only — actual offers vary by company size, sector, clearance, and negotiation. Recommend verifying against current sources such as ISACA Salary Survey, Levels.fyi, or LinkedIn Salary.",
+  "roles": {
+    "SOC Analyst Tier 1-2": "$65K–$95K",
+    "Security Analyst / Mid-level": "$90K–$130K",
+    "Senior Security Analyst / Engineer": "$120K–$170K",
+    "IT Auditor": "$75K–$110K",
+    "Senior IT Auditor / Audit Manager": "$110K–$155K",
+    "GRC Analyst": "$85K–$125K",
+    "GRC Manager / Risk Manager": "$120K–$165K",
+    "Security Manager / CISO (mid-size org)": "$150K–$220K",
+    "CISO (enterprise / defense)": "$200K–$350K+"
+  },
+  "modifiers": {
+    "defense_contractor_premium": "+10–20% for positions requiring active clearance",
+    "ts_sci_premium": "Active TS/SCI clearance adds $20–40K in San Diego defense market",
+    "market_note": "San Diego is above national average due to concentration of defense contractors (Northrop, Leidos, SAIC, Booz Allen) and high cost of living"
+  }
+}

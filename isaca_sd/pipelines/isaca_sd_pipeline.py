@@ -13,6 +13,8 @@ Usage:
 """
 
 import asyncio
+import json
+import logging
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -26,6 +28,9 @@ from isaca_sd.agents.job_search_agent import create_job_search_agent
 from isaca_sd.agents.orchestrator import classify_route, create_orchestrator
 from isaca_sd.agents.research_agent import create_research_agent
 from isaca_sd.agents.resume_agent import create_resume_agent
+from isaca_sd.filters.injection_filter import check_injection
+
+audit_logger = logging.getLogger("isaca_sd.audit")
 
 WELCOME = """
 +==============================================================+
@@ -85,19 +90,46 @@ class ISACASdPipeline:
 
     async def _run_turn(self, user_message: str, history: list[dict]) -> str:
         """Run one conversation turn through the full multi-agent flow."""
-        # 1. Safety check
-        is_safe, reason = await run_safety_check(self._agents["safety"], user_message)
-        if not is_safe:
-            return SAFETY_REJECTION
+        safety_status = "safe"
+        route = "general"
+        success = True
 
-        # 2. Route to specialist
-        route = await classify_route(self._agents["orchestrator"], user_message)
+        try:
+            # 1. Regex injection pre-filter (zero cost, no LLM)
+            is_clean, injection_reason = check_injection(user_message)
+            if not is_clean:
+                safety_status = "injection"
+                return SAFETY_REJECTION
 
-        # 3. Run specialist with conversation context
-        specialist = self._agents.get(route, self._agents["general"])
-        prompt = _build_prompt(user_message, history)
-        result = await specialist.run(prompt)
-        return result.text if hasattr(result, "text") else str(result)
+            # 2. LLM safety check (Haiku — fails closed on error)
+            is_safe, reason = await run_safety_check(self._agents["safety"], user_message)
+            if not is_safe:
+                safety_status = "blocked"
+                return SAFETY_REJECTION
+
+            # 3. Route to specialist
+            route = await classify_route(self._agents["orchestrator"], user_message)
+
+            # 4. Run specialist with conversation context
+            specialist = self._agents.get(route, self._agents["general"])
+            prompt = _build_prompt(user_message, history)
+            try:
+                result = await specialist.run(prompt)
+                return result.text if hasattr(result, "text") else str(result)
+            except Exception as exc:
+                success = False
+                audit_logger.error("Specialist agent error (route=%s): %s", route, exc)
+                return "I'm having trouble responding right now — please try again in a moment."
+
+        finally:
+            audit_logger.info(
+                json.dumps({
+                    "event": "turn",
+                    "safety": safety_status,
+                    "route": route,
+                    "success": success,
+                })
+            )
 
     async def _chat_loop(self) -> None:
         """Interactive REPL for conversational use."""

@@ -11,13 +11,39 @@ Strengths over the general agent:
 - Actionable language: specific bullet examples, not vague advice
 """
 
+import json
+import logging
+from pathlib import Path
+
 from agent_framework.anthropic import AnthropicClient
 
 from agents.base import create_agent, create_client
 from isaca_sd.tools.cert_facts import get_cert_facts
 from isaca_sd.tools.knowledge_base import search_knowledge_base
 
-SYSTEM_PROMPT = """
+logger = logging.getLogger(__name__)
+
+_SALARY_FILE = Path(__file__).parent.parent / "knowledge" / "salary-data.json"
+
+
+def _load_salary_block() -> str:
+    """Load salary data from JSON and format it for the system prompt."""
+    try:
+        data = json.loads(_SALARY_FILE.read_text(encoding="utf-8"))
+        lines = [f"Use these as guidance — {data.get('note', '')}"]
+        for role, salary in data.get("roles", {}).items():
+            lines.append(f"- {role}: {salary}")
+        for mod in data.get("modifiers", {}).values():
+            lines.append(f"- {mod}")
+        return "\n".join(lines)
+    except Exception as exc:
+        logger.warning("Could not load salary data: %s — using fallback", exc)
+        return "Salary data unavailable — recommend checking current ISACA Salary Survey or LinkedIn Salary."
+
+
+_SALARY_BLOCK = _load_salary_block()
+
+SYSTEM_PROMPT = f"""
 You are a cybersecurity and IT career positioning specialist for ISACA San Diego.
 You focus on resumes, salary negotiation, LinkedIn optimization, and career positioning.
 
@@ -30,18 +56,7 @@ You help professionals in IT audit, cybersecurity, GRC, and security management 
 - Military-to-civilian transition: translating DoD roles, clearances, and MOS codes
 
 ## Salary context for San Diego (2025/2026 market)
-Use these as guidance — actual offers vary by company size, sector, and negotiation:
-- SOC Analyst Tier 1-2: $65K–$95K
-- Security Analyst / Mid-level: $90K–$130K
-- Senior Security Analyst / Engineer: $120K–$170K
-- IT Auditor: $75K–$110K
-- Senior IT Auditor / Audit Manager: $110K–$155K
-- GRC Analyst: $85K–$125K
-- GRC Manager / Risk Manager: $120K–$165K
-- Security Manager / CISO (mid-size): $150K–$220K
-- CISO (enterprise / defense): $200K–$350K+
-- Defense contractor premium: +10–20% for cleared positions
-- San Diego is above national average due to defense sector and cost of living
+{_SALARY_BLOCK}
 
 ## Resume guidelines
 - CISA after name in header: "Jane Smith, CISA, CRISC"

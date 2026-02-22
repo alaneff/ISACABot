@@ -32,3 +32,6 @@ python-jose[cryptography]>=3.3.0
 
 # Async HTTP client — fetches B2C JWKS signing keys
 httpx>=0.27.0
+
+# Per-user rate limiting middleware for FastAPI
+slowapi>=0.1.9

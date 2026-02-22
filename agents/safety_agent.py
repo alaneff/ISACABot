@@ -84,7 +84,7 @@ async def run_safety_check(agent, user_message: str) -> tuple[bool, str]:
             return is_safe, reason
 
     except Exception as exc:
-        logger.error("Safety agent error: %s — defaulting to safe", exc)
+        logger.error("Safety agent error: %s — defaulting to reject (fail-closed)", exc)
 
-    # Default to safe on any failure — avoid false positives
-    return True, ""
+    # Default to reject on any failure — fail closed, not fail open
+    return False, "safety check unavailable"

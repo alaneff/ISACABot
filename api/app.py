@@ -18,11 +18,14 @@ import logging
 from typing import Any
 
 import httpx
-from fastapi import FastAPI, HTTPException, Security, status
+from fastapi import FastAPI, HTTPException, Request, Security, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError, jwt
 from pydantic import BaseModel
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+from slowapi.util import get_remote_address
 
 from agents.isaca_sd_agent import create_isaca_sd_agent
 from config.settings import configure_logging, settings
@@ -30,7 +33,19 @@ from config.settings import configure_logging, settings
 configure_logging()
 logger = logging.getLogger("api")
 
+
+def _get_user_id(request: Request) -> str:
+    """Rate-limit key: JWT sub claim if authenticated, otherwise client IP."""
+    # JWT sub is stored in request.state by verify_token after successful auth.
+    # Falls back to IP for unauthenticated paths (e.g. /api/health).
+    return getattr(request.state, "user_sub", None) or get_remote_address(request)
+
+
+limiter = Limiter(key_func=_get_user_id)
+
 app = FastAPI(title="ISACA SD Advisor API", docs_url=None, redoc_url=None)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # ── CORS ────────────────────────────────────────────────────────────────────
 # Only the ISACA SD website and localhost (for local testing) are allowed.
@@ -77,6 +92,7 @@ async def _get_jwks() -> dict[str, Any]:
 
 
 async def verify_token(
+    request: Request,
     credentials: HTTPAuthorizationCredentials = Security(security),
 ) -> dict:
     """Validate Azure AD B2C JWT. Returns decoded token claims on success."""
@@ -90,6 +106,8 @@ async def verify_token(
             audience=settings.b2c_client_id,
             options={"verify_aud": True, "verify_exp": True},
         )
+        # Store sub in request.state so the rate limiter can key on it
+        request.state.user_sub = claims.get("sub", "")
         return claims
     except JWTError as exc:
         logger.warning("JWT validation failed: %s", exc)
@@ -114,6 +132,9 @@ async def verify_token(
             detail="Invalid or expired token. Please sign in again.",
             headers={"WWW-Authenticate": "Bearer"},
         )
+
+
+
 
 
 # ── Agent & session store ────────────────────────────────────────────────────
@@ -176,21 +197,23 @@ async def health() -> dict:
 
 
 @app.post("/api/chat", response_model=ChatResponse)
+@limiter.limit("20/hour")
 async def chat(
-    request: ChatRequest,
+    request: Request,
+    body: ChatRequest,
     claims: dict = Security(verify_token),
 ) -> ChatResponse:
-    if not request.message.strip():
+    if not body.message.strip():
         raise HTTPException(status_code=400, detail="Message cannot be empty.")
 
-    prompt = _build_prompt(request.session_id, request.message)
+    prompt = _build_prompt(body.session_id, body.message)
 
     try:
         result = await _get_agent().run(prompt)
         reply = result.text if hasattr(result, "text") else str(result)
     except Exception as exc:
-        logger.error("Agent error for session %s: %s", request.session_id, exc, exc_info=True)
+        logger.error("Agent error for session %s: %s", body.session_id, exc, exc_info=True)
         raise HTTPException(status_code=500, detail="Something went wrong — please try again.")
 
-    _store_turn(request.session_id, request.message, reply)
-    return ChatResponse(reply=reply, session_id=request.session_id)
+    _store_turn(body.session_id, body.message, reply)
+    return ChatResponse(reply=reply, session_id=body.session_id)
