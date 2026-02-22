@@ -1,0 +1,706 @@
+[
+  {
+    "abbreviation": "GSEC",
+    "full_name": "GIAC Security Essentials",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Assessment/Testing",
+    "level": "beginner",
+    "brief": "Broad foundational certification covering active defense, network security, cryptography, and incident handling. Ideal for security professionals moving from general IT into a dedicated security role."
+  },
+  {
+    "abbreviation": "GISF",
+    "full_name": "GIAC Information Security Fundamentals",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Assessment/Testing",
+    "level": "beginner",
+    "brief": "Entry-level GIAC credential covering core security concepts, networking basics, and foundational security practices. Suited for non-technical professionals entering the information security field."
+  },
+  {
+    "abbreviation": "GPPA",
+    "full_name": "GIAC Certified Enterprise Defender",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Assessment/Testing",
+    "level": "intermediate",
+    "brief": "Validates skills in network and endpoint defense, malware detection, and security operations. Targets security practitioners responsible for defending enterprise environments."
+  },
+  {
+    "abbreviation": "GCFW",
+    "full_name": "GIAC Certified Firewall Analyst",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Covers perimeter defense, firewall architecture, packet filtering, and network access control. Suited for network security engineers and firewall administrators."
+  },
+  {
+    "abbreviation": "GMON",
+    "full_name": "GIAC Continuous Monitoring Certification",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Validates continuous security monitoring skills including SIEM, log analysis, network traffic analysis, and security tool operations. Designed for SOC analysts and security engineers."
+  },
+  {
+    "abbreviation": "GRID",
+    "full_name": "GIAC Response and Industrial Defense",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Incident Handling",
+    "level": "intermediate",
+    "brief": "Focuses on incident response and defense for industrial control systems (ICS) and OT environments. Targets security professionals protecting critical infrastructure."
+  },
+  {
+    "abbreviation": "GPEN",
+    "full_name": "GIAC Penetration Tester",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Validates penetration testing skills including reconnaissance, scanning, exploitation, and reporting. Covers the full pentest methodology and is widely recognized in the industry."
+  },
+  {
+    "abbreviation": "GWAPT",
+    "full_name": "GIAC Web Application Penetration Tester",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Demonstrates skills in web application security testing including OWASP Top 10 exploitation, injection attacks, and authentication flaws. Suited for web application security testers."
+  },
+  {
+    "abbreviation": "GNFA",
+    "full_name": "GIAC Network Forensic Analyst",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Forensics",
+    "level": "intermediate",
+    "brief": "Validates skills in network traffic analysis, protocol analysis, and forensic investigation of network-based attacks. Targets forensic analysts and network security investigators."
+  },
+  {
+    "abbreviation": "GMOB",
+    "full_name": "GIAC Mobile Device Security Analyst",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Covers security assessment of mobile applications and devices on iOS and Android platforms. Designed for penetration testers and security analysts working in mobile environments."
+  },
+  {
+    "abbreviation": "GCTI",
+    "full_name": "GIAC Cyber Threat Intelligence",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Validates skills in gathering, analyzing, and applying threat intelligence to defend organizations. Targets threat intelligence analysts and senior SOC professionals."
+  },
+  {
+    "abbreviation": "GOSI",
+    "full_name": "GIAC Open Source Intelligence",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Assessment/Testing",
+    "level": "intermediate",
+    "brief": "Covers open-source intelligence gathering techniques used in reconnaissance and investigations. Suited for penetration testers, investigators, and threat intelligence analysts."
+  },
+  {
+    "abbreviation": "GDAT",
+    "full_name": "GIAC Defending Advanced Threats",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Operations",
+    "level": "expert",
+    "brief": "Advanced credential focused on detecting and responding to sophisticated nation-state-level threat actors. Targets senior blue team practitioners and security engineers at mature organizations."
+  },
+  {
+    "abbreviation": "GXPN",
+    "full_name": "GIAC Exploit Researcher and Advanced Penetration Tester",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Exploitation",
+    "level": "expert",
+    "brief": "Elite certification covering advanced exploitation, shellcode development, and vulnerability research. One of the most technically demanding GIAC credentials, targeting experienced exploit developers and advanced penetration testers."
+  },
+  {
+    "abbreviation": "GAWN",
+    "full_name": "GIAC Assessing and Auditing Wireless Networks",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Validates wireless network security assessment skills including 802.11 attacks, WPA/WPA2 cracking, and rogue access point detection. Designed for penetration testers assessing wireless environments."
+  },
+  {
+    "abbreviation": "GSTRT",
+    "full_name": "GIAC Strategic Planning, Policy, and Leadership",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Assessment/Testing",
+    "level": "expert",
+    "brief": "Covers security strategy, policy development, and leadership for senior security practitioners. Targets CISOs and security directors responsible for organizational security programs."
+  },
+  {
+    "abbreviation": "GASF",
+    "full_name": "GIAC Advanced Smartphone Forensics",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Forensics",
+    "level": "expert",
+    "brief": "Advanced forensic analysis of mobile devices including acquisition, analysis, and reporting on iOS and Android artifacts. Targets digital forensic investigators specializing in mobile evidence."
+  },
+  {
+    "abbreviation": "GCIH",
+    "full_name": "GIAC Certified Incident Handler",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Incident Handling",
+    "level": "intermediate",
+    "brief": "Validates skills in detecting, responding to, and recovering from security incidents. Covers attack techniques, containment strategies, and incident response methodology."
+  },
+  {
+    "abbreviation": "GCFE",
+    "full_name": "GIAC Certified Forensic Examiner",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Forensics",
+    "level": "intermediate",
+    "brief": "Covers Windows forensic examination including file system analysis, registry forensics, browser artifacts, and evidence collection. Targets forensic examiners and incident responders."
+  },
+  {
+    "abbreviation": "GCFA",
+    "full_name": "GIAC Certified Forensic Analyst",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Forensics",
+    "level": "intermediate",
+    "brief": "Advanced forensic analysis covering memory forensics, timeline analysis, and investigation of sophisticated attacks. Suited for experienced forensic analysts and DFIR professionals."
+  },
+  {
+    "abbreviation": "GREM",
+    "full_name": "GIAC Reverse Engineering Malware",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Forensics",
+    "level": "expert",
+    "brief": "Validates skills in static and dynamic malware analysis, reverse engineering, and understanding malicious code behavior. Targets malware analysts, threat researchers, and advanced incident responders."
+  },
+  {
+    "abbreviation": "OSCP",
+    "full_name": "Offensive Security Certified Professional",
+    "issuer": "Offensive Security (OffSec)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "24-hour hands-on lab exam requiring candidates to compromise multiple machines and submit a professional pentest report. Widely considered the gold standard practical credential for penetration testers."
+  },
+  {
+    "abbreviation": "OSEP",
+    "full_name": "Offensive Security Experienced Penetration Tester",
+    "issuer": "Offensive Security (OffSec)",
+    "category": "Penetration Testing",
+    "level": "expert",
+    "brief": "Advanced penetration testing credential focused on evading modern defenses, bypassing AV/EDR, and attacking hardened enterprise environments. Targets experienced pentesters looking to level up their offensive toolkit."
+  },
+  {
+    "abbreviation": "OSED",
+    "full_name": "Offensive Security Exploit Developer",
+    "issuer": "Offensive Security (OffSec)",
+    "category": "Exploitation",
+    "level": "expert",
+    "brief": "Hands-on credential covering Windows exploit development including buffer overflows, SEH exploitation, and ROP chain construction. Targets security researchers and exploit developers."
+  },
+  {
+    "abbreviation": "OSWE",
+    "full_name": "Offensive Security Web Expert",
+    "issuer": "Offensive Security (OffSec)",
+    "category": "Penetration Testing",
+    "level": "expert",
+    "brief": "Advanced web application security credential focusing on source code review, white-box testing, and chaining vulnerabilities for full application compromise. Targets experienced web application penetration testers."
+  },
+  {
+    "abbreviation": "OSEE",
+    "full_name": "Offensive Security Exploitation Expert",
+    "issuer": "Offensive Security (OffSec)",
+    "category": "Exploitation",
+    "level": "expert",
+    "brief": "Elite exploit development credential covering advanced Windows exploitation, kernel bugs, and modern mitigation bypass techniques. Considered one of the most technically demanding certifications in the offensive security field."
+  },
+  {
+    "abbreviation": "OSDA",
+    "full_name": "Offensive Security Defense Analyst",
+    "issuer": "Offensive Security (OffSec)",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Covers defensive security analysis from an attacker's perspective, including log analysis, SIEM usage, and detection of offensive techniques. Bridges the gap between red and blue team thinking."
+  },
+  {
+    "abbreviation": "OSWP",
+    "full_name": "Offensive Security Wireless Professional",
+    "issuer": "Offensive Security (OffSec)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Hands-on wireless security certification covering 802.11 attacks, WEP/WPA cracking, and rogue access point attacks. Practical exam requiring candidates to compromise wireless networks in a live environment."
+  },
+  {
+    "abbreviation": "OSCE3",
+    "full_name": "Offensive Security Certified Expert 3",
+    "issuer": "Offensive Security (OffSec)",
+    "category": "Exploitation",
+    "level": "expert",
+    "brief": "Combined elite credential awarded upon passing OSEP, OSED, and OSWE — demonstrating mastery across advanced pentesting, exploit development, and web application exploitation. One of the rarest credentials in offensive security."
+  },
+  {
+    "abbreviation": "OSIP",
+    "full_name": "Offensive Security Incident Responder",
+    "issuer": "Offensive Security (OffSec)",
+    "category": "Incident Handling",
+    "level": "intermediate",
+    "brief": "Covers incident response methodology, threat hunting, and forensic analysis from an offensive security perspective. Targets analysts who want to understand attacker techniques to improve their response capabilities."
+  },
+  {
+    "abbreviation": "CEH",
+    "full_name": "Certified Ethical Hacker",
+    "issuer": "EC-Council",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Broad ethical hacking certification covering attack phases, common tools, and vulnerability exploitation techniques. Widely listed on government and enterprise job postings, though criticized by practitioners for its multiple-choice exam format."
+  },
+  {
+    "abbreviation": "CEH Practical",
+    "full_name": "Certified Ethical Hacker Practical",
+    "issuer": "EC-Council",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Hands-on companion to the CEH, requiring candidates to perform real attacks in a live lab environment. Adds practical credibility to the standard CEH credential."
+  },
+  {
+    "abbreviation": "CEH Master",
+    "full_name": "Certified Ethical Hacker Master",
+    "issuer": "EC-Council",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Combined designation awarded upon passing both the CEH knowledge exam and the CEH Practical. Demonstrates both theoretical understanding and hands-on ethical hacking capability."
+  },
+  {
+    "abbreviation": "CHFI",
+    "full_name": "Computer Hacking Forensic Investigator",
+    "issuer": "EC-Council",
+    "category": "Forensics",
+    "level": "intermediate",
+    "brief": "Covers digital forensics methodology, evidence acquisition, file system analysis, and investigation of cybercrime. Targets forensic investigators and law enforcement personnel working cyber cases."
+  },
+  {
+    "abbreviation": "ECIH",
+    "full_name": "EC-Council Certified Incident Handler",
+    "issuer": "EC-Council",
+    "category": "Incident Handling",
+    "level": "intermediate",
+    "brief": "Validates incident handling and response skills including preparation, detection, containment, and recovery. Suited for security analysts and incident response team members."
+  },
+  {
+    "abbreviation": "ECSA",
+    "full_name": "EC-Council Certified Security Analyst",
+    "issuer": "EC-Council",
+    "category": "Security Assessment/Testing",
+    "level": "intermediate",
+    "brief": "Covers advanced penetration testing methodology including pen testing frameworks, documentation, and reporting. Positioned as the next step after CEH for security analysts focused on structured assessments."
+  },
+  {
+    "abbreviation": "LPT",
+    "full_name": "Licensed Penetration Tester (Master)",
+    "issuer": "EC-Council",
+    "category": "Penetration Testing",
+    "level": "expert",
+    "brief": "Advanced practical penetration testing credential requiring candidates to conduct a full pentest engagement against a complex multi-layered network. Targets senior penetration testers seeking EC-Council's highest offensive designation."
+  },
+  {
+    "abbreviation": "CPENT",
+    "full_name": "Certified Penetration Testing Professional",
+    "issuer": "EC-Council",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Hands-on penetration testing credential covering network, web, IoT, and OT environments in a live range. Passing with high marks simultaneously awards the LPT Master designation."
+  },
+  {
+    "abbreviation": "CND",
+    "full_name": "Certified Network Defender",
+    "issuer": "EC-Council",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Covers network defense strategies, threat detection, and security operations from a blue team perspective. Designed for network administrators and security engineers responsible for protecting network infrastructure."
+  },
+  {
+    "abbreviation": "ECES",
+    "full_name": "EC-Council Certified Encryption Specialist",
+    "issuer": "EC-Council",
+    "category": "Security Assessment/Testing",
+    "level": "intermediate",
+    "brief": "Covers cryptographic algorithms, PKI, encryption standards, and their practical security implications. Suited for security professionals who need a solid cryptography foundation in their assessment or engineering work."
+  },
+  {
+    "abbreviation": "PNPT",
+    "full_name": "Practical Network Penetration Tester",
+    "issuer": "TCM Security",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Five-day hands-on practical exam simulating a real-world network penetration test including Active Directory attacks and a professional report submission. A highly respected practitioner-focused alternative to CEH for those on a budget."
+  },
+  {
+    "abbreviation": "PJPT",
+    "full_name": "Practical Junior Penetration Tester",
+    "issuer": "TCM Security",
+    "category": "Penetration Testing",
+    "level": "beginner",
+    "brief": "Entry-level hands-on penetration testing credential covering internal network assessment fundamentals and basic Active Directory attacks. Designed for beginners transitioning into offensive security."
+  },
+  {
+    "abbreviation": "PJMR",
+    "full_name": "Practical Junior Malware Researcher",
+    "issuer": "TCM Security",
+    "category": "Forensics",
+    "level": "beginner",
+    "brief": "Introductory hands-on credential covering malware analysis, static and dynamic analysis techniques, and basic reverse engineering. Suited for entry-level analysts wanting to break into malware research."
+  },
+  {
+    "abbreviation": "PMJPT",
+    "full_name": "Practical Mobile Penetration Tester",
+    "issuer": "TCM Security",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Practical mobile application security testing credential covering iOS and Android app assessment methodology. Targets penetration testers expanding into mobile application security."
+  },
+  {
+    "abbreviation": "PenTest+",
+    "full_name": "CompTIA PenTest+",
+    "issuer": "CompTIA",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Vendor-neutral penetration testing certification covering planning, scoping, information gathering, attacks, and reporting. Meets DoD 8570 requirements and targets mid-level penetration testers."
+  },
+  {
+    "abbreviation": "CASP+",
+    "full_name": "CompTIA Advanced Security Practitioner",
+    "issuer": "CompTIA",
+    "category": "Security Assessment/Testing",
+    "level": "expert",
+    "brief": "Advanced practitioner-level credential covering enterprise security architecture, risk management, and technical integration of security controls. Targets senior security engineers and architects."
+  },
+  {
+    "abbreviation": "Security+",
+    "full_name": "CompTIA Security+",
+    "issuer": "CompTIA",
+    "category": "Security Assessment/Testing",
+    "level": "beginner",
+    "brief": "Industry-standard entry-level security certification covering foundational security concepts, threats, vulnerabilities, and security controls. Required by DoD 8570 and widely used as a baseline credential for security roles."
+  },
+  {
+    "abbreviation": "CySA+",
+    "full_name": "CompTIA Cybersecurity Analyst",
+    "issuer": "CompTIA",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Covers threat detection, behavioral analytics, and security operations center (SOC) practices. Targets security analysts responsible for monitoring and responding to threats in enterprise environments."
+  },
+  {
+    "abbreviation": "eJPT",
+    "full_name": "eLearnSecurity Junior Penetration Tester",
+    "issuer": "INE Security (eLearnSecurity)",
+    "category": "Penetration Testing",
+    "level": "beginner",
+    "brief": "Entry-level hands-on penetration testing certification covering basic network attacks, web application testing, and host-based exploitation. Widely recommended as a first practical credential before pursuing OSCP."
+  },
+  {
+    "abbreviation": "eCPPT",
+    "full_name": "eLearnSecurity Certified Professional Penetration Tester",
+    "issuer": "INE Security (eLearnSecurity)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Intermediate practical penetration testing credential covering network pentesting, web application attacks, Active Directory, and report writing. Often used as a stepping stone between eJPT and OSCP."
+  },
+  {
+    "abbreviation": "eWPT",
+    "full_name": "eLearnSecurity Web Application Penetration Tester",
+    "issuer": "INE Security (eLearnSecurity)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Hands-on web application penetration testing certification covering OWASP vulnerabilities, injection attacks, and authentication bypass. Targets penetration testers specializing in web application security."
+  },
+  {
+    "abbreviation": "eCPTX",
+    "full_name": "eLearnSecurity Certified Penetration Tester eXtreme",
+    "issuer": "INE Security (eLearnSecurity)",
+    "category": "Penetration Testing",
+    "level": "expert",
+    "brief": "Advanced penetration testing credential covering red team operations, advanced Active Directory attacks, and evasion techniques. Targets experienced penetration testers ready to advance to red team engagements."
+  },
+  {
+    "abbreviation": "eMAPT",
+    "full_name": "eLearnSecurity Mobile Application Penetration Tester",
+    "issuer": "INE Security (eLearnSecurity)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Practical mobile application penetration testing credential covering Android and iOS app security assessment. Targets penetration testers working in mobile security assessment roles."
+  },
+  {
+    "abbreviation": "ePND",
+    "full_name": "eLearnSecurity Penetration Testing Network Defense",
+    "issuer": "INE Security (eLearnSecurity)",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Covers network defense from a penetration tester's perspective, bridging offensive and defensive security skills. Suited for analysts who want to strengthen detection capabilities by understanding attacker methods."
+  },
+  {
+    "abbreviation": "CREST CRT",
+    "full_name": "CREST Registered Penetration Tester",
+    "issuer": "CREST",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "UK-based penetration testing credential validating foundational penetration testing knowledge across infrastructure and web application testing. Required by many UK government and financial sector contracts."
+  },
+  {
+    "abbreviation": "CREST CCT",
+    "full_name": "CREST Certified Infrastructure Tester / Certified Web Application Tester",
+    "issuer": "CREST",
+    "category": "Penetration Testing",
+    "level": "expert",
+    "brief": "Senior-level CREST penetration testing qualification covering advanced infrastructure or web application testing techniques. Required for high-assurance UK government and financial sector penetration testing engagements."
+  },
+  {
+    "abbreviation": "CREST CSAM",
+    "full_name": "CREST Certified Simulated Attack Manager",
+    "issuer": "CREST",
+    "category": "Penetration Testing",
+    "level": "expert",
+    "brief": "Validates management and planning skills for red team and CBEST/TIBER-style simulated attack engagements. Targets senior red team managers leading advanced threat simulation programs."
+  },
+  {
+    "abbreviation": "CREST CCHIA",
+    "full_name": "CREST Certified Host Intrusion Analyst",
+    "issuer": "CREST",
+    "category": "Incident Handling",
+    "level": "intermediate",
+    "brief": "Covers host-based forensic analysis and intrusion investigation including memory analysis and artifact examination. Targets incident response analysts working host-based investigations."
+  },
+  {
+    "abbreviation": "CCTIM",
+    "full_name": "CREST Certified Threat Intelligence Manager",
+    "issuer": "CREST",
+    "category": "Security Operations",
+    "level": "expert",
+    "brief": "Validates advanced threat intelligence management skills for leading intelligence programs at strategic, operational, and tactical levels. Targets senior threat intelligence professionals."
+  },
+  {
+    "abbreviation": "CCAS",
+    "full_name": "CREST Certified Application Security Tester",
+    "issuer": "CREST",
+    "category": "Security Assessment/Testing",
+    "level": "intermediate",
+    "brief": "Covers application security assessment skills including code review, dynamic testing, and vulnerability identification in software. Suited for application security testers and secure development professionals."
+  },
+  {
+    "abbreviation": "EnCE",
+    "full_name": "EnCase Certified Examiner",
+    "issuer": "OpenText (formerly Guidance Software)",
+    "category": "Forensics",
+    "level": "intermediate",
+    "brief": "Validates proficiency with the EnCase digital forensics platform for evidence acquisition, analysis, and reporting. Recognized by law enforcement and corporate investigators working with EnCase toolsets."
+  },
+  {
+    "abbreviation": "ACE",
+    "full_name": "AccessData Certified Examiner",
+    "issuer": "Exterro (formerly AccessData)",
+    "category": "Forensics",
+    "level": "intermediate",
+    "brief": "Validates proficiency with the FTK (Forensic Toolkit) digital forensics platform for evidence processing and analysis. Recognized in corporate and law enforcement digital forensics roles."
+  },
+  {
+    "abbreviation": "CCPA",
+    "full_name": "Cellebrite Certified Physical Analyst",
+    "issuer": "Cellebrite",
+    "category": "Forensics",
+    "level": "intermediate",
+    "brief": "Validates skills in mobile device evidence extraction and physical analysis using Cellebrite tools. Widely used by law enforcement and corporate investigators for mobile forensic casework."
+  },
+  {
+    "abbreviation": "CCDE",
+    "full_name": "Cellebrite Certified Digital Intelligence Specialist",
+    "issuer": "Cellebrite",
+    "category": "Forensics",
+    "level": "expert",
+    "brief": "Advanced Cellebrite credential covering comprehensive digital intelligence workflows, advanced extraction methods, and artifact interpretation. Targets senior digital forensic examiners and investigators."
+  },
+  {
+    "abbreviation": "MCFE",
+    "full_name": "McAfee Certified Forensics Engineer",
+    "issuer": "Trellix (formerly McAfee Enterprise)",
+    "category": "Forensics",
+    "level": "intermediate",
+    "brief": "Vendor-specific forensic credential validating use of McAfee/Trellix endpoint forensic tools for investigation and incident response. Suited for security analysts operating in McAfee-centric environments."
+  },
+  {
+    "abbreviation": "BTL1",
+    "full_name": "Blue Team Labs Level 1",
+    "issuer": "Security Blue Team",
+    "category": "Security Operations",
+    "level": "beginner",
+    "brief": "Hands-on defensive security certification covering phishing analysis, threat intelligence, SIEM investigation, and digital forensics basics. Designed as an entry point for aspiring SOC analysts and blue team practitioners."
+  },
+  {
+    "abbreviation": "BTL2",
+    "full_name": "Blue Team Labs Level 2",
+    "issuer": "Security Blue Team",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Advanced hands-on blue team credential covering threat hunting, advanced SIEM analysis, malware analysis, and incident response. Targets experienced SOC analysts and blue teamers looking to advance their skills."
+  },
+  {
+    "abbreviation": "C-HFIR",
+    "full_name": "Certified HIPAA Forensics Incident Responder",
+    "issuer": "AHIMA / Various",
+    "category": "Incident Handling",
+    "level": "intermediate",
+    "brief": "Covers forensic investigation and incident response within HIPAA-regulated healthcare environments. Targets healthcare security professionals responsible for breach investigation and regulatory compliance."
+  },
+  {
+    "abbreviation": "SC-200",
+    "full_name": "Microsoft Security Operations Analyst",
+    "issuer": "Microsoft",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Validates skills in threat investigation and response using Microsoft Sentinel, Microsoft Defender, and related Microsoft security tools. Targets SOC analysts operating in Microsoft-centric enterprise environments."
+  },
+  {
+    "abbreviation": "Splunk Core Certified User",
+    "full_name": "Splunk Core Certified User",
+    "issuer": "Splunk",
+    "category": "Security Operations",
+    "level": "beginner",
+    "brief": "Entry-level Splunk credential covering basic data search, reporting, and dashboard creation within the Splunk platform. Suitable for analysts beginning to work with Splunk for log analysis and security monitoring."
+  },
+  {
+    "abbreviation": "Splunk Core Power User",
+    "full_name": "Splunk Core Certified Power User",
+    "issuer": "Splunk",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Covers advanced Splunk searches, field extractions, transforming commands, and creating complex visualizations. Targets analysts who need deeper Splunk capabilities for security investigations and SOC operations."
+  },
+  {
+    "abbreviation": "Splunk Core Admin",
+    "full_name": "Splunk Certified Admin",
+    "issuer": "Splunk",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Validates Splunk administration skills including configuration, data onboarding, user management, and platform maintenance. Targets security engineers responsible for maintaining Splunk infrastructure in a SOC."
+  },
+  {
+    "abbreviation": "Splunk Enterprise Security Admin",
+    "full_name": "Splunk Certified Enterprise Security Admin",
+    "issuer": "Splunk",
+    "category": "Security Operations",
+    "level": "expert",
+    "brief": "Advanced Splunk credential covering the Splunk Enterprise Security (ES) SIEM, including correlation searches, threat intelligence integration, and incident review workflows. Targets SIEM engineers and senior SOC analysts."
+  },
+  {
+    "abbreviation": "BSCP",
+    "full_name": "Burp Suite Certified Practitioner",
+    "issuer": "PortSwigger",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Hands-on web application security certification requiring candidates to exploit real vulnerabilities using Burp Suite in a time-limited exam. Recognized by web application security professionals and bug bounty hunters."
+  },
+  {
+    "abbreviation": "GIAC GPTX",
+    "full_name": "GIAC Python Security Tester",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Penetration Testing",
+    "level": "intermediate",
+    "brief": "Validates Python scripting skills applied to security testing, including writing exploit scripts, automating reconnaissance, and building security tooling. Targets penetration testers who want to extend their scripting capabilities."
+  },
+  {
+    "abbreviation": "INE eWPTX",
+    "full_name": "eLearnSecurity Web Application Penetration Tester eXtreme",
+    "issuer": "INE Security (eLearnSecurity)",
+    "category": "Penetration Testing",
+    "level": "expert",
+    "brief": "Advanced web application penetration testing credential covering complex vulnerability chaining, advanced injection attacks, and sophisticated evasion techniques. Targets experienced web application security testers."
+  },
+  {
+    "abbreviation": "GCLD",
+    "full_name": "GIAC Cloud Security Essentials",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Assessment/Testing",
+    "level": "intermediate",
+    "brief": "Covers cloud security assessment fundamentals including misconfigurations, identity and access management risks, and cloud-native attack paths. Suited for penetration testers and security analysts working in cloud environments."
+  },
+  {
+    "abbreviation": "GPCS",
+    "full_name": "GIAC Public Cloud Security",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Assessment/Testing",
+    "level": "intermediate",
+    "brief": "Validates skills in assessing and securing AWS, Azure, and GCP environments including cloud-specific attack techniques and defense strategies. Targets cloud security engineers and penetration testers."
+  },
+  {
+    "abbreviation": "CISA",
+    "full_name": "Certified Information Systems Auditor",
+    "issuer": "ISACA",
+    "category": "Security Assessment/Testing",
+    "level": "intermediate",
+    "brief": "Covers IT audit, control, and assurance including security assessment frameworks and risk-based auditing. Widely recognized in audit, compliance, and governance roles assessing organizational security posture."
+  },
+  {
+    "abbreviation": "GEVA",
+    "full_name": "GIAC Enterprise Vulnerability Assessor",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Security Assessment/Testing",
+    "level": "intermediate",
+    "brief": "Covers vulnerability management program design, assessment methodologies, and remediation prioritization at enterprise scale. Targets vulnerability management engineers and security analysts responsible for continuous assessment."
+  },
+  {
+    "abbreviation": "GRTP",
+    "full_name": "GIAC Red Team Professional",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Penetration Testing",
+    "level": "expert",
+    "brief": "Advanced red team operations credential covering adversary simulation, command and control, and advanced evasion techniques aligned with MITRE ATT&CK. Targets experienced red team operators."
+  },
+  {
+    "abbreviation": "GDFIR",
+    "full_name": "GIAC Defending Advanced Threats and Forensics Incident Response",
+    "issuer": "GIAC (Global Information Assurance Certification)",
+    "category": "Incident Handling",
+    "level": "expert",
+    "brief": "Combines advanced threat defense and forensic incident response skills for seasoned DFIR practitioners. Targets senior incident handlers and forensic analysts responding to sophisticated intrusions."
+  },
+  {
+    "abbreviation": "Sec+ DoD",
+    "full_name": "CompTIA Security+ (DoD 8570/8140 Approved)",
+    "issuer": "CompTIA",
+    "category": "Security Operations",
+    "level": "beginner",
+    "brief": "Government-approved foundational security certification required for many DoD and federal contractor IA roles. Covers threats, vulnerabilities, architecture, and security operations fundamentals."
+  },
+  {
+    "abbreviation": "SANS FOR508",
+    "full_name": "Advanced Incident Response, Threat Hunting, and Digital Forensics (FOR508 course cert)",
+    "issuer": "SANS Institute",
+    "category": "Incident Handling",
+    "level": "expert",
+    "brief": "Advanced incident response and threat hunting training credential covering memory forensics, timeline analysis, and hunting for sophisticated attackers across enterprise environments."
+  },
+  {
+    "abbreviation": "SANS SEC504",
+    "full_name": "Hacker Tools, Techniques, and Incident Handling (SEC504 course cert)",
+    "issuer": "SANS Institute",
+    "category": "Incident Handling",
+    "level": "intermediate",
+    "brief": "Covers attacker techniques and the incident handling process, teaching defenders to think offensively. Foundational for security analysts and incident responders wanting to understand and counter real attack methods."
+  },
+  {
+    "abbreviation": "CREST CCNIA",
+    "full_name": "CREST Certified Network Intrusion Analyst",
+    "issuer": "CREST",
+    "category": "Security Operations",
+    "level": "intermediate",
+    "brief": "Validates network intrusion analysis skills including traffic analysis, pattern recognition, and investigation of network-based attacks. Targets SOC analysts and network security investigators."
+  },
+  {
+    "abbreviation": "eCIR",
+    "full_name": "eLearnSecurity Certified Incident Responder",
+    "issuer": "INE Security (eLearnSecurity)",
+    "category": "Incident Handling",
+    "level": "intermediate",
+    "brief": "Hands-on incident response credential covering detection, containment, eradication, and recovery processes. Targets security analysts and incident response team members building practical IR skills."
+  },
+  {
+    "abbreviation": "eCDFP",
+    "full_name": "eLearnSecurity Certified Digital Forensics Professional",
+    "issuer": "INE Security (eLearnSecurity)",
+    "category": "Forensics",
+    "level": "intermediate",
+    "brief": "Practical digital forensics credential covering evidence acquisition, file system analysis, memory forensics, and forensic reporting. Targets aspiring digital forensic examiners and DFIR analysts."
+  }
+]

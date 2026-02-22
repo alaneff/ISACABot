@@ -1,0 +1,570 @@
+[
+  {
+    "abbreviation": "CISA",
+    "full_name": "Certified Information Systems Auditor",
+    "issuer": "ISACA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Gold standard for IT audit professionals, covering audit processes, governance, and information asset protection. Requires 5 years of IS audit experience and is near-mandatory for senior IT auditor roles at Big 4 firms and regulators globally."
+  },
+  {
+    "abbreviation": "CISM",
+    "full_name": "Certified Information Security Manager",
+    "issuer": "ISACA",
+    "category": "Security and Risk Management",
+    "level": "intermediate",
+    "brief": "Management-focused security credential covering governance, risk management, program management, and incident response. Requires 5 years of security management experience and is the primary stepping stone to CISO roles."
+  },
+  {
+    "abbreviation": "CRISC",
+    "full_name": "Certified in Risk and Information Systems Control",
+    "issuer": "ISACA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Focuses on IT risk identification, assessment, response, and control implementation aligned to enterprise risk management. Requires 3 years of IT risk experience and is heavily used by GRC analysts and third-party risk managers."
+  },
+  {
+    "abbreviation": "CGEIT",
+    "full_name": "Certified in Governance of Enterprise IT",
+    "issuer": "ISACA",
+    "category": "GRC",
+    "level": "expert",
+    "brief": "Executive-level ISACA credential for CIOs, IT directors, and board advisors responsible for enterprise IT governance. Requires 5 years of IT governance experience and is deeply aligned to the COBIT 2019 framework."
+  },
+  {
+    "abbreviation": "CSX-P",
+    "full_name": "Cybersecurity Practitioner Certification",
+    "issuer": "ISACA",
+    "category": "Security and Risk Management",
+    "level": "intermediate",
+    "brief": "Performance-based, hands-on cybersecurity credential delivered in a live lab environment covering Identify, Protect, Detect, Respond, and Recover functions. Designed for SOC analysts, incident responders, and security engineers who want to prove practical skill rather than test-taking ability."
+  },
+  {
+    "abbreviation": "CDPSE",
+    "full_name": "Certified Data Privacy Solutions Engineer",
+    "issuer": "ISACA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Technical privacy credential focused on engineering and implementing privacy into technology systems — privacy by design in practice. Requires 3 years of experience and targets software engineers, security engineers, and IT architects working with regulated data."
+  },
+  {
+    "abbreviation": "CISSP",
+    "full_name": "Certified Information Systems Security Professional",
+    "issuer": "ISC2",
+    "category": "Security and Risk Management",
+    "level": "expert",
+    "brief": "The most globally recognized senior security credential, covering 8 domains from risk management and asset security to software development security. Requires 5 years of experience across two or more domains and is widely required for senior security architect, manager, and CISO roles."
+  },
+  {
+    "abbreviation": "SSCP",
+    "full_name": "Systems Security Certified Practitioner",
+    "issuer": "ISC2",
+    "category": "Security and Risk Management",
+    "level": "beginner",
+    "brief": "ISC2's practitioner-level credential for IT and security operations staff covering access controls, cryptography, network security, and incident response. Requires only 1 year of experience and serves as an effective stepping stone toward CISSP."
+  },
+  {
+    "abbreviation": "CCSP",
+    "full_name": "Certified Cloud Security Professional",
+    "issuer": "ISC2",
+    "category": "Security and Risk Management",
+    "level": "intermediate",
+    "brief": "Vendor-neutral cloud security credential covering cloud architecture, data security, platform security, legal compliance, and operations. Requires 5 years of IT experience including 3 in security and 1 in cloud, and is the leading vendor-neutral cloud security certification for architects and engineers."
+  },
+  {
+    "abbreviation": "CSSLP",
+    "full_name": "Certified Secure Software Lifecycle Professional",
+    "issuer": "ISC2",
+    "category": "Programming Language",
+    "level": "intermediate",
+    "brief": "Focuses on integrating security practices throughout the software development lifecycle, from requirements and design through testing and deployment. Requires 4 years of SDLC experience and targets software developers, architects, and security professionals involved in application security."
+  },
+  {
+    "abbreviation": "CAP",
+    "full_name": "Certified Authorization Professional",
+    "issuer": "ISC2",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Covers the NIST Risk Management Framework (RMF) and the Authorization to Operate (ATO) process for U.S. federal information systems. Requires 2 years of experience and is specifically designed for information security officers and authorization officials in U.S. government and defense contractor contexts."
+  },
+  {
+    "abbreviation": "HCISPP",
+    "full_name": "HealthCare Information Security and Privacy Practitioner",
+    "issuer": "ISC2",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Specialized credential combining information security and privacy principles specifically within the healthcare sector, covering HIPAA, patient data protection, and healthcare-specific risk management. Requires 2 years of healthcare industry experience and targets compliance officers, privacy officers, and security professionals in hospital and health IT environments."
+  },
+  {
+    "abbreviation": "Associate of ISC2",
+    "full_name": "Associate of ISC2",
+    "issuer": "ISC2",
+    "category": "Security and Risk Management",
+    "level": "beginner",
+    "brief": "Designation granted to candidates who pass a qualifying ISC2 exam (CISSP or SSCP) but have not yet met the experience requirement. Allows early-career professionals to demonstrate exam-level knowledge while accumulating the years of experience needed to upgrade to full certification status."
+  },
+  {
+    "abbreviation": "CIA",
+    "full_name": "Certified Internal Auditor",
+    "issuer": "IIA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "The global gold standard for internal auditors, covering internal audit standards, business acumen, risk-based auditing, and governance. Requires varying experience based on education level and is recognized worldwide as the premier credential for professionals in corporate internal audit functions."
+  },
+  {
+    "abbreviation": "CGAP",
+    "full_name": "Certified Government Auditing Professional",
+    "issuer": "IIA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Specialized IIA credential for auditors working in public sector and government audit environments, covering government-specific accountability standards and audit methodologies. Requires 2 years of government audit experience and is valued in municipal, state, and federal audit offices."
+  },
+  {
+    "abbreviation": "CFSA",
+    "full_name": "Certified Financial Services Auditor",
+    "issuer": "IIA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "IIA specialty credential for internal auditors in banking, insurance, and other financial services industries, covering financial services-specific risk and regulatory requirements. Requires 2 years of financial services audit experience."
+  },
+  {
+    "abbreviation": "CCSA",
+    "full_name": "Certification in Control Self-Assessment",
+    "issuer": "IIA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Focuses on control self-assessment methodologies used to evaluate organizational risks and controls through facilitated workshops and structured approaches. Requires 2 years of work experience and is suited for professionals who facilitate CSA programs within organizations."
+  },
+  {
+    "abbreviation": "CRMA",
+    "full_name": "Certification in Risk Management Assurance",
+    "issuer": "IIA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "IIA credential focused on providing assurance over risk management frameworks and processes, including ERM, governance, and risk culture assessment. Requires active CIA certification plus 4,500 hours of internal audit or risk management experience."
+  },
+  {
+    "abbreviation": "CPA",
+    "full_name": "Certified Public Accountant",
+    "issuer": "AICPA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "The foundational U.S. accounting license, with significant relevance in IT audit and SOX compliance contexts where CPAs conduct financial statement audits and evaluate IT general controls. Requires passing the Uniform CPA Exam and meeting state-specific education and experience requirements."
+  },
+  {
+    "abbreviation": "ISO 27001 LI",
+    "full_name": "ISO/IEC 27001 Lead Implementer",
+    "issuer": "PECB",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Validates the ability to plan, implement, manage, and maintain an Information Security Management System (ISMS) in accordance with ISO/IEC 27001. Targets information security managers, consultants, and IT professionals responsible for establishing organizational ISMS programs."
+  },
+  {
+    "abbreviation": "ISO 27001 LA",
+    "full_name": "ISO/IEC 27001 Lead Auditor",
+    "issuer": "PECB",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Covers planning and conducting ISO/IEC 27001 compliance audits against an organization's ISMS, including audit techniques, evidence gathering, and reporting. Intended for auditors, quality managers, and consultants performing third-party or internal ISMS audits."
+  },
+  {
+    "abbreviation": "ISO 22301 LI",
+    "full_name": "ISO 22301 Lead Implementer",
+    "issuer": "PECB",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Validates expertise in implementing and managing a Business Continuity Management System (BCMS) in compliance with ISO 22301. Designed for BCM managers, risk managers, and IT continuity professionals responsible for organizational resilience programs."
+  },
+  {
+    "abbreviation": "ISO 27005 RM",
+    "full_name": "ISO/IEC 27005 Risk Manager",
+    "issuer": "PECB",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Covers the information security risk management process defined in ISO/IEC 27005, including risk identification, analysis, evaluation, and treatment within an ISMS context. Suited for risk managers and security professionals responsible for structured information security risk assessment programs."
+  },
+  {
+    "abbreviation": "ITIL 4 Foundation",
+    "full_name": "ITIL 4 Foundation",
+    "issuer": "Axelos / PeopleCert",
+    "category": "GRC",
+    "level": "beginner",
+    "brief": "Foundational credential covering the ITIL 4 service management framework, including key concepts, the service value system, and the four dimensions model. The entry point for IT service management professionals and required prerequisite for all higher ITIL 4 certifications."
+  },
+  {
+    "abbreviation": "ITIL MP",
+    "full_name": "ITIL 4 Managing Professional",
+    "issuer": "Axelos / PeopleCert",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Practitioner-level ITIL 4 designation covering IT teams, workflows, value streams, and direct delivery of IT products and services. Requires completing four modules: Create, Deliver and Support; Drive Stakeholder Value; High Velocity IT; and Direct, Plan and Improve."
+  },
+  {
+    "abbreviation": "ITIL SL",
+    "full_name": "ITIL 4 Strategic Leader",
+    "issuer": "Axelos / PeopleCert",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Strategic-level ITIL 4 designation for IT leaders who influence business direction and use IT to create competitive advantage. Requires completing Direct, Plan and Improve and Digital and IT Strategy modules alongside ITIL 4 Foundation."
+  },
+  {
+    "abbreviation": "ITIL Master",
+    "full_name": "ITIL 4 Master",
+    "issuer": "Axelos / PeopleCert",
+    "category": "GRC",
+    "level": "expert",
+    "brief": "The highest ITIL 4 designation, requiring candidates to hold both Managing Professional and Strategic Leader designations and demonstrate the ability to apply ITIL principles and practices in real-world situations through a work-based assignment. Reserved for highly experienced IT service management leaders."
+  },
+  {
+    "abbreviation": "COBIT 2019 Foundation",
+    "full_name": "COBIT 2019 Foundation",
+    "issuer": "ISACA",
+    "category": "GRC",
+    "level": "beginner",
+    "brief": "Introductory credential covering the COBIT 2019 IT governance framework, including governance objectives, design factors, and the governance system. Provides the foundational knowledge needed by IT auditors, GRC professionals, and executives implementing or assessing IT governance programs."
+  },
+  {
+    "abbreviation": "PMP",
+    "full_name": "Project Management Professional",
+    "issuer": "PMI",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "The world's leading project management certification, covering predictive (waterfall), agile, and hybrid project delivery approaches. Requires 36 months of project leadership experience and 35 hours of project management education, and is widely required for senior project and program manager roles globally."
+  },
+  {
+    "abbreviation": "CAPM",
+    "full_name": "Certified Associate in Project Management",
+    "issuer": "PMI",
+    "category": "GRC",
+    "level": "beginner",
+    "brief": "PMI's entry-level project management certification covering the fundamentals of project management terminology, processes, and the PMBOK framework. Requires 23 hours of project management education and no work experience, making it accessible to early-career professionals and students."
+  },
+  {
+    "abbreviation": "PMI-RMP",
+    "full_name": "PMI Risk Management Professional",
+    "issuer": "PMI",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Specialized PMI credential focused on project risk identification, assessment, response planning, and monitoring. Requires 3 years of project risk management experience and 30 hours of risk management education, and is valued in program management and complex project environments."
+  },
+  {
+    "abbreviation": "PMI-ACP",
+    "full_name": "PMI Agile Certified Practitioner",
+    "issuer": "PMI",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "PMI's agile credential covering multiple agile approaches including Scrum, Kanban, Lean, XP, and SAFe. Requires 2,000 hours of general project experience and 1,500 hours working on agile projects, and is suited for practitioners and coaches working in agile delivery environments."
+  },
+  {
+    "abbreviation": "PgMP",
+    "full_name": "Program Management Professional",
+    "issuer": "PMI",
+    "category": "GRC",
+    "level": "expert",
+    "brief": "Advanced PMI certification for professionals managing related projects as a coordinated program to achieve strategic business objectives. Requires 4 years of project management experience and 4 years of program management experience, and is suited for senior program leaders."
+  },
+  {
+    "abbreviation": "PfMP",
+    "full_name": "Portfolio Management Professional",
+    "issuer": "PMI",
+    "category": "GRC",
+    "level": "expert",
+    "brief": "PMI's highest-level credential for executives who manage portfolios of programs and projects aligned to organizational strategy. Requires 8 years of professional business experience and 4 years of portfolio management experience."
+  },
+  {
+    "abbreviation": "PMI-PBA",
+    "full_name": "PMI Professional in Business Analysis",
+    "issuer": "PMI",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Covers business analysis skills including needs assessment, requirements elicitation, traceability, and solution evaluation within the project lifecycle. Requires 4,500 hours of business analysis experience and is suited for business analysts, product owners, and requirements engineers."
+  },
+  {
+    "abbreviation": "CRMP",
+    "full_name": "Certified Risk Management Professional",
+    "issuer": "RIMS",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "RIMS's flagship credential for enterprise risk management professionals, covering risk strategy, risk culture, and integration of ERM with organizational decision-making. Requires 3 years of risk management experience and is well-recognized in corporate risk officer and insurance risk roles."
+  },
+  {
+    "abbreviation": "GRC Professional",
+    "full_name": "GRC Professional",
+    "issuer": "OCEG",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "OCEG credential validating competency in the GRC (Governance, Risk, Compliance) Capability Model, covering principled performance, accountability, and integrated GRC program design. Suited for compliance officers, risk managers, and GRC program leads at organizations adopting the OCEG framework."
+  },
+  {
+    "abbreviation": "CIPP/US",
+    "full_name": "Certified Information Privacy Professional / United States",
+    "issuer": "IAPP",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "IAPP's credential covering U.S. privacy law across federal and state regimes including CCPA/CPRA, HIPAA, FERPA, and emerging state comprehensive privacy laws. The leading credential for privacy professionals working in or with U.S.-based organizations."
+  },
+  {
+    "abbreviation": "CIPP/E",
+    "full_name": "Certified Information Privacy Professional / Europe",
+    "issuer": "IAPP",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Covers European data protection law with a deep focus on GDPR, including lawful bases for processing, data subject rights, international transfers, and supervisory authority requirements. The globally recognized credential for GDPR compliance professionals and Data Protection Officers."
+  },
+  {
+    "abbreviation": "CIPM",
+    "full_name": "Certified Information Privacy Manager",
+    "issuer": "IAPP",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Focuses on privacy program governance and management, including building and operationalizing privacy programs, privacy by design, vendor management, and incident response from a privacy program perspective. Complements the CIPP credentials for professionals managing organizational privacy functions."
+  },
+  {
+    "abbreviation": "CIPT",
+    "full_name": "Certified Information Privacy Technologist",
+    "issuer": "IAPP",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Technical privacy credential covering how to embed privacy into technology products and systems, including data minimization, anonymization, consent management, and privacy risk assessment for software and systems. Targeted at IT professionals, developers, and security engineers working at the intersection of privacy and technology."
+  },
+  {
+    "abbreviation": "FIP",
+    "full_name": "Fellow of Information Privacy",
+    "issuer": "IAPP",
+    "category": "GRC",
+    "level": "expert",
+    "brief": "IAPP's highest recognition, awarded to privacy professionals who hold multiple IAPP certifications and demonstrate sustained leadership, knowledge, and contribution to the privacy field. Recognized as a mark of distinction for senior privacy officers and leaders."
+  },
+  {
+    "abbreviation": "CPP",
+    "full_name": "Certified Protection Professional",
+    "issuer": "ASIS International",
+    "category": "Security and Risk Management",
+    "level": "intermediate",
+    "brief": "The gold standard credential in physical security and security management, covering security programs, investigations, personnel security, and emergency management. Requires 9 years of security management experience (reduced with a degree) and is widely recognized in corporate security director and CSO roles."
+  },
+  {
+    "abbreviation": "PSP",
+    "full_name": "Physical Security Professional",
+    "issuer": "ASIS International",
+    "category": "Security and Risk Management",
+    "level": "intermediate",
+    "brief": "ASIS credential focused on physical security assessment, design, and implementation including threat and vulnerability assessments, security systems, and loss prevention. Requires 5 years of physical security experience and is suited for physical security practitioners and consultants."
+  },
+  {
+    "abbreviation": "APP",
+    "full_name": "Associate Protection Professional",
+    "issuer": "ASIS International",
+    "category": "Security and Risk Management",
+    "level": "beginner",
+    "brief": "ASIS entry-level credential for early-career security professionals demonstrating foundational knowledge of security principles and practices. Requires passing an examination without extensive experience requirements, providing a path for students and those new to the security management profession."
+  },
+  {
+    "abbreviation": "CCISO",
+    "full_name": "Certified Chief Information Security Officer",
+    "issuer": "EC-Council",
+    "category": "Security and Risk Management",
+    "level": "expert",
+    "brief": "Executive-level credential from EC-Council focused on the five domains of CISO-level leadership: governance, security risk management, controls, audit and testing, finance, and strategic program management. Requires 5 years of senior-level IS management experience and targets current or aspiring CISOs."
+  },
+  {
+    "abbreviation": "TOGAF",
+    "full_name": "TOGAF Certification",
+    "issuer": "The Open Group",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Covers The Open Group Architecture Framework (TOGAF), the most widely adopted enterprise architecture framework, including the Architecture Development Method (ADM) and governance of architecture programs. Widely held by enterprise architects and IT strategy professionals across large organizations."
+  },
+  {
+    "abbreviation": "SABSA",
+    "full_name": "Sherwood Applied Business Security Architecture",
+    "issuer": "SABSA Institute",
+    "category": "Security and Risk Management",
+    "level": "intermediate",
+    "brief": "Covers the SABSA framework for risk-driven security architecture, linking business requirements through logical, physical, and operational security architecture layers. Offered at Foundation, Practitioner, and Master levels, and is favored by security architects designing enterprise security programs aligned to business strategy."
+  },
+  {
+    "abbreviation": "Zachman",
+    "full_name": "Zachman Framework Certification",
+    "issuer": "Zachman International",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Covers the Zachman Framework for enterprise architecture, a two-dimensional classification schema for organizing enterprise architecture descriptions across multiple perspectives. Valued by enterprise architects, business analysts, and IT strategists working on large-scale architecture programs."
+  },
+  {
+    "abbreviation": "CSAM",
+    "full_name": "Certified Security Awareness Manager",
+    "issuer": "Security Awareness Company / NCSAM aligned",
+    "category": "Security and Risk Management",
+    "level": "intermediate",
+    "brief": "Validates expertise in designing, implementing, and managing security awareness programs including behavior change methodologies, phishing simulation, and metrics. Suited for security awareness program managers and security culture advocates within organizations."
+  },
+  {
+    "abbreviation": "S-CISO",
+    "full_name": "Senior Certified Information Security Officer",
+    "issuer": "IISP",
+    "category": "Security and Risk Management",
+    "level": "expert",
+    "brief": "Senior-level information security leadership credential from the Institute of Information Security Professionals (IISP) validating strategic security leadership, governance, and program management capabilities. Targeted at current and aspiring CISOs and senior security directors."
+  },
+  {
+    "abbreviation": "GCPM",
+    "full_name": "GIAC Certified Project Manager",
+    "issuer": "GIAC / SANS",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "GIAC credential for security-aware project managers covering project management in the context of IT and security programs, including risk management, stakeholder communication, and security project governance. Suited for project managers working in information security or technology risk environments."
+  },
+  {
+    "abbreviation": "QIAL",
+    "full_name": "Qualification in Internal Audit Leadership",
+    "issuer": "IIA",
+    "category": "GRC",
+    "level": "expert",
+    "brief": "IIA's advanced leadership qualification for experienced internal audit professionals aspiring to chief audit executive (CAE) roles, covering strategic thinking, organizational leadership, and stakeholder engagement at the executive level. Requires active CIA certification plus demonstrated leadership experience."
+  },
+  {
+    "abbreviation": "CISA-Associate",
+    "full_name": "ISACA Associate — CISA Pathway",
+    "issuer": "ISACA",
+    "category": "GRC",
+    "level": "beginner",
+    "brief": "Designation for candidates who have passed the CISA exam but have not yet met the 5-year experience requirement, allowing early-career professionals to demonstrate exam-level knowledge while accruing the required experience to become certified."
+  },
+  {
+    "abbreviation": "ITIL 4 CDS",
+    "full_name": "ITIL 4 Create, Deliver and Support",
+    "issuer": "Axelos / PeopleCert",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Module within the ITIL 4 Managing Professional designation covering the integration of different value streams and activities to create, deliver, and support IT services, including service design, service request management, and monitoring. Required module for ITIL MP designation."
+  },
+  {
+    "abbreviation": "ITIL 4 DSV",
+    "full_name": "ITIL 4 Drive Stakeholder Value",
+    "issuer": "Axelos / PeopleCert",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "ITIL 4 module covering customer and user engagement, relationship management, and the co-creation of value across the customer journey. Part of the ITIL 4 Managing Professional designation, focusing on how service providers develop service relationships to deliver business outcomes."
+  },
+  {
+    "abbreviation": "DPO",
+    "full_name": "Certified Data Protection Officer",
+    "issuer": "PECB",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Validates the competencies required to fulfill the Data Protection Officer role mandated by GDPR and other data protection regulations, including oversight of compliance, engagement with supervisory authorities, and advising on data protection impact assessments. Targeted at privacy officers and compliance professionals in European data protection contexts."
+  },
+  {
+    "abbreviation": "CIPP/C",
+    "full_name": "Certified Information Privacy Professional / Canada",
+    "issuer": "IAPP",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Covers Canadian privacy law including PIPEDA, provincial privacy legislation, and Quebec Law 25, providing the knowledge needed to manage privacy programs under Canadian regulatory requirements. Suited for privacy professionals working in or advising Canadian organizations."
+  },
+  {
+    "abbreviation": "GRCP",
+    "full_name": "Governance, Risk and Compliance Professional",
+    "issuer": "OCEG",
+    "category": "GRC",
+    "level": "beginner",
+    "brief": "Entry-level GRC credential from OCEG validating foundational knowledge of governance, risk, and compliance principles aligned to the OCEG GRC Capability Model (Red Book). Designed for professionals new to GRC roles or those seeking a structured introduction to the GRC discipline."
+  },
+  {
+    "abbreviation": "CISA (AICPA)",
+    "full_name": "SOC 2 Examination — AICPA Trust Services Criteria",
+    "issuer": "AICPA",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "SOC 2 (System and Organization Controls 2) is an AICPA attestation framework covering security, availability, processing integrity, confidentiality, and privacy of service organization systems. CPAs and auditors conduct SOC 2 Type I and Type II examinations, which are widely required by enterprise customers of SaaS and cloud providers."
+  },
+  {
+    "abbreviation": "CRISC-Associate",
+    "full_name": "ISACA Associate — CRISC Pathway",
+    "issuer": "ISACA",
+    "category": "GRC",
+    "level": "beginner",
+    "brief": "Designation for candidates who pass the CRISC exam before accumulating the required 3 years of IT risk management experience, enabling early-career professionals to demonstrate risk management knowledge while building toward full CRISC certification."
+  },
+  {
+    "abbreviation": "ITIL 4 HVIT",
+    "full_name": "ITIL 4 High Velocity IT",
+    "issuer": "Axelos / PeopleCert",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "ITIL 4 module covering techniques and methods enabling IT organizations to work at high velocity, including DevOps principles, Agile, Lean, and resilient service delivery. Part of the ITIL 4 Managing Professional designation and relevant for IT leaders and practitioners in fast-paced digital transformation environments."
+  },
+  {
+    "abbreviation": "ITIL 4 DPI",
+    "full_name": "ITIL 4 Direct, Plan and Improve",
+    "issuer": "Axelos / PeopleCert",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Shared module within both ITIL 4 Managing Professional and Strategic Leader designations, covering governance, organizational change management, measurement, and continual improvement at both operational and strategic levels."
+  },
+  {
+    "abbreviation": "ITIL 4 DITS",
+    "full_name": "ITIL 4 Digital and IT Strategy",
+    "issuer": "Axelos / PeopleCert",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Executive-level ITIL 4 module covering digital business strategy, the impact of digital disruption, and how IT leaders position their organizations to thrive in digital environments. Required for the ITIL 4 Strategic Leader designation and suited for senior IT leaders and CIOs."
+  },
+  {
+    "abbreviation": "ISO 31000 RM",
+    "full_name": "ISO 31000 Risk Manager",
+    "issuer": "PECB",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Covers the ISO 31000 international standard for risk management principles, framework, and process applicable across any organization or sector. Suited for enterprise risk managers and ERM program leads who need to demonstrate competency in internationally recognized risk management practice."
+  },
+  {
+    "abbreviation": "BCS ITIL",
+    "full_name": "BCS Foundation Certificate in IT Service Management",
+    "issuer": "BCS (British Computer Society)",
+    "category": "GRC",
+    "level": "beginner",
+    "brief": "BCS foundational credential covering IT service management concepts, frameworks, and best practices for IT professionals in the UK market. Provides grounding in service management principles relevant to help desk, support, and IT operations roles."
+  },
+  {
+    "abbreviation": "BCS ISEB",
+    "full_name": "BCS Practitioner Certificate in Information Risk Management",
+    "issuer": "BCS (British Computer Society)",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "BCS credential covering information risk management methodologies including risk assessment, risk treatment, and governance aligned to UK and international standards. Valued in UK public sector, financial services, and regulated industries where BCS certifications carry institutional recognition."
+  },
+  {
+    "abbreviation": "PMI-SP",
+    "full_name": "PMI Scheduling Professional",
+    "issuer": "PMI",
+    "category": "GRC",
+    "level": "intermediate",
+    "brief": "Specialized PMI credential for project scheduling professionals, covering schedule development, resource optimization, schedule control, and earned value management. Requires 40 months of project scheduling experience and is valued in program management offices and complex multi-project environments."
+  },
+  {
+    "abbreviation": "CISM-Associate",
+    "full_name": "ISACA Associate — CISM Pathway",
+    "issuer": "ISACA",
+    "category": "Security and Risk Management",
+    "level": "beginner",
+    "brief": "Designation for candidates who pass the CISM exam but have not yet accumulated the required 5 years of security management experience. Allows aspiring security managers to formalize their knowledge while building toward full CISM certification."
+  },
+  {
+    "abbreviation": "ISO 27001 Foundation",
+    "full_name": "ISO/IEC 27001 Foundation",
+    "issuer": "PECB",
+    "category": "GRC",
+    "level": "beginner",
+    "brief": "Introductory credential covering the basic concepts, principles, and requirements of the ISO/IEC 27001 Information Security Management System standard. Designed for professionals new to information security governance who need foundational awareness of the ISMS framework before pursuing Lead Implementer or Lead Auditor."
+  },
+  {
+    "abbreviation": "EISM",
+    "full_name": "EU Information Security Manager",
+    "issuer": "TUV Rheinland / EIMF",
+    "category": "Security and Risk Management",
+    "level": "intermediate",
+    "brief": "Credential focused on information security management within the European regulatory landscape, covering NIS2 Directive requirements, GDPR obligations, and EU-specific cybersecurity governance frameworks. Relevant for security managers and compliance professionals at organizations subject to EU information security regulations."
+  }
+]

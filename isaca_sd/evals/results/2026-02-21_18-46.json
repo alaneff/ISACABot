@@ -1,0 +1,634 @@
+{
+  "run_at": "2026-02-21T18:46:14.799315+00:00",
+  "model": "claude-sonnet-4-6",
+  "grader_model": "claude-haiku-4-5-20251001",
+  "summary": {
+    "overall_pass_rate": 0.06666666666666667,
+    "overall_avg_score": 0.06666666666666667,
+    "total_cases": 30,
+    "passed": 2,
+    "failed": 28,
+    "by_category": {
+      "entry_level": {
+        "pass_rate": 0.0,
+        "avg_score": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "mid_career": {
+        "pass_rate": 0.2,
+        "avg_score": 0.2,
+        "passed": 1,
+        "total": 5
+      },
+      "cert_comparison": {
+        "pass_rate": 0.2,
+        "avg_score": 0.2,
+        "passed": 1,
+        "total": 5
+      },
+      "factual": {
+        "pass_rate": 0.0,
+        "avg_score": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "resume_career": {
+        "pass_rate": 0.0,
+        "avg_score": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "honest_guidance": {
+        "pass_rate": 0.0,
+        "avg_score": 0.0,
+        "passed": 0,
+        "total": 5
+      }
+    },
+    "failures": [
+      {
+        "id": "entry_001",
+        "category": "entry_level",
+        "question": "I'm new to IT with 6 months of experience and want to get into cybersecurity. What cert should I start with?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9W6czBqXRenYstJDT'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "entry_002",
+        "category": "entry_level",
+        "question": "I just graduated with a CS degree and have no work experience. I want to work in IT audit. Where do I start?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAQscwwb8xbaMWZWqf'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "entry_003",
+        "category": "entry_level",
+        "question": "I'm a help desk technician with 1 year of experience. I want to move into security. What cert should I get?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9RczJT6CMc8kn8Thh'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "entry_004",
+        "category": "entry_level",
+        "question": "I'm completely new to IT with no degree and no certs. What's the fastest realistic path to a cybersecurity job?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiALPzm6hrbhDXY19iL'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "entry_005",
+        "category": "entry_level",
+        "question": "Should a college student studying computer science get the Security+ before graduating?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi7sfr6MJVMCqen87ts'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "mid_001",
+        "category": "mid_career",
+        "question": "I've been a network engineer for 6 years and want to move into security management. Should I get CISSP or CISM?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiB6XbLfXnTJBjwo3m7'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "mid_002",
+        "category": "mid_career",
+        "question": "I'm a security analyst with 4 years of experience. What's the best cert to get promoted to a senior analyst or team lead role?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9W6d8PKDB34XCHXgX'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "mid_004",
+        "category": "mid_career",
+        "question": "I'm pivoting from software development to cybersecurity with 7 years of dev experience. What path do you recommend?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9W68HK4xharRgoYmx'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "mid_005",
+        "category": "mid_career",
+        "question": "I have a CISA and 8 years in IT audit. I want to become a CISO eventually. What should I do next?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiALXSA7BZxMeq8huuP'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "comp_001",
+        "category": "cert_comparison",
+        "question": "What's the difference between CISSP and CISM?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAQpebwm3KCGnYzGU8'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "comp_002",
+        "category": "cert_comparison",
+        "question": "CISA or CISSP — which one should I go for if I'm in IT audit?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiANB9ZyMDQ3RWDrGzz'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "comp_003",
+        "category": "cert_comparison",
+        "question": "Is CRISC worth getting if I already have a CISA?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAM4vptBiHhDTomvmT'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "comp_004",
+        "category": "cert_comparison",
+        "question": "How does CompTIA CySA+ compare to CEH for a security analyst role?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9GxbVv3JTbGDXWykg'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "fact_001",
+        "category": "factual",
+        "question": "How many years of experience do I need to get the CISA certification?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9a5EapLqTnQoE4uAT'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "fact_002",
+        "category": "factual",
+        "question": "What is the exam fee for CISSP?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9QgSQUjRfz6UksB1H'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "fact_003",
+        "category": "factual",
+        "question": "How many domains does the CISM exam cover and what are they?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiB4nfkaKSJfi1eqEzv'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "fact_004",
+        "category": "factual",
+        "question": "What passing score do I need on the CISA exam?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9S5XQVQYGke4KFsHn'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "fact_005",
+        "category": "factual",
+        "question": "How many CPE hours do I need to maintain my CISA each year?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9HExU4rjR2HjLpV5f'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_001",
+        "category": "resume_career",
+        "question": "How should I list my CISA certification on my resume?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9quEm5HnkVnZkMD6q'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_002",
+        "category": "resume_career",
+        "question": "I have 10 years of IT experience but no security certs. How do I position myself for a GRC manager role?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiB6YqEKLvphHT6BGiQ'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_003",
+        "category": "resume_career",
+        "question": "What's a realistic salary range for a CISO in San Diego?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9aEAkgqA5MaUDBATx'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_004",
+        "category": "resume_career",
+        "question": "I'm transitioning from military IT to civilian cybersecurity. How do I translate my experience?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAPBvca2FAMUAqAYhU'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_005",
+        "category": "resume_career",
+        "question": "How long does it typically take to go from Security+ to CISSP?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9XMH7Qer35FRXtYHd'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_001",
+        "category": "honest_guidance",
+        "question": "I want to get into penetration testing. Should I get a CISA or CISSP?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9aK87REQJqYmJq9n1'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_002",
+        "category": "honest_guidance",
+        "question": "Is getting an ISACA membership worth the cost for a junior security analyst with 1 year of experience?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9GxMBn22WRXRPwGt7'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_003",
+        "category": "honest_guidance",
+        "question": "I'm a cloud architect who wants to improve my security knowledge. Which cert is best?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9RbkX2Jv22sq3LA9N'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_004",
+        "category": "honest_guidance",
+        "question": "My employer will pay for a CGEIT certification. Is it worth pursuing?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiANFrtbKHQzzNgvdv6'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_005",
+        "category": "honest_guidance",
+        "question": "A recruiter told me I need a CISSP to apply for any security job. Is that true?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAQhhx48hg3RpFdM5B'}",
+        "hard_rule_fail": false
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "entry_001",
+      "category": "entry_level",
+      "question": "I'm new to IT with 6 months of experience and want to get into cybersecurity. What cert should I start with?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9W6czBqXRenYstJDT'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "entry_002",
+      "category": "entry_level",
+      "question": "I just graduated with a CS degree and have no work experience. I want to work in IT audit. Where do I start?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAQscwwb8xbaMWZWqf'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "entry_003",
+      "category": "entry_level",
+      "question": "I'm a help desk technician with 1 year of experience. I want to move into security. What cert should I get?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9RczJT6CMc8kn8Thh'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "entry_004",
+      "category": "entry_level",
+      "question": "I'm completely new to IT with no degree and no certs. What's the fastest realistic path to a cybersecurity job?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiALPzm6hrbhDXY19iL'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "entry_005",
+      "category": "entry_level",
+      "question": "Should a college student studying computer science get the Security+ before graduating?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi7sfr6MJVMCqen87ts'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_001",
+      "category": "mid_career",
+      "question": "I've been a network engineer for 6 years and want to move into security management. Should I get CISSP or CISM?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiB6XbLfXnTJBjwo3m7'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_002",
+      "category": "mid_career",
+      "question": "I'm a security analyst with 4 years of experience. What's the best cert to get promoted to a senior analyst or team lead role?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9W6d8PKDB34XCHXgX'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_003",
+      "category": "mid_career",
+      "question": "I'm a compliance officer with 5 years in IT audit. I want to expand into risk management. What cert makes the most sense?",
+      "response": "Great news — your background is a near-perfect setup for this move. Here's my honest take:\n\n---\n\n## CRISC is Your Best Next Step\n\n**CRISC (Certified in Risk and Information Systems Control)** by ISACA is purpose-built for exactly what you're describing. Here's why it fits you so well:\n\n### ✅ You Already Qualify\n CRISC requires 3 years of cumulative work experience in IT risk management and IS control, across at least 2 of 4 CRISC domains — a lower bar than CISA or CISM.  With 5 years in IT audit and compliance, you likely already meet or exceed this threshold, and your audit experience maps directly to the exam domains.\n\n### 📋 Exam at a Glance\n-  **150 questions**, computer-based, **240 minutes**. Passing score is **450** (on a 200–800 scale). \n-  **Exam fee:** $575 (ISACA member) / $760 (non-member) \n-  **Renewal:** 120 CPE hours every 3 years, with a minimum of 20 CPE per year \n\n### 📚 What You'll Be Tested On\n The four domains are: **Governance (26%)**, **IT Risk Assessment (20%)**, **Risk Response and Reporting (32%)**, and **Information Technology and Security (22%)**. \n\n---\n\n## Why CRISC Over Other Options?\n\nYour audit background gives you a head start that most candidates don't have. And the career payoff is real:\n\n CRISC accelerates a GRC-focused career path — from GRC Analyst → Senior GRC Analyst / IT Risk Manager → Director of IT Risk / Enterprise Risk Officer. For audit professionals, **CISA + CRISC is a powerful combination** for senior audit/risk hybrid roles. \n\n CRISC holders are concentrated in financial services, healthcare, energy, and government contracting — industries with formal enterprise risk management programs. \n\n Salary data from ISACA's 2024 survey shows CRISC holders in North America averaging around **$130,000–$145,000** annually, varying by industry and seniority. \n\n---\n\n## One Thing to Consider\n\nIf you're also eyeing a longer-term path toward a leadership role like CISO or Deputy CISO, CRISC pairs extremely well with your audit background:\n\n The governance/audit ascent path — IT Auditor / GRC Analyst → Risk Manager → CISO — has natural strengths in board and audit committee communication, regulatory relationships, and financial risk frameworks. \n\nAdding CRISC now positions you for that senior GRC / risk leadership trajectory without requiring a hard pivot away from what you've built.\n\n---\n\n## My Recommendation\n\n1. **Get CRISC** — it's the most direct credential for your goal, you likely qualify today, and it's highly valued by employers in your likely industries.\n2. **If you don't yet have CISA**, consider it alongside CRISC. The CISA + CRISC combo is a recognized power pairing for senior audit/risk roles.\n\nWant help with a study plan for CRISC, or would you like to talk through how to reframe your resume for risk management roles?",
+      "score": 1.0,
+      "pass": true,
+      "reason": "Excellent response: CRISC prominently featured as primary recommendation with detailed justification (risk focus, IT audit background transfer, qualification criteria met). Includes accurate exam details, domain breakdown, salary data, and career progression context. Appropriately mentions CISM as complementary option. All content is factually sound and directly addresses the candidate's specific situation.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_004",
+      "category": "mid_career",
+      "question": "I'm pivoting from software development to cybersecurity with 7 years of dev experience. What path do you recommend?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9W68HK4xharRgoYmx'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_005",
+      "category": "mid_career",
+      "question": "I have a CISA and 8 years in IT audit. I want to become a CISO eventually. What should I do next?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiALXSA7BZxMeq8huuP'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_001",
+      "category": "cert_comparison",
+      "question": "What's the difference between CISSP and CISM?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAQpebwm3KCGnYzGU8'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_002",
+      "category": "cert_comparison",
+      "question": "CISA or CISSP — which one should I go for if I'm in IT audit?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiANB9ZyMDQ3RWDrGzz'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_003",
+      "category": "cert_comparison",
+      "question": "Is CRISC worth getting if I already have a CISA?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAM4vptBiHhDTomvmT'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_004",
+      "category": "cert_comparison",
+      "question": "How does CompTIA CySA+ compare to CEH for a security analyst role?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9GxbVv3JTbGDXWykg'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_005",
+      "category": "cert_comparison",
+      "question": "OSCP vs CEH — which is better for getting into pentesting?",
+      "response": "Great question — and honestly, the answer is pretty clear-cut. Here's the full breakdown:\n\n---\n\n## OSCP vs. CEH for Penetration Testing\n\n### 🏆 For Actual Pentesting Jobs: OSCP Wins — Decisively\n\n**OSCP (Offensive Security Certified Professional)** is the gold standard for breaking into pentesting, and here's why:\n\n- **It's performance-based, not multiple choice.** The OSCP exam is a grueling 24-hour hands-on lab where you must actually compromise target machines — then write a professional penetration test report in the following 24 hours. You simply cannot memorize your way through it.\n- **Employers trust it.** Penetration testing firms, red teams, and security consulting companies routinely list OSCP as a preferred or required qualification. Because it can't be faked, it's a reliable signal that you can actually do the work.\n- **It doesn't expire.** Once you earn it, it's yours — no ongoing CPE/renewal requirements.\n- **Cost:** ~$1,499, which includes the PEN-200 course and lab access.\n\n---\n\n### 📋 CEH's Place in the Market\n\n**CEH (Certified Ethical Hacker)** is a different animal:\n\n- **Multiple choice, theory-heavy.** It's 125 multiple-choice questions over 4 hours. The community is nearly unanimous that OSCP carries far more weight for practitioners who want to demonstrate *actual* ability.\n- **Compliance/government value.** CEH shines in one specific context: government and federal contractor job postings frequently list CEH by name (due to DoD 8570/8140 alignment), even though hiring managers in the private sector strongly prefer OSCP.\n- **Lower barrier.** With exam-only cost around $550, it's cheaper — but you get what you pay for in terms of employer perception.\n- **Renewal:** Requires 120 ECE credits every 3 years.\n\n---\n\n### 🧭 The Pragmatic Recommendation\n\n| Factor | OSCP | CEH |\n|---|---|---|\n| Employer respect (private sector) | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |\n| Government/compliance recognition | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |\n| Proves real-world skill | ✅ Yes | ❌ Limited |\n| Difficulty | High (hands-on) | Moderate (MCQ) |\n| Cost | ~$1,499 | ~$550 (exam only) |\n| Expires? | Never | Every 3 years |\n\n**Bottom line:**\n- **If you want to work at a pentesting firm, red team, or as an offensive security consultant** → Go OSCP. It's what serious employers are looking for.\n- **If you're pursuing a federal government or DoD contractor role** → CEH may be required by the contract, and it's worth adding. But ideally, hold *both*.\n- **Building toward OSCP?** CompTIA PenTest+ is a solid intermediate stepping stone if you're not quite ready for the OSCP's intensity.\n\n---\n\n### One More Option Worth Knowing\n\nIf you're interested in penetration testing and cost is a concern, the **PNPT (Practical Network Penetration Tester)** by TCM Security is a well-regarded, hands-on alternative to OSCP at a lower price point (~$400). It's gaining real traction with employers.\n\n---\n\nWant help figuring out if you're ready for OSCP yet, or would a study path / timeline be useful?",
+      "score": 1.0,
+      "pass": true,
+      "reason": "Excellent response that strongly and decisively favors OSCP for genuine penetration testing work, clearly explains why employers and practitioners prefer it (hands-on 24-hour exam vs. multiple-choice theory), includes OSCP prominently throughout, acknowledges CEH's niche value in government/compliance contexts, and provides practical context without being wishy-washy. All evaluation criteria fully met.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "fact_001",
+      "category": "factual",
+      "question": "How many years of experience do I need to get the CISA certification?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9a5EapLqTnQoE4uAT'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "fact_002",
+      "category": "factual",
+      "question": "What is the exam fee for CISSP?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9QgSQUjRfz6UksB1H'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "fact_003",
+      "category": "factual",
+      "question": "How many domains does the CISM exam cover and what are they?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiB4nfkaKSJfi1eqEzv'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "fact_004",
+      "category": "factual",
+      "question": "What passing score do I need on the CISA exam?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9S5XQVQYGke4KFsHn'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "fact_005",
+      "category": "factual",
+      "question": "How many CPE hours do I need to maintain my CISA each year?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9HExU4rjR2HjLpV5f'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_001",
+      "category": "resume_career",
+      "question": "How should I list my CISA certification on my resume?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9quEm5HnkVnZkMD6q'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_002",
+      "category": "resume_career",
+      "question": "I have 10 years of IT experience but no security certs. How do I position myself for a GRC manager role?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiB6YqEKLvphHT6BGiQ'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_003",
+      "category": "resume_career",
+      "question": "What's a realistic salary range for a CISO in San Diego?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9aEAkgqA5MaUDBATx'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_004",
+      "category": "resume_career",
+      "question": "I'm transitioning from military IT to civilian cybersecurity. How do I translate my experience?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAPBvca2FAMUAqAYhU'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_005",
+      "category": "resume_career",
+      "question": "How long does it typically take to go from Security+ to CISSP?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9XMH7Qer35FRXtYHd'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_001",
+      "category": "honest_guidance",
+      "question": "I want to get into penetration testing. Should I get a CISA or CISSP?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9aK87REQJqYmJq9n1'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_002",
+      "category": "honest_guidance",
+      "question": "Is getting an ISACA membership worth the cost for a junior security analyst with 1 year of experience?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9GxMBn22WRXRPwGt7'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_003",
+      "category": "honest_guidance",
+      "question": "I'm a cloud architect who wants to improve my security knowledge. Which cert is best?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMi9RbkX2Jv22sq3LA9N'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_004",
+      "category": "honest_guidance",
+      "question": "My employer will pay for a CGEIT certification. Is it worth pursuing?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiANFrtbKHQzzNgvdv6'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_005",
+      "category": "honest_guidance",
+      "question": "A recruiter told me I need a CISSP to apply for any security job. Is that true?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: cf67f2bb-c48c-49aa-b48d-b5852c41b0c1, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.\"}, 'request_id': 'req_011CYMiAQhhx48hg3RpFdM5B'}",
+      "hard_rule_fail": false
+    }
+  ]
+}

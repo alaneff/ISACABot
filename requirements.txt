@@ -1,0 +1,34 @@
+# Microsoft Agent Framework — Anthropic provider only
+# Using agent-framework-anthropic directly instead of the agent-framework[all]
+# meta-package, which installs every provider (Bedrock, Ollama, Copilot, etc.)
+# and takes a very long time. This gives us just what we need.
+agent-framework-anthropic>=0.1.0b1
+
+# Anthropic SDK (direct API access)
+anthropic>=0.49.0
+
+# Environment & config
+python-dotenv>=1.0.0
+
+# Azure integration (for deployment auth)
+azure-identity>=1.19.0
+
+# Async utilities
+anyio>=4.0.0
+
+# Typing
+typing-extensions>=4.12.0
+
+# ── Web API (FastAPI + Azure AD B2C auth) ───────────────────────────────────
+
+# HTTP framework for the /api/chat endpoint
+fastapi>=0.115.0
+
+# ASGI server — runs the FastAPI app
+uvicorn[standard]>=0.32.0
+
+# JWT validation (Azure AD B2C tokens use RS256)
+python-jose[cryptography]>=3.3.0
+
+# Async HTTP client — fetches B2C JWKS signing keys
+httpx>=0.27.0

@@ -1,0 +1,404 @@
+<!--
+  ISACA SD — Career Advisor Chat Widget
+  ======================================
+  Paste the ENTIRE contents of this file into Squarespace:
+    Settings > Advanced > Code Injection > Footer
+
+  BEFORE PASTING: fill in the three config values below (search for CONFIG).
+-->
+
+<script>
+// ============================================================
+// CONFIG — fill these in before pasting into Squarespace
+// ============================================================
+const ISACA_CONFIG = {
+  // Your deployed Azure Container Apps URL (from deploy.sh output)
+  // Example: "https://isaca-sd-advisor.happycoast-abc123.eastus.azurecontainerapps.io"
+  API_BASE_URL: "https://YOUR-APP-URL.azurecontainerapps.io",
+
+  // Azure AD B2C settings — must match what you put in .env
+  B2C_TENANT_NAME: "isacasdorg",          // e.g. "isacasdorg"
+  B2C_CLIENT_ID:   "YOUR-CLIENT-ID-HERE", // from Azure Portal > B2C > App registrations
+  B2C_POLICY_NAME: "B2C_1_signupsignin",  // your User Flow name
+};
+// ============================================================
+
+(function () {
+  "use strict";
+
+  // ── MSAL.js (Microsoft Authentication Library) ──────────────────────────
+  // Loaded from CDN — no build step needed
+  const MSAL_CDN = "https://alcdn.msauth.net/browser/2.39.0/js/msal-browser.min.js";
+
+  // ── Styles ───────────────────────────────────────────────────────────────
+  const CSS = `
+    #isaca-chat-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #1a3c6e;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    #isaca-chat-btn:hover { background: #2a5298; }
+
+    #isaca-chat-panel {
+      position: fixed;
+      bottom: 90px;
+      right: 24px;
+      width: 360px;
+      max-height: 520px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      z-index: 9998;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      overflow: hidden;
+    }
+    #isaca-chat-panel.hidden { display: none; }
+
+    #isaca-chat-header {
+      background: #1a3c6e;
+      color: #fff;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    #isaca-chat-header strong { font-size: 15px; }
+    #isaca-chat-header span { font-size: 11px; opacity: 0.8; }
+    #isaca-signout-btn {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.7);
+      cursor: pointer;
+      font-size: 12px;
+      padding: 0;
+    }
+    #isaca-signout-btn:hover { color: #fff; }
+
+    #isaca-chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .isaca-msg {
+      max-width: 85%;
+      padding: 8px 12px;
+      border-radius: 10px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .isaca-msg.user {
+      align-self: flex-end;
+      background: #1a3c6e;
+      color: #fff;
+      border-bottom-right-radius: 2px;
+    }
+    .isaca-msg.advisor {
+      align-self: flex-start;
+      background: #f0f0f0;
+      color: #222;
+      border-bottom-left-radius: 2px;
+    }
+    .isaca-msg.typing {
+      align-self: flex-start;
+      background: #f0f0f0;
+      color: #888;
+      font-style: italic;
+    }
+
+    #isaca-chat-footer {
+      padding: 10px;
+      border-top: 1px solid #e8e8e8;
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    #isaca-chat-input {
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 13px;
+      resize: none;
+      outline: none;
+      font-family: inherit;
+    }
+    #isaca-chat-input:focus { border-color: #1a3c6e; }
+    #isaca-send-btn {
+      background: #1a3c6e;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0 14px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    #isaca-send-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    #isaca-send-btn:hover:not(:disabled) { background: #2a5298; }
+
+    #isaca-login-panel {
+      position: fixed;
+      bottom: 90px;
+      right: 24px;
+      width: 280px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      padding: 24px;
+      z-index: 9998;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      text-align: center;
+    }
+    #isaca-login-panel.hidden { display: none; }
+    #isaca-login-panel h3 { margin: 0 0 8px; color: #1a3c6e; font-size: 16px; }
+    #isaca-login-panel p { margin: 0 0 16px; color: #555; font-size: 13px; }
+    #isaca-login-btn {
+      background: #1a3c6e;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      width: 100%;
+    }
+    #isaca-login-btn:hover { background: #2a5298; }
+
+    @media (max-width: 480px) {
+      #isaca-chat-panel { width: calc(100vw - 32px); right: 16px; bottom: 80px; }
+      #isaca-login-panel { width: calc(100vw - 64px); right: 16px; }
+      #isaca-chat-btn { bottom: 16px; right: 16px; }
+    }
+  `;
+
+  // ── Inject styles ────────────────────────────────────────────────────────
+  const style = document.createElement("style");
+  style.textContent = CSS;
+  document.head.appendChild(style);
+
+  // ── Build HTML ───────────────────────────────────────────────────────────
+  document.body.insertAdjacentHTML("beforeend", `
+    <button id="isaca-chat-btn" aria-label="Open ISACA SD Career Advisor">💬</button>
+
+    <div id="isaca-login-panel" class="hidden">
+      <h3>ISACA SD Members Only</h3>
+      <p>Sign in to access your AI career and certification advisor.</p>
+      <button id="isaca-login-btn">Sign In / Register</button>
+    </div>
+
+    <div id="isaca-chat-panel" class="hidden">
+      <div id="isaca-chat-header">
+        <div>
+          <strong>ISACA SD Advisor</strong><br>
+          <span>Career &amp; Certification Guidance</span>
+        </div>
+        <button id="isaca-signout-btn">Sign out</button>
+      </div>
+      <div id="isaca-chat-messages"></div>
+      <div id="isaca-chat-footer">
+        <textarea id="isaca-chat-input" rows="2"
+          placeholder="Ask about certs, career paths, resumes…"></textarea>
+        <button id="isaca-send-btn" aria-label="Send">➤</button>
+      </div>
+    </div>
+  `);
+
+  // ── State ────────────────────────────────────────────────────────────────
+  let msalInstance = null;
+  let panelOpen = false;
+  let isLoggedIn = false;
+  let sessionId = sessionStorage.getItem("isaca_session_id") || crypto.randomUUID();
+  sessionStorage.setItem("isaca_session_id", sessionId);
+
+  // ── Load MSAL.js then boot ────────────────────────────────────────────────
+  function loadMsal(callback) {
+    if (window.msal) { callback(); return; }
+    const s = document.createElement("script");
+    s.src = MSAL_CDN;
+    s.onload = callback;
+    document.head.appendChild(s);
+  }
+
+  function initMsal() {
+    const authority =
+      `https://${ISACA_CONFIG.B2C_TENANT_NAME}.b2clogin.com/` +
+      `${ISACA_CONFIG.B2C_TENANT_NAME}.onmicrosoft.com/` +
+      ISACA_CONFIG.B2C_POLICY_NAME;
+
+    msalInstance = new msal.PublicClientApplication({
+      auth: {
+        clientId: ISACA_CONFIG.B2C_CLIENT_ID,
+        authority: authority,
+        knownAuthorities: [`${ISACA_CONFIG.B2C_TENANT_NAME}.b2clogin.com`],
+        redirectUri: window.location.origin,
+      },
+      cache: { cacheLocation: "sessionStorage" },
+    });
+  }
+
+  async function getToken() {
+    const accounts = msalInstance.getAllAccounts();
+    if (!accounts.length) return null;
+    try {
+      const resp = await msalInstance.acquireTokenSilent({
+        account: accounts[0],
+        scopes: ["openid", "profile"],
+      });
+      return resp.idToken;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async function checkLoginState() {
+    // Handle redirect after B2C login
+    try {
+      const resp = await msalInstance.handleRedirectPromise();
+      if (resp) { isLoggedIn = true; return; }
+    } catch (e) { /* ignore */ }
+    const accounts = msalInstance.getAllAccounts();
+    isLoggedIn = accounts.length > 0;
+  }
+
+  function signIn() {
+    msalInstance.loginRedirect({ scopes: ["openid", "profile"] });
+  }
+
+  function signOut() {
+    msalInstance.logoutRedirect();
+    sessionStorage.removeItem("isaca_session_id");
+  }
+
+  // ── DOM helpers ───────────────────────────────────────────────────────────
+  function appendMessage(role, text) {
+    const div = document.createElement("div");
+    div.className = `isaca-msg ${role}`;
+    div.textContent = text;
+    const msgs = document.getElementById("isaca-chat-messages");
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return div;
+  }
+
+  function setInputEnabled(enabled) {
+    document.getElementById("isaca-chat-input").disabled = !enabled;
+    document.getElementById("isaca-send-btn").disabled = !enabled;
+  }
+
+  // ── Send message ──────────────────────────────────────────────────────────
+  async function sendMessage() {
+    const input = document.getElementById("isaca-chat-input");
+    const message = input.value.trim();
+    if (!message) return;
+
+    input.value = "";
+    setInputEnabled(false);
+    appendMessage("user", message);
+    const typingEl = appendMessage("typing", "Advisor is thinking…");
+
+    const token = await getToken();
+    if (!token) {
+      typingEl.remove();
+      appendMessage("advisor", "Your session expired. Please sign in again.");
+      setInputEnabled(true);
+      return;
+    }
+
+    try {
+      const resp = await fetch(`${ISACA_CONFIG.API_BASE_URL}/api/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
+        body: JSON.stringify({ session_id: sessionId, message }),
+      });
+
+      typingEl.remove();
+
+      if (resp.status === 401) {
+        appendMessage("advisor", "Your session expired. Please sign out and sign back in.");
+      } else if (!resp.ok) {
+        appendMessage("advisor", "Something went wrong — please try again.");
+      } else {
+        const data = await resp.json();
+        appendMessage("advisor", data.reply);
+      }
+    } catch (e) {
+      typingEl.remove();
+      appendMessage("advisor", "Could not reach the advisor — check your connection and try again.");
+    }
+
+    setInputEnabled(true);
+    document.getElementById("isaca-chat-input").focus();
+  }
+
+  // ── Event listeners ───────────────────────────────────────────────────────
+  document.getElementById("isaca-chat-btn").addEventListener("click", function () {
+    panelOpen = !panelOpen;
+    if (panelOpen) {
+      if (isLoggedIn) {
+        document.getElementById("isaca-chat-panel").classList.remove("hidden");
+        document.getElementById("isaca-login-panel").classList.add("hidden");
+        if (!document.querySelector(".isaca-msg")) {
+          appendMessage("advisor",
+            "Hello! I'm your ISACA San Diego career and certification advisor. " +
+            "Ask me about certifications (CISA, CISSP, CRISC, and more), " +
+            "career paths, or resume tips.");
+        }
+        document.getElementById("isaca-chat-input").focus();
+      } else {
+        document.getElementById("isaca-login-panel").classList.remove("hidden");
+        document.getElementById("isaca-chat-panel").classList.add("hidden");
+      }
+    } else {
+      document.getElementById("isaca-chat-panel").classList.add("hidden");
+      document.getElementById("isaca-login-panel").classList.add("hidden");
+    }
+  });
+
+  document.getElementById("isaca-login-btn").addEventListener("click", signIn);
+  document.getElementById("isaca-signout-btn").addEventListener("click", signOut);
+
+  document.getElementById("isaca-send-btn").addEventListener("click", sendMessage);
+  document.getElementById("isaca-chat-input").addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+
+  // ── Boot ──────────────────────────────────────────────────────────────────
+  loadMsal(async function () {
+    initMsal();
+    await checkLoginState();
+    // Show the chat button once everything is ready
+    document.getElementById("isaca-chat-btn").style.display = "flex";
+  });
+
+  // Hide button until MSAL is ready (avoids flash of broken state)
+  document.getElementById("isaca-chat-btn").style.display = "none";
+})();
+</script>

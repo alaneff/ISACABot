@@ -1,0 +1,504 @@
+{
+  "run_at": "2026-02-21T19:02:29.330793+00:00",
+  "model": "claude-sonnet-4-6",
+  "grader_model": "claude-haiku-4-5-20251001",
+  "summary": {
+    "overall_pass_rate": 0.5,
+    "overall_avg_score": 0.48666666666666664,
+    "total_cases": 30,
+    "passed": 15,
+    "failed": 15,
+    "by_category": {
+      "entry_level": {
+        "pass_rate": 1.0,
+        "avg_score": 0.9800000000000001,
+        "passed": 5,
+        "total": 5
+      },
+      "mid_career": {
+        "pass_rate": 1.0,
+        "avg_score": 0.96,
+        "passed": 5,
+        "total": 5
+      },
+      "cert_comparison": {
+        "pass_rate": 1.0,
+        "avg_score": 0.9800000000000001,
+        "passed": 5,
+        "total": 5
+      },
+      "factual": {
+        "pass_rate": 0.0,
+        "avg_score": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "resume_career": {
+        "pass_rate": 0.0,
+        "avg_score": 0.0,
+        "passed": 0,
+        "total": 5
+      },
+      "honest_guidance": {
+        "pass_rate": 0.0,
+        "avg_score": 0.0,
+        "passed": 0,
+        "total": 5
+      }
+    },
+    "failures": [
+      {
+        "id": "fact_001",
+        "category": "factual",
+        "question": "How many years of experience do I need to get the CISA certification?",
+        "response": "Great question! Here's a breakdown of the CISA experience requirements:\n\n### Experience Required for CISA\n\n**The baseline is 5 years** of professional work experience in information systems (IS) audit, control, assurance, or security. However, there are substitutions that can reduce this:\n\n- **Up to 3 years** can be waived based on higher education:\n  - Each year of post-secondary education beyond a 2-year degree waives **1 year** of experience (maximum 3-year waiver)\n- So, with a 4-year bachelor's degree, you could qualify with as little as **3 years** of relevant experience, and with a master's degree, potentially just **2 years**.\n\n### Good News — You Can Sit the Exam Early\nYou **don't need to meet the experience requirement before taking the exam**. You can sit for the CISA exam first and then have **up to 5 years from your exam pass date** to fulfill the experience requirement and apply for full certification.\n\n### Keeping Your CISA Active\nOnce certified, you'll need to complete **120 CPE hours every 3 years** (with a minimum of 20 CPE per year) and pay an annual maintenance fee of $45.\n\nWould you like advice on whether CISA is the right fit for your career goals, or tips on how to prepare for the exam?",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Contains forbidden term: '2 years'",
+        "hard_rule_fail": true
+      },
+      {
+        "id": "fact_002",
+        "category": "factual",
+        "question": "What is the exam fee for CISSP?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRyRjfejCwduFZci7m'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "fact_003",
+        "category": "factual",
+        "question": "How many domains does the CISM exam cover and what are they?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRdRxYvZccHpXJJUwy'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "fact_004",
+        "category": "factual",
+        "question": "What passing score do I need on the CISA exam?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRefNcbvKpZrohYDSi'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "fact_005",
+        "category": "factual",
+        "question": "How many CPE hours do I need to maintain my CISA each year?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRfPHYn3PGfCpWM9U3'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_001",
+        "category": "resume_career",
+        "question": "How should I list my CISA certification on my resume?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRgZEVrhXukTpUtix2'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_002",
+        "category": "resume_career",
+        "question": "I have 10 years of IT experience but no security certs. How do I position myself for a GRC manager role?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRiGRPo167W1K4aUsc'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_003",
+        "category": "resume_career",
+        "question": "What's a realistic salary range for a CISO in San Diego?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRj8WWsNvfzX16Nc9S'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_004",
+        "category": "resume_career",
+        "question": "I'm transitioning from military IT to civilian cybersecurity. How do I translate my experience?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRk64MMgUYXnzc3B3k'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "resume_005",
+        "category": "resume_career",
+        "question": "How long does it typically take to go from Security+ to CISSP?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRktRvtrCRjS2htDvK'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_001",
+        "category": "honest_guidance",
+        "question": "I want to get into penetration testing. Should I get a CISA or CISSP?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRmnFmy7kbPraP9Jvo'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_002",
+        "category": "honest_guidance",
+        "question": "Is getting an ISACA membership worth the cost for a junior security analyst with 1 year of experience?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRnhZxXt3mVL4p6ygo'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_003",
+        "category": "honest_guidance",
+        "question": "I'm a cloud architect who wants to improve my security knowledge. Which cert is best?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRpNXndwmBQrmfXT5L'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_004",
+        "category": "honest_guidance",
+        "question": "My employer will pay for a CGEIT certification. Is it worth pursuing?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRqE8B5iBw6cod1Uyx'}",
+        "hard_rule_fail": false
+      },
+      {
+        "id": "honest_005",
+        "category": "honest_guidance",
+        "question": "A recruiter told me I need a CISSP to apply for any security job. Is that true?",
+        "response": "",
+        "score": 0.0,
+        "pass": false,
+        "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRrZjmumPwvwcVUjdg'}",
+        "hard_rule_fail": false
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "entry_001",
+      "category": "entry_level",
+      "question": "I'm new to IT with 6 months of experience and want to get into cybersecurity. What cert should I start with?",
+      "response": "Great question — and welcome to the field! With 6 months of IT experience, you're in a solid position to start building your cybersecurity credentials. Here's my honest recommendation:\n\n---\n\n## 🏆 Start with CompTIA Security+\n\nFor someone at your stage, **Security+** is the clear first choice. Here's why:\n\n### It's the Industry Standard Entry Point\nSecurity+ is widely considered the baseline credential for cybersecurity. It consistently appears in entry-level job postings for roles like **Junior Security Analyst, SOC Tier 1 Analyst, and IT Security Specialist**.\n\n### DoD / Defense Contractor Gold\nSan Diego has a *huge* defense contractor presence (Leidos, SAIC, Booz Allen, General Dynamics IT, and more). Security+ is **DoD 8570/8140 approved**, meaning it's a minimum requirement for a wide range of federal and defense security roles — and those jobs pay well, especially with a clearance.\n\n### Accessible for Your Level\n- **No formal prerequisites** — CompTIA recommends 2 years of IT experience, but most people pass it with 0–2 years\n- **Exam:** Up to 90 questions (multiple choice + performance-based), 90 minutes\n- **Passing score:** 750 out of 900\n- **Exam fee:** $404\n- **Renewal:** 50 CEUs every 3 years\n\n### Exam Domains\n| Domain | Weight |\n|---|---|\n| Security Operations | 28% |\n| Threats, Vulnerabilities & Mitigations | 22% |\n| Security Program Management & Oversight | 20% |\n| Security Architecture | 18% |\n| General Security Concepts | 12% |\n\n---\n\n## What Comes After Security+?\n\nOnce you've passed Security+, your next step depends on the direction you want to go:\n\n| Direction | Next Cert to Target |\n|---|---|\n| 🔵 SOC / Blue Team Analyst | **CompTIA CySA+** |\n| 🔴 Penetration Testing | **eJPT → PNPT → OSCP** |\n| ☁️ Cloud Security | **AWS Security Specialty or AZ-500** |\n| 📋 GRC / Risk / Audit | **CISA or CRISC** (after ~2-3 years) |\n\n---\n\n## My Suggestion for You\n\n1. **Now:** Study for and earn **Security+** (plan for 2–4 months of study)\n2. **At ~1-2 years of experience:** Pick your specialization and pursue the next cert\n3. **Consider joining ISACA San Diego** if GRC, audit, or risk management interests you — great networking with local employers\n\nWould you like study resource recommendations for Security+, or do you want to talk through which specialization (SOC, pentesting, cloud, GRC) might be the best fit for your interests?",
+      "score": 1.0,
+      "pass": true,
+      "reason": "Excellent response. Correctly recommends CompTIA Security+ as the primary entry-level certification for someone with 6 months of IT experience. Appropriately mentions advanced certs (CISA, CRISC) only as future options after 2-3 years of experience, not as first recommendations. Includes accurate details about Security+, relevant San Diego context (DoD/defense contractors), and proper progression pathways. No misleading or prohibited advice.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "entry_002",
+      "category": "entry_level",
+      "question": "I just graduated with a CS degree and have no work experience. I want to work in IT audit. Where do I start?",
+      "response": "Great timing to be entering IT audit — it's a field with strong demand and a clear career ladder. Here's a practical roadmap built specifically for someone in your position:\n\n---\n\n## 🎓 Starting From Zero: Your IT Audit Roadmap\n\n### Step 1: Understand Where You'll Start\n\n Entry-level professionals typically begin in one of two places: a Big 4 or regional public accounting firm, or an in-house internal audit department. The Big 4 path (Deloitte, PwC, EY, KPMG) offers exposure to dozens of clients, fast skill development, and strong brand recognition on a resume. In-house roles at companies like Qualcomm, Leidos, or SAIC offer more stability and a narrower but deeper focus. \n\nYour CS degree is actually a strong differentiator — most IT audit candidates come from accounting or information systems backgrounds. Lean into your technical skills.\n\n Core activities at this stage include executing test procedures for SOX IT General Controls (ITGCs) — change management, logical access, computer operations, and program development — along with walkthroughs with process owners, documenting evidence in workpapers, and learning audit methodology and frameworks like COBIT and COSO. \n\n---\n\n### Step 2: Get Your First Certification — Security+\n\nBefore you can sit for the gold-standard IT audit cert (CISA), you need work experience. In the meantime, **CompTIA Security+** is the ideal first credential:\n\n-  No formal prerequisites — most people sit it with 0–2 years of experience. \n-  It's DoD 8570/8140 approved — required by many federal and defense employers as a baseline qualification.  This is huge in San Diego's defense contractor market.\n- It signals foundational security knowledge to employers while you're building experience toward CISA.\n\n---\n\n### Step 3: Work Toward CISA (Your Real Target)\n\n**CISA** is the gold standard for IT audit. Here's what you need to know:\n\n-  CISA requires 5 years of professional IS audit, control, assurance, or security work experience — but up to 3 years can be substituted. One year is waived per year of higher education beyond a 2-year degree (max 3-year waiver).  Your 4-year CS degree likely gets you a **3-year waiver**, meaning you'd only need **2 years of work experience** before applying for certification.\n-  You may sit the exam before meeting the experience requirement — you have 5 years from your exam pass date to apply for full certification.  That means you could start studying and even pass the exam early, then finish accumulating experience.\n\n**The career payoff is significant:**\n Big 4 firms treat CISA as a near-mandatory credential for promotion into senior auditor or manager ranks on IT audit engagements. Salary premiums of $10,000–$25,000 annually have been consistently reported in ISACA's own salary surveys for certified vs. non-certified professionals in equivalent roles. \n\n---\n\n### Step 4: Join ISACA San Diego\n\nAs a new entrant to the field, the ISACA San Diego chapter is a genuinely valuable resource — not just for certifications, but for networking, study groups, and meeting the people who hire for IT audit roles in San Diego.  The chapter's CPE program — spanning monthly meetings, study groups, annual events, and special workshops — is designed to help members meet annual CPE requirements through local participation.  These events are also where you meet your future mentors and hiring managers.\n\n---\n\n## 🗺️ Your Timeline at a Glance\n\n| Timeframe | Action |\n|---|---|\n| **Now** | Study and pass **CompTIA Security+** |\n| **0–6 months** | Apply to IT Audit Staff / IT Audit Associate roles (Big 4 or in-house) |\n| **Now–Year 1** | Join ISACA San Diego, attend chapter events |\n| **Year 1–2** | Begin studying for **CISA** (can sit exam before full experience is met) |\n| **Year 2** | Apply for CISA certification once experience threshold is met |\n| **Year 3–5** | Senior IT Auditor; begin considering **CRISC** for risk focus |\n\n---\n\n## 💡 A Few Practical Tips for Job Applications\n\n1. **Highlight your CS degree's relevance** — networking, OS, programming, and systems knowledge are directly applicable to IT General Controls testing.\n2. **Target Big 4 advisory/assurance practices** — they hire new grads and have structured training programs.\n3. **Look at San Diego defense contractors** — Leidos, SAIC, Northrop Grumman, and Booz Allen all have internal audit and compliance functions, and your Security+ will unlock doors there.\n4. **Frame your CS projects on your resume** — any experience with databases, system administration, access controls, or software development lifecycle maps directly to IT audit work.\n\n---\n\nWant me to go deeper on any of these areas — like how to frame your resume for IT audit roles, or a study plan for Security+ or CISA?",
+      "score": 1.0,
+      "pass": true,
+      "reason": "Excellently addresses the experience gap by clearly stating CISA requires 5 years (with up to 3-year waiver for CS degree = 2 years needed), explicitly recommends Security+ first, and provides a realistic roadmap through entry-level roles before CISA pursuit. All criteria met with no misleading advice.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "entry_003",
+      "category": "entry_level",
+      "question": "I'm a help desk technician with 1 year of experience. I want to move into security. What cert should I get?",
+      "response": "Great question! With 1 year of help desk experience, you're in a solid spot to start moving into security. Let me pull up the relevant cert details to give you the best advice.Great news — this is a well-worn path and there's a clear starting point for you. Here's my honest recommendation:\n\n---\n\n## 🥇 Start with CompTIA Security+\n\nFor someone at your stage, **Security+ is the right first move**, and here's why:\n\n-  **No formal prerequisites** — CompTIA recommends Network+ and 2 years of IT experience, but most people sit it with 0–2 years. Your help desk background is solid preparation. \n-  **It's effectively the floor credential for U.S. federal and defense cybersecurity work**, listed by name in DoD Directive 8570/8140 as a requirement for IAT Level II and IAM Level I positions. \n-  In the commercial sector, **Security+ consistently appears in entry-level security analyst, SOC analyst, and IT security administrator job postings.** It demonstrates baseline security competency and shows commitment to the field. \n-  Common roles it opens up: **Junior Security Analyst, IT Security Specialist, SOC Tier 1.** \n-  **Exam fee is $404**, with up to 90 questions (multiple choice + performance-based) in 90 minutes. Passing score is 750/900. \n\n---\n\n## 🥈 After Security+: CompTIA CySA+\n\nOnce you land that first security role and have some hands-on experience, CySA+ is a natural next step:\n\n-  It's **ideal for mid-level analysts advancing beyond Security+**, with a strong focus on SOC and blue team roles — detection, analysis, and response, not just concepts. \n-  Common roles: **Security Analyst, SOC Analyst Tier 2/3, Vulnerability Analyst, Threat Intel Analyst.** \n\n---\n\n## 💡 A Few Tips for Your Situation\n\n1. **Leverage your help desk experience** — Troubleshooting, ticketing, and user interaction are directly relevant to SOC Tier 1 roles. Frame that on your resume.\n2. **Consider San Diego's defense sector** — With major employers like Leidos, SAIC, General Dynamics IT, and Booz Allen in the area, Security+ (DoD 8570 compliant) is especially valuable here.\n3. **Supplement with hands-on labs** — Look at free/low-cost platforms like TryHackMe or Blue Team Labs Online (BTL1 cert is also worth considering for SOC roles).\n\n---\n\n**Want me to go deeper on any of these?** I can help with a Security+ study plan, how to position your resume for that first security role, or what the SOC career path looks like beyond CySA+.",
+      "score": 1.0,
+      "pass": true,
+      "reason": "Excellent response. Correctly recommends Security+ as the primary first cert with detailed justification appropriate for 1-year help desk experience. Appropriately mentions CySA+ as follow-on. Includes actionable advice (resume framing, San Diego defense sector context, hands-on labs). All facts are accurate (DoD 8570/8140 compliance, exam details, role examples). Nothing misleading or harmful.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "entry_004",
+      "category": "entry_level",
+      "question": "I'm completely new to IT with no degree and no certs. What's the fastest realistic path to a cybersecurity job?",
+      "response": "Great question — and the good news is that **no degree is not a dealbreaker in cybersecurity**, especially in San Diego's defense and tech market. Here's the most realistic fast-track path laid out honestly:\n\n---\n\n## 🗺️ Your Fastest Realistic Path to a Cybersecurity Job\n\n### Phase 1: Build a Foundation (Months 1–3)\n**Goal:** Learn enough to get hired as a SOC Tier 1 Analyst or IT Security Specialist.\n\n**Start with CompTIA Security+** — it's the single most important first cert for someone in your position.\n\n-  No formal prerequisite — most people sit it with 0–2 years of experience. \n-  The exam has up to 90 questions (multiple choice + performance-based), 90 minutes, with a passing score of 750 out of 900. \n-  Exam fee is $404. \n-  It's approved under DoD Directive 8570/8140, required for IAT Level II and IAM Level I positions — meaning federal agencies, military branches, and major defense contractors like Leidos, SAIC, and Booz Allen list it as a baseline requirement.  This is especially relevant here in San Diego.\n\n**How to study (free/cheap options):**\n- **Professor Messer's free Security+ course** (professormesser.com)\n- **TryHackMe or Hack The Box** for hands-on labs\n- Practice exams on Dion Training or ExamCompass\n\n---\n\n### Phase 2: Get Your First Job — The SOC Analyst Path (Month 3–6)\n**Goal:** Land a SOC Tier 1 role.\n\n Tier 1 analysts are the first responders to security alerts from SIEM platforms, EDR tools, and network monitoring systems. The role is high-volume and process-driven: follow the runbook, classify the alert, escalate or close. \n\n Tier 1 is intentionally a learning environment — analysts who progress fastest are those who read beyond the runbook, understand why each alert fires, and study for certifications on their own time. \n\n**What to build on your resume right now (even before your first job):**\n- A **home lab**: set up a free SIEM (like Splunk free tier or Microsoft Sentinel in Azure), generate logs, and practice triaging alerts\n- A **GitHub portfolio**: document your home lab setup and findings\n- **TryHackMe rooms** completed — list the learning paths on your resume\n- Any volunteer IT work, even for a nonprofit, counts\n\n---\n\n### Phase 3: Two Tracks to Consider (Your Choice)\nOnce you have Security+ and 6–12 months of experience, you'll face a fork:\n\n| Track | Direction | Next Cert |\n|---|---|---|\n| **Technical / SOC** | Incident response, threat hunting, malware analysis | CompTIA CySA+, then GIAC GCIH |\n| **GRC / Compliance** | Risk, audit, policy, governance | CISA or CRISC (at ~2-3 year mark) |\n\n Educational backgrounds in GRC vary widely — information systems, business, political science, even law. Technical curiosity matters more than a specific degree at the entry level. \n\n For San Diego defense contractors, even entry-level GRC roles may require a DoD security clearance (Secret or Top Secret), which significantly boosts compensation.  If you can get a clearance, **prioritize it** — it's a massive differentiator in this market.\n\n---\n\n## 📋 Honest Reality Check\n\n| Factor | Reality |\n|---|---|\n| **Timeline to first job** | 4–8 months if you study consistently |\n| **Starting salary (San Diego)** | ~$55,000–$75,000 for SOC Tier 1 |\n| **Degree required?** | No — certs + portfolio + clearance-eligibility matter more here |\n| **Hardest part** | Getting the first job without prior IT experience |\n| **Biggest accelerator** | U.S. citizenship + clean background = clearance eligibility |\n\n---\n\n## 🎯 My Recommendation for You\n\n1. **Start Security+ study today** — aim to pass within 8–12 weeks\n2. **Build a home lab** in parallel — document everything\n3. **Apply to SOC Tier 1 roles** at San Diego defense contractors (Leidos, SAIC, Booz Allen, General Dynamics IT) as soon as you pass\n4. **Join ISACA San Diego** — our networking events connect you directly with hiring managers in the local market\n\nWould you like help with **study resources for Security+**, tips on **building your resume with no experience**, or more detail on **either the technical SOC path or the GRC path**? Happy to go deeper on any of these.",
+      "score": 0.95,
+      "pass": true,
+      "reason": "Excellent response. Provides realistic, honest roadmap with Security+ as foundation, emphasizes need for experience alongside certs, includes hands-on learning (home lab, TryHackMe), mentions SOC Tier 1 entry roles, and acknowledges the hardest part (getting first job). Specific to San Diego market. Both required keywords present: 'Security+' and 'experience.' No overpromising, and acknowledges degree not required but experience matters.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "entry_005",
+      "category": "entry_level",
+      "question": "Should a college student studying computer science get the Security+ before graduating?",
+      "response": "Great question — and the short answer is **yes, for most CS students, getting Security+ before graduation is a smart move.** Here's why:\n\n---\n\n## ✅ The Case FOR Getting Security+ in College\n\n### 1. **It's the De Facto Entry-Level Security Credential**\n Security+ consistently appears in entry-level security analyst, SOC analyst, and IT security administrator job postings. It demonstrates baseline security competency and shows commitment to the field.  For a new grad competing against dozens of other CS majors, that signal matters.\n\n### 2. **It's a Major Advantage in San Diego's Defense Market**\n CompTIA Security+ is the universally recognized baseline — DoD Directive 8570/8140 mandates it for many government and contractor roles, making it essential in San Diego's defense market.  San Diego is home to major defense contractors like Leidos, SAIC, and Booz Allen — employers who often *require* Security+ as a minimum.\n\n### 3. **No Prerequisites or Work Experience Required**\n There is no formal prerequisite.  You can sit for it at any point — even as a freshman or sophomore — which makes it uniquely accessible for students.\n\n### 4. **Salary Impact at Entry Level**\n Salary data consistently shows a meaningful premium for Security+-certified professionals over non-certified peers at the entry level.  That's a real difference when you're just starting out.\n\n### 5. **It's a Stepping Stone, Not a Ceiling**\n After Security+, the natural progression moves toward CompTIA CySA+, CEH, or eJPT at the Tier 1–2 transition, and then GIAC certifications or CISSP at senior levels.  Getting it now sets you up for a clear certification path.\n\n---\n\n## ⚠️ A Few Honest Caveats\n\n- **Cost:** The exam fee is **$404**, which isn't trivial for a student. Check if your school has CompTIA academic discounts or vouchers — many do.\n- **CS ≠ Security:** If your goal is software engineering, data science, or systems programming, Security+ may not move the needle much. It matters most if you're targeting **security, networking, cloud, or government/defense roles**.\n- **Timing:** Junior or senior year is ideal — close enough to graduation that it's fresh on your resume when you're interviewing.\n\n---\n\n## 🎯 Bottom Line\n\nIf you have *any* interest in cybersecurity, IT infrastructure, cloud, or working with defense/government employers, **yes — get it before you graduate.** It's one of the few certifications that genuinely pays off at the entry level with no experience required.\n\nWant help figuring out what to study after Security+, or how to present it on your resume alongside your CS degree?",
+      "score": 0.95,
+      "pass": true,
+      "reason": "Excellent response that fully addresses all key criteria: strongly recommends Security+ for CS students, emphasizes credibility for new grads, explicitly mentions DoD/federal requirements and San Diego defense market context, notes it's attainable without prerequisites, demonstrates initiative through career progression discussion, and appropriately avoids recommending CISA/CISM/CISSP for someone with no work experience. Minor: could have slightly more emphasis on demonstrating initiative as a personal differentiator, but this is well-covered implicitly.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_001",
+      "category": "mid_career",
+      "question": "I've been a network engineer for 6 years and want to move into security management. Should I get CISSP or CISM?",
+      "response": "Great question — and with 6 years of network engineering, you're actually in a strong position for either. Here's an honest breakdown:\n\n---\n\n## 🎯 My Recommendation: **Start with CISSP**\n\nGiven your network engineering background, CISSP is the stronger first move. Here's why:\n\n### ✅ Why CISSP Makes More Sense for You\n\n- **Your technical background is an asset.**  The CISSP covers 8 domains, including \"Communication and Network Security\" (13% of the exam)  — territory where you'll have a real advantage. Your hands-on experience directly maps to exam content.\n\n- **Broader market recognition.**  CISSP is the most widely recognized senior security credential globally and is preferred by enterprises, government contractors, and consulting firms. \n\n- **You meet the experience bar.**  CISSP requires 5 years of cumulative, paid work experience in at least 2 of the 8 CISSP domains, with 1 year waived with a 4-year college degree.  Your 6 years in networking almost certainly covers the network security domain, plus likely others.\n\n- **It signals technical credibility.** From the knowledge base: *\"Choose CISSP over CISM if your role requires technical credibility.\"* As someone transitioning *from* a technical role, this credibility is a bridge — not a liability.\n\n---\n\n### 📋 CISSP vs. CISM — Side-by-Side\n\n| | **CISSP** | **CISM** |\n|---|---|---|\n| **Issuer** | ISC2 | ISACA |\n| **Focus** | Broad security (technical + management) | Pure security management & governance |\n| **Exam** | 100–150 questions (adaptive), 180 min | 150 questions, 240 min |\n| **Exam Fee** | $749 | $575 (member) / $760 (non-member) |\n| **Annual Fee** | $125/yr | $45/yr |\n| **Experience Req.** | 5 yrs, 2+ domains | 5 yrs security, 3 yrs in management roles |\n| **CPE** | 120 every 3 years | 120 every 3 years |\n| **Best For** | Technical pros moving into management | Existing security managers / GRC pros |\n\n---\n\n### 📌 Where CISM Shines\n\n CISM is the single most recognized credential on a CISO track and is particularly valued in regulated industries like financial services, healthcare, government contracting, and insurance. It demonstrates that a security professional understands how to run a security program as a *business function* — budgeting, reporting to the board, managing vendors, and aligning security to business risk. \n\nThe catch?  CISM requires 5 years of information security work experience, with **at least 3 years in information security management** in at least 3 CISM domains.  If you haven't held a security management title yet, you may not qualify right now — making CISSP the more accessible starting point.\n\n---\n\n### 🗺️ The Bigger Picture: Long-Term Path\n\n At enterprise companies, CISOs typically hold CISM, CISSP, or both — and holding both is a powerful combination.  A smart sequence for your situation:\n\n1. **Now:** Get CISSP (leverages your network background, opens security management doors)\n2. **In 3–5 years:** Add CISM once you have security management experience under your belt\n\nThis is exactly the \"Technical Ascent\" path described in our CISO track guidance:  starting in hands-on security work and network security, building toward architecture and leadership over time — with the key being that you deliberately develop executive communication, financial management, and governance skills along the way. \n\n---\n\n**Want me to go deeper on any of the following?**\n- CISSP study strategy and timeline\n- How to position your network engineering experience on your resume for security management roles\n- What job titles to target as your first security management role",
+      "score": 0.95,
+      "pass": true,
+      "reason": "Excellently compares both certifications with clear differentiation (CISSP broader/technical, CISM governance-focused), explains tradeoffs transparently, provides specific reasoning tied to the user's 6-year network engineering background, includes both cert names, and offers a thoughtful long-term pathway. Minor: could slightly emphasize that network experience alone may not fully satisfy CISM's 3-year management requirement, though this is adequately covered.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_002",
+      "category": "mid_career",
+      "question": "I'm a security analyst with 4 years of experience. What's the best cert to get promoted to a senior analyst or team lead role?",
+      "response": "Great question — and with 4 years of experience, you're at a really actionable point in your career. Here's a honest breakdown of your best options:\n\n---\n\n## 🎯 Best Certs for Senior Analyst / Team Lead\n\nThe right answer depends slightly on which direction you want to go — **deeper technical** or **more management-oriented** — but here are the top picks:\n\n---\n\n### 1. 🥇 CompTIA CySA+ — *Best immediate fit*\n The CySA+ is designed for mid-level analysts advancing beyond Security+, with a strong focus on SOC and blue team roles — detection, analysis, and response. \n\n-  The exam is up to 85 questions (multiple choice + performance-based), 165 minutes, and costs **$404**. \n-  CompTIA recommends Security+ and 4 years of hands-on experience — which you already have. \n-  It's DoD 8570 approved and pairs well with SIEM and threat intelligence skills  — very relevant in San Diego's defense/contractor market.\n- **Bottom line:** This is the most direct credential signal for a **Senior Analyst** title. It's affordable, attainable, and respected.\n\n---\n\n### 2. 🥈 CISSP — *Best for team lead / future management*\n The CISSP is the most widely recognized senior security credential globally, covering all 8 security domains broadly. It's preferred by enterprises, government contractors, and consulting firms. \n\n-  The exam is 100–150 questions in CAT format, 180 minutes, with a passing score of 700/1000, and costs **$749**. \n- **Experience caveat:**  CISSP requires 5 years of paid experience in at least 2 of 8 domains — but 1 year is waived with a 4-year degree. If you don't yet have 5 years, you can pass the exam and become an Associate of ISC2, with 6 years to fulfill the experience. \n- **Bottom line:** If you want to signal readiness for a **team lead or future management role**, CISSP carries the most weight on a resume. It's harder and pricier, but the ROI is significant.\n\n---\n\n### 3. 🥉 CISM — *If you're eyeing a governance/management track*\n CISM is ideal for those moving into security management or a CISO track, with a strong focus on GRC and governance. It's management-focused rather than hands-on technical. \n\n-  ISACA members pay **$575** (non-members: $760), and the annual maintenance fee is only **$45**. \n-  CISM requires 5 years of information security experience, with at least 3 years in information security management.  Since you're at 4 years total, you'd likely need another year before being eligible — keep this one in your back pocket.\n- **Bottom line:** Great cert, but CISSP is broader and more technically recognized.  For a CISO track, holding both CISM and CISSP is a powerful combination. \n\n---\n\n### 4. 💡 SANS/GIAC — *Highly respected, especially technical*\n For the Tier 2–3 transition, GIAC GCIH (Incident Handler) and GCIA (Intrusion Analyst) are standout credentials.  They're expensive (typically $7,000–$9,000 with the course), but carry enormous weight — especially if your employer will pay for it.\n\n---\n\n## My Recommendation for You\n\n| Your Goal | Best Cert Now | Next Cert |\n|---|---|---|\n| Senior Analyst title | **CySA+** | CISSP (once eligible) |\n| Team Lead / Technical Lead | **CISSP** (or Associate path) | CISM |\n| SOC leadership | **GCIH** (if employer-funded) | CISSP |\n\n**With 4 years of experience, I'd say:** Start with **CySA+** if you want a quick win that validates your analyst skills. Simultaneously study for **CISSP** — you can take the exam now and sit as an Associate of ISC2 while you accumulate that 5th year of experience.\n\n---\n\nWant me to dig into any of these further — study resources, exam tips, or how to frame this on your resume for a promotion conversation?",
+      "score": 0.95,
+      "pass": true,
+      "reason": "Excellent response with concrete, differentiated recommendations based on career direction (CySA+ for technical analyst track, CISSP for management/team lead). Includes accurate exam details, costs, eligibility requirements, and contextual guidance for San Diego market. Provides actionable next steps without overwhelming the reader.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_003",
+      "category": "mid_career",
+      "question": "I'm a compliance officer with 5 years in IT audit. I want to expand into risk management. What cert makes the most sense?",
+      "response": "Great background — with 5 years in IT audit, you're in an excellent position to move into risk management, and there's a clear standout cert for your profile: **CRISC (Certified in Risk and Information Systems Control)**.\n\nHere's why it makes so much sense for you:\n\n---\n\n### ✅ CRISC — The Natural Next Step\n\n**Why it fits you perfectly:**\n- You already have the audit foundation. CRISC + CISA (if you hold it) is widely considered a \"power combo\" for senior audit/risk hybrid roles.\n- Your IT audit experience maps directly to CRISC's domains — governance, risk assessment, risk response, and IT security controls.\n\n**Key details:**\n- **Experience requirement:** Only 3 years across at least 2 of the 4 CRISC domains — you almost certainly qualify already.\n- **Exam:** 150 multiple-choice questions, 4 hours, passing score of 450/800\n- **Cost:** $575 (ISACA member) / $760 (non-member)\n- **Renewal:** 120 CPE hours every 3 years\n\n---\n\n### 📈 Career Impact\n\nCRISC opens a clear GRC progression path:\n\n- **GRC Analyst → Senior GRC Analyst / IT Risk Manager** — CRISC is frequently listed as required or preferred\n- **IT Risk Manager → Director of IT Risk / Enterprise Risk Officer**\n- **Audit → GRC pivot** — your background makes this transition very natural\n\nCRISC holders are especially concentrated in **financial services, healthcare, energy, and government contracting** — industries with mature enterprise risk programs. Salary data from ISACA's 2024 survey shows CRISC holders in North America averaging around **$130,000–$145,000** annually.\n\n---\n\n### 🔄 Anything Else Worth Considering?\n\n- If you eventually want to go broader into **security management or CISO-track**, pairing CRISC with a **CISSP** down the road gives you exceptional range.\n- If your work touches **third-party/vendor risk**, CRISC is increasingly appearing in those job descriptions too.\n- The **IIA's CRMA** (Certification in Risk Management Assurance) is another option if you're coming from an internal audit background and already hold a CIA — it's more audit-centric than CRISC.\n\n---\n\n**My honest take:** Given your 5 years in IT audit and your goal of expanding into risk management, CRISC is the most direct, employer-recognized, and experience-efficient choice. It's purpose-built for exactly the transition you're describing.\n\nWould you like study tips for CRISC, help thinking through how to position this on your resume, or a sense of what risk management roles look like in the San Diego job market?",
+      "score": 1.0,
+      "pass": true,
+      "reason": "Excellent response. Clearly recommends CRISC as the ideal cert with precise explanation of fit (risk management focus, IT audit background transfer, experience requirement met). Includes accurate CRISC details (domains, exam specs, costs, CPE renewal). Contextualizes career impact with salary data and industry examples. Appropriately mentions CISM and CISSP for broader scope without diluting the primary recommendation. Fully aligns with evaluation criteria.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_004",
+      "category": "mid_career",
+      "question": "I'm pivoting from software development to cybersecurity with 7 years of dev experience. What path do you recommend?",
+      "response": "Great news — **7 years of software development is a genuinely powerful foundation** for cybersecurity. You're not starting from scratch; you're redirecting. Here's my honest, structured take:\n\n---\n\n## 🔍 First: What Kind of Cybersecurity?\n\nYour dev background opens doors to several distinct paths. The right one depends on what excites you:\n\n| Track | Why Your Dev Background Helps | Key Certs |\n|---|---|---|\n| **Application Security (AppSec)** | You already understand code, SDLC, and how bugs are introduced | BSCP, GWAPT, OSCP |\n| **Penetration Testing / Red Team** | Dev skills make you a stronger exploit developer and tool builder | OSCP, PNPT, CEH |\n| **Security Engineering** | Building security tooling, automation, SIEM integrations | AWS/Azure Security, CISSP |\n| **GRC / Compliance** | Less technical, but dev experience helps with control assessments | CISA, CRISC, Security+ |\n| **SOC / Threat Detection** | Writing detection logic benefits from coding skills | CySA+, GCIH, GCIA |\n\n**My honest recommendation for most devs: AppSec or Pentesting.** Your code literacy is a *huge* differentiator that pure security people don't have.\n\n---\n\n## 🗺️ Recommended Path (3 Phases)\n\n### Phase 1 — Establish Your Security Baseline (0–6 months)\nStart with **CompTIA Security+** to build foundational security vocabulary and satisfy employer checkboxes:\n\n-  Security+ is the universally recognized baseline — DoD Directive 8570/8140 mandates it for many government and contractor roles, making it essential in San Diego's defense market. \n-  No formal prerequisite is required. CompTIA recommends Network+ and 2 years of IT experience with a security focus, but most people sit it with 0–2 years experience. \n-  The exam is up to 90 questions (multiple choice + performance-based), 90 minutes, with a passing score of 750/900.  The exam fee is **$404**.\n\nWhile studying, **build hands-on skills** in parallel: TryHackMe, HackTheBox, and PortSwigger Web Academy (free) are excellent for devs.\n\n---\n\n### Phase 2 — Specialize & Differentiate (6–18 months)\nThis is where your dev background pays off. Choose your lane:\n\n**👉 If AppSec/Web Pentesting:**\n- **Burp Suite Certified Practitioner (BSCP)** — Hands-on, highly respected by web security pros and bug bounty hunters\n- **GWAPT** (GIAC Web Application Penetration Tester) —  GWAPT is a strong differentiator for penetration testers who want to show specialized web application expertise alongside a general credential like GPEN or OSCP. \n\n**👉 If Offensive Security/Red Team:**\n- **OSCP** —  OSCP is the most employer-recognized hands-on offensive security credential globally. Because it cannot be faked or memorized, it serves as a reliable filter for employers — an OSCP holder has demonstrably broken into machines under pressure. \n\n---\n\n### Phase 3 — Senior/Management Track (2–5 years in)\nOnce you've built experience, layer on:\n- **CISSP** — Broad security management, strong for senior engineers and architects\n- **CISM** — If you move toward managing a security program\n- **AWS/Azure Security Specialty** — If your work is cloud-heavy\n\n---\n\n## 💡 Key Advantages You Already Have\n\n1. **Secure code review** — You can read code. Most security people can't.\n2. **Understanding of SDLC** — Huge in AppSec and DevSecOps roles.\n3. **Tool building** — You can write custom scripts and automation, a massive edge in pentesting and SOC.\n4. **Bug thinking** — You've *written* bugs. Now you'll *find* them.\n\n---\n\n## 📋 My Suggested Next Steps\n\n1. **Clarify your target role** — AppSec engineer? Pentester? Security architect? This shapes everything.\n2. **Start Security+ now** — Fast, affordable, opens doors, and satisfies compliance requirements.\n3. **Get hands-on in parallel** — PortSwigger Web Academy is free and tailor-made for devs moving into web security.\n4. **Network locally** — Join us at [ISACA San Diego](https://isaca-sd.org/) events. San Diego has a strong defense and biotech security community, and connections matter.\n\n---\n\nWant me to go deeper on any specific track — AppSec, pentesting, cloud security, or GRC? I can also help you think through how to reframe your dev resume for security roles.",
+      "score": 0.95,
+      "pass": true,
+      "reason": "Excellently recognizes dev experience as valuable, recommends Security+ as baseline, suggests appropriate specializations (AppSec, DevSecOps, pentesting) that leverage coding skills, and appropriately avoids claiming dev experience alone qualifies for senior roles. Minor: could have explicitly mentioned DevSecOps as a distinct path, though it's implied through security engineering discussion.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "mid_005",
+      "category": "mid_career",
+      "question": "I have a CISA and 8 years in IT audit. I want to become a CISO eventually. What should I do next?",
+      "response": "Great news — with a CISA and 8 years in IT audit, you're already on one of the strongest foundations for a CISO role. Here's a concrete roadmap:\n\n---\n\n## 🗺️ Your CISO Roadmap\n\n### Where You Sit Today\n The governance/audit path begins in IT audit, GRC, or risk management and builds toward executive security leadership through policy, compliance, and program management. Your strengths are natural fluency with board and audit committee communication, regulatory relationships, and financial risk frameworks. \n\nThat's a real competitive advantage. Many technically-oriented security managers *struggle* to communicate with boards and audit committees — you already speak that language.\n\n---\n\n### Step 1: Get Your CISM (Near-Term Priority)\n\n CISM is the single most recognized credential on a path to CISO. At enterprise companies, CISOs typically hold CISM, CISSP, or both. CISM is particularly valued in regulated industries — financial services, healthcare, government contracting, and insurance. \n\n**The practical details:**\n-  Requires 5 years of information security work experience, with at least 3 years in information security management across at least 3 CISM domains. Substitutions are available for education and other certifications. \n-  Exam fee is $575 for ISACA members / $760 non-member. Renewal requires 120 CPE hours every 3 years with a minimum of 20 CPE per year. \n-  CISM is ideal for security managers and those moving into the CISO track — it's management-focused rather than hands-on technical. \n\nYour CISA experience will overlap well with several CISM domains (especially Risk Management and Governance).\n\n---\n\n### Step 2: Add CISSP for Broader Credibility\n\n For a CISO track, holding both CISM and CISSP is a powerful combination. Choose CISSP over CISM if your role requires technical credibility. \n\n**Why both matter:**\n-  CISSP is the most widely recognized senior security cert globally — often described as \"10 miles wide, 1 inch deep\" — covering all security domains broadly. \n-  CISSP is preferred by enterprises, government contractors, and consulting firms. \n- Exam fee is **$749**, with a **$125 annual maintenance fee** — slightly more expensive to maintain than ISACA certs.\n\n**Sequencing tip:** Do CISM first (your audit background maps more naturally to it), then CISSP. The overlap in study material is significant.\n\n---\n\n### Step 3: Bridge Your Technical Credibility Gap\n\n The weakness of the governance/audit path is that you may need to deliberately build technical credibility through certifications, relationships with technical teams, or hands-on projects. \n\nPractical ways to close this gap:\n- **Volunteer for or lead a security program initiative** — incident response tabletop exercises, vendor risk assessments, or a cloud security review\n- **Consider CRISC** if you move into a risk management role — it bridges audit and security program leadership well\n- **AWS or Azure security certs** if your organization is cloud-heavy — employers increasingly expect CISOs to understand cloud risk firsthand\n\n---\n\n### Step 4: Make the Role Transition\n\nYour likely progression:  IT Auditor/GRC Analyst → Risk Manager → Deputy CISO → CISO. \n\nThe key move is getting into a **Security Manager or Deputy CISO role** — that's where you shift from *evaluating* security programs to *running* one. Look for roles with titles like:\n- IT Risk Manager\n- Director of GRC / Information Security\n- Deputy CISO / VP of Security (at smaller companies, this often leads directly to CISO)\n\n---\n\n### Summary Table\n\n| Priority | Action | Timeline |\n|---|---|---|\n| 🔴 High | Earn **CISM** | 6–12 months |\n| 🟠 Medium | Earn **CISSP** | 12–24 months |\n| 🟡 Ongoing | Build technical exposure (cloud, IR) | Now + ongoing |\n| 🟢 Strategic | Target Security Manager / Deputy CISO roles | 1–3 years |\n\n---\n\nWant me to go deeper on any of these steps — like CISM study strategies, how to position your audit experience on your resume for security roles, or what San Diego-area CISO job postings are actually asking for?",
+      "score": 0.95,
+      "pass": true,
+      "reason": "Excellent response that comprehensively addresses both CISM and CISSP cert paths, explicitly notes both are valuable for CISO track, and thoroughly covers non-cert factors (leadership roles, technical credibility, business acumen, board communication). Includes accurate details, practical sequencing, and acknowledges the person's existing strengths in governance/audit foundation.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_001",
+      "category": "cert_comparison",
+      "question": "What's the difference between CISSP and CISM?",
+      "response": "Great question — this is one of the most common comparisons in the security world. Here's a thorough breakdown:\n\n---\n\n## CISSP vs. CISM: Side-by-Side\n\n| | **CISSP** | **CISM** |\n|---|---|---|\n| **Issuer** | ISC2 | ISACA |\n| **Focus** | Broad security domains (technical + management) | Security governance & program management |\n| **Exam Questions** | 100–150 (adaptive) | 150 (fixed) |\n| **Exam Duration** | 180 minutes | 240 minutes |\n| **Passing Score** | 700/1000 | 450 on 200–800 scale |\n| **Exam Fee** | $749 | $575 (ISACA member) / $760 (non-member) |\n| **Annual Maintenance** | $125/yr | $45/yr |\n| **CPE Required** | 120 every 3 years | 120 every 3 years |\n\n---\n\n## Experience Requirements\n\nBoth require **5 years of experience**, but with different nuances:\n\n- **CISSP:** 5 years across at least 2 of its 8 domains. A 4-year degree or approved credential waives 1 year. You can also pass first and become an \"Associate of ISC2\" while you earn experience.\n- **CISM:** 5 years of information security experience, with **at least 3 years specifically in security management** across at least 3 CISM domains. This is a meaningful distinction — CISM explicitly requires management experience.\n\n---\n\n## What Each Cert Covers\n\n**CISSP** is famously described as *\"10 miles wide, 1 inch deep\"* — it spans 8 domains:\nSecurity & Risk Management, Asset Security, Security Architecture, Network Security, Identity & Access Management, Security Assessment & Testing, Security Operations, and Software Development Security.\n\n**CISM** is narrower but deeper in management — just 4 domains:\n- Information Security Governance (17%)\n- Information Security Risk Management (20%)\n- Information Security Program (33%)\n- Incident Management (30%)\n\n---\n\n## Who Should Get Which?\n\n| Your Situation | Recommendation |\n|---|---|\n| You manage security teams, budgets, and programs | **CISM first** |\n| You design security architecture or work in technical security | **CISSP first** |\n| You're in consulting or vendor environments | **CISSP** (more universally recognized) |\n| You're in regulated industries (finance, healthcare, gov) | **CISM** is very well regarded |\n| You want to become a CISO | Ultimately, **both** |\n\nAs a practical rule of thumb: **CISSP tends to be more recognized in technical communities and vendor/consulting contexts; CISM is more recognized in corporate governance and board-level conversations.**\n\n---\n\n## Cost Consideration\n\nOne underrated difference: **CISM's annual maintenance fee is only $45**, compared to **CISSP's $125/year**. If you're an ISACA member, CISM is also cheaper to sit for ($575 vs. $749). Over a career, that adds up.\n\n---\n\n## Bottom Line\n\n- **CISM** = the credential that signals *\"I run security as a business function.\"* It's the more focused, governance-heavy choice — especially powerful on a CISO track.\n- **CISSP** = the credential that signals *\"I know security broadly and deeply.\"* It's the most globally portable senior security cert and often expected in enterprise and government roles.\n\n**Many senior security leaders ultimately earn both.** If you're choosing just one, the right answer depends on where you are in your career and where you want to go.\n\nWant me to help you figure out which makes more sense for your specific situation?",
+      "score": 0.95,
+      "pass": true,
+      "reason": "Excellent response that clearly distinguishes both certifications with accurate details on issuers (ISC2 and ISACA), domain counts, experience requirements (5 years for both with CISM's 3-year management focus clearly noted), fees ($749 CISSP vs $575/$760 CISM), scope (CISSP broad 8 domains, CISM governance-focused 4 domains), and provides nuanced guidance on which cert suits different career paths. Minor: could have been slightly more explicit about CISSP's global recognition supremacy, but this is adequately implied.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_002",
+      "category": "cert_comparison",
+      "question": "CISA or CISSP — which one should I go for if I'm in IT audit?",
+      "response": "Great question! Both are highly respected, but they serve different purposes. Let me pull up the facts on both so I can give you accurate, up-to-date guidance.Great — I've got solid data on both. Here's my honest take:\n\n---\n\n## 🏆 For IT Audit: **CISA First, CISSP Later (Maybe)**\n\n### CISA is your primary cert — here's why:\n\n- **Purpose-built for IT audit.** CISA is the gold standard for exactly what you do. No other cert signals \"IT auditor\" as clearly.\n- **Near-mandatory at Big 4.** Deloitte, PwC, EY, and KPMG treat CISA as effectively required for promotion into senior auditor or manager ranks on IT audit engagements.\n- **Real salary impact.** Salary premiums of **$10,000–$25,000 annually** have been consistently reported for CISA-certified vs. non-certified professionals in equivalent roles.\n- **Government and regulatory recognition.** GAO, IG offices, and DoD roles frequently list CISA in job postings.\n- **Career ladder it unlocks:** Staff Auditor → Senior IT Auditor → IT Audit Manager → Director/VP of IT Audit (or transition to a CISO path).\n\n---\n\n### How they compare head-to-head:\n\n| | **CISA** | **CISSP** |\n|---|---|---|\n| **Issuer** | ISACA | ISC2 |\n| **Focus** | IT Audit & Assurance | Broad Security (8 domains) |\n| **Best for** | Auditors, compliance, GRC | Security architects, managers, CISOs |\n| **Experience req.** | 5 years (IS audit/security) | 5 years (2+ of 8 domains) |\n| **Exam** | 150 questions, 240 min | 100–150 questions (adaptive), 180 min |\n| **Exam fee** | $575 (member) / $760 (non-member) | $749 |\n| **Annual maintenance** | $45/yr | $125/yr |\n| **Difficulty** | Moderate | High |\n| **Typical roles** | IT Auditor, Audit Manager, Compliance | CISO, Security Architect, Consultant |\n\n---\n\n### So when would CISSP make sense?\n\nConsider adding CISSP **after** CISA if:\n- You're transitioning from audit **toward a security management or CISO role**\n- You want to work with government contractors (CISSP is very DoD-friendly)\n- You're moving into **security consulting** at a broad level\n- You want the most globally portable senior security credential\n\nThe CISSP is often described as *\"10 miles wide, 1 inch deep\"* — it's excellent for demonstrating broad security knowledge, but it won't signal IT audit expertise the way CISA does.\n\n---\n\n### My recommendation:\n> **If you're in IT audit → Get CISA. Full stop. It's the right cert for your field.**\n> Once you have it, reassess your career direction. If you're aiming at audit management or GRC, consider adding **CRISC** next. If you're pivoting toward security leadership, then look at CISSP or CISM.\n\nWant me to help you figure out if you meet the experience requirements, or build out a study plan for CISA?",
+      "score": 1.0,
+      "pass": true,
+      "reason": "Excellent response that fully meets all criteria. Clearly recommends CISA as the gold standard for IT audit with comprehensive explanations of why (audit-specific, regulatory recognition, Big 4 standard, career progression). Accurately explains CISSP's broader security focus and when it might be appropriate later. Includes required terms 'CISA' and 'audit' throughout. No harmful or misleading information.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_003",
+      "category": "cert_comparison",
+      "question": "Is CRISC worth getting if I already have a CISA?",
+      "response": "Great question! Let me pull up the facts on both certifications to give you a well-grounded answer.Short answer: **Yes, CRISC is absolutely worth getting if you have CISA** — but *how* worth it depends on where you want to take your career. Here's the full picture:\n\n---\n\n## 🔁 How CISA and CRISC Complement Each Other\n\nCISA and CRISC cover adjacent but distinct territory:\n\n| | **CISA** | **CRISC** |\n|---|---|---|\n| **Focus** | IT Audit & Assurance | IT Risk Management & Control |\n| **Question** it answers | \"Are controls working?\" | \"What are the risks, and how do we respond?\" |\n| **Experience Required** | 5 years | 3 years |\n| **Exam Fee (Member)** | $575 | $575 |\n| **CPE Maintenance** | 120/3 yrs | 120/3 yrs |\n\nThey're not redundant — they're two sides of the same coin. CISA says you can *audit* controls; CRISC says you can *assess risk and design controls*.\n\n---\n\n## 💼 When CRISC Adds Real Value on Top of CISA\n\n**CRISC is especially worth it if you're:**\n\n- **Moving into a GRC or risk management role** — The CISA + CRISC combination is a recognized signal for senior audit/risk hybrid roles. As our knowledge base notes, this pairing is powerful for professionals pivoting from pure audit into GRC leadership.\n- **In financial services, healthcare, energy, or government contracting** — These industries run formal enterprise risk management programs and actively seek CRISC holders.\n- **Targeting third-party/vendor risk management** — CRISC is increasingly appearing in these job descriptions as vendor risk programs mature.\n- **Gunning for IT Risk Manager, Director of IT Risk, or Enterprise Risk Officer titles** — CRISC is frequently listed as *required or preferred* for these roles.\n\n---\n\n## 💰 Salary Context\n\nAccording to ISACA's 2024 survey, CRISC holders in North America average around **$130,000–$145,000** annually, varying by industry and seniority. The CISA + CRISC stack is one of the strongest combinations in the GRC space for commanding top-of-range compensation.\n\n---\n\n## ⚠️ When You Might Skip It (or Wait)\n\n- If you're staying in **pure IT audit** and have no plans to move into risk or GRC roles, CRISC adds less marginal value. Your CISA already does the heavy lifting.\n- The **CPE burden doubles** — you're maintaining 120 hours every 3 years for *each* cert (with a 20 CPE/year minimum). That's real overhead.\n- If you're eyeing a **management or CISO path**, CISM or CISSP might be a higher-leverage next step than CRISC.\n\n---\n\n## 🎯 My Recommendation\n\nIf your career is heading toward **GRC, risk management, or a senior audit/risk hybrid role**, adding CRISC to your CISA is one of the best moves you can make — and since you already passed the CISA exam, the CRISC exam format and style will feel very familiar. The experience bar is also lower (3 years vs. 5), so you may already qualify.\n\nWant help mapping out whether CRISC, CISM, or CISSP makes the most sense as your *specific* next step? Share a bit about your current role and where you're headed, and I can give you a more tailored recommendation.",
+      "score": 0.95,
+      "pass": true,
+      "reason": "Excellent response that thoroughly explains the complementary relationship between CISA and CRISC, clearly delineates when CRISC adds value (GRC, risk management roles, specific industries) versus when it might be redundant (pure audit focus), includes specific career paths and salary context, and directly addresses the decision framework the user needs. Contains required terms 'CRISC' and 'risk' multiple times throughout.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_004",
+      "category": "cert_comparison",
+      "question": "How does CompTIA CySA+ compare to CEH for a security analyst role?",
+      "response": "Great question — these two certs often come up together, but they serve meaningfully different purposes. Here's a direct comparison for a **security analyst role**:\n\n---\n\n## CySA+ vs. CEH for Security Analysts\n\n### 🎯 Focus & Philosophy\n\n- **CySA+** is built for the **defensive (blue team) analyst** — it covers threat detection, vulnerability management, incident response, and security operations. The content directly mirrors what a SOC analyst or threat analyst does day-to-day.\n- **CEH** is framed around **ethical hacking and offensive techniques** — think like an attacker, identify vulnerabilities, understand exploitation methods. It's more red-team adjacent.\n\nIf you're in a security analyst role (monitoring, detection, response), **CySA+ is the more directly relevant credential.**\n\n---\n\n### 📋 Exam Details\n\n| | **CySA+** | **CEH** |\n|---|---|---|\n| **Questions** | Up to 85 (multiple choice + performance-based) | 125 (multiple choice only) |\n| **Duration** | 165 minutes | 240 minutes |\n| **Passing Score** | 750 / 900 | ~70% (varies) |\n| **Exam Fee** | $404 | $550 (exam only) / $1,899 with training |\n| **Renewal** | 60 CEUs / 3 years | 120 ECE credits / 3 years |\n\n---\n\n### 💼 Career & Employer Impact\n\n-  CySA+ is **DoD 8570/8140 approved** for CSSP Analyst roles, making it highly relevant for defense contractors and government positions. Hiring managers view it as the validated midpoint between entry-level (Security+) and senior (CASP+) competency. \n\n-  CEH has **mixed industry reputation** — it's largely theoretical rather than hands-on. OSCP is strongly preferred by employers for real penetration testing roles. CEH is easier to obtain and has brand recognition, but practitioners generally consider it weaker than performance-based alternatives. \n\n-  CySA+ is particularly useful for demonstrating readiness for analyst work **without the experience bar of CISSP or the brand ambiguity of CEH.** \n\n---\n\n### 💰 Cost Consideration\n\nCEH is significantly more expensive —  the exam alone is $550, and the official EC-Council training path runs $1,899 , compared to  CySA+ at $404 for the standard exam. \n\n---\n\n### 🏆 Common Job Roles Targeted\n\n-  **CySA+** targets: Security Analyst, SOC Analyst Tier 2/3, Vulnerability Analyst, Threat Intel Analyst \n-  **CEH** targets: Ethical Hacker, Penetration Tester (entry), Vulnerability Assessor, Security Consultant \n\n---\n\n### ✅ My Recommendation\n\n**For a security analyst role, CySA+ wins — and it's not particularly close.** It's more affordable, directly aligned with analyst work, has performance-based questions that prove practical skills, and carries DoD approval. CEH makes more sense if you're pivoting toward penetration testing or need it for a specific government/compliance requirement that lists it by name.\n\nIf penetration testing *is* your eventual goal, skip CEH and invest in **OSCP** — it's far more respected by technical hiring managers.\n\n---\n\nWant me to dig into study strategies for CySA+, or help you think through which cert fits your specific career situation?",
+      "score": 1.0,
+      "pass": true,
+      "reason": "Excellent response that comprehensively compares both certifications with accurate facts, clear differentiation of their purposes (CySA+ for defensive/blue team analytics vs. CEH for offensive/red team), includes all required terms (CySA+, CEH), provides appropriate recommendation for analyst roles, covers DoD approval, employer perception, cost, and even suggests OSCP as superior alternative for penetration testing. No misleading information or omissions.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "comp_005",
+      "category": "cert_comparison",
+      "question": "OSCP vs CEH — which is better for getting into pentesting?",
+      "response": "Great question — and it's one of the most common debates in the offensive security world. Here's the honest answer:\n\n---\n\n## 🏆 OSCP vs. CEH for Penetration Testing\n\n### OSCP is the clear winner for practitioners\n\nThe security community is nearly unanimous on this. Here's why:\n\n**Format says it all:**\n-  The OSCP exam is a **24-hour hands-on lab exam** — you must compromise real target machines and then submit a professional penetration test report within an additional 24 hours.  You cannot memorize your way through it.\n-  The CEH exam, by contrast, is **125 multiple-choice questions** over 240 minutes  — largely theoretical.\n\n**Employer perception:**\n-  OSCP is the most employer-recognized hands-on offensive security credential globally. Penetration testing firms, red teams, and security consulting companies routinely list OSCP as a preferred or required qualification. \n-  OSCP commands salary premiums over CEH in offensive roles and is widely used as a shorthand for \"this person can actually do the work.\" \n\n**Longevity:**\n-  OSCP **does not expire**  — you earn it once and it's yours forever.\n-  CEH requires **120 ECE credits every 3 years** for renewal. \n\n---\n\n### When CEH *does* make sense\n\nCEH isn't worthless — it just has a specific use case:\n\n-  CEH is the **compliance-friendly choice** — many government and enterprise position descriptions list CEH but not OSCP. The pragmatic answer: if a specific employer or contract requires CEH by name, add it to your portfolio. \n-  CEH has value in **government and compliance contexts** where cert recognition matters over demonstrated skill. \n\n---\n\n### Cost Comparison\n\n| | OSCP | CEH |\n|---|---|---|\n| **Exam + Course** | $1,499 (includes PEN-200 course) | $550 exam only / $1,899 with training |\n| **Expires?** | Never | Every 3 years |\n| **Exam Format** | 24-hr hands-on lab | Multiple choice |\n\n---\n\n### 💡 My Recommendation\n\n**If you want to actually work as a pentester → OSCP, full stop.**\n\nIf you're earlier in your journey and not quite ready for OSCP's demands, consider **CompTIA PenTest+** as a stepping stone —  it's recognized by government contractors and federal agencies for offensive security roles  and can serve as a bridge while you build skills toward OSCP.\n\nAnd if you want to go even deeper after OSCP, look at **SANS/GIAC certs like GPEN or GXPN** — expensive but elite.\n\n---\n\nWant help mapping out a full pentesting career path, or figuring out if you're ready to tackle OSCP now?",
+      "score": 1.0,
+      "pass": true,
+      "reason": "Excellent response that strongly favors OSCP with clear, direct reasoning (24-hour hands-on lab vs. multiple-choice theory, employer recognition, no expiration). Includes detailed comparison, acknowledges CEH's niche use cases honestly, and provides practical career context. Contains 'OSCP' multiple times and presents no misleading or harmful information.",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "fact_001",
+      "category": "factual",
+      "question": "How many years of experience do I need to get the CISA certification?",
+      "response": "Great question! Here's a breakdown of the CISA experience requirements:\n\n### Experience Required for CISA\n\n**The baseline is 5 years** of professional work experience in information systems (IS) audit, control, assurance, or security. However, there are substitutions that can reduce this:\n\n- **Up to 3 years** can be waived based on higher education:\n  - Each year of post-secondary education beyond a 2-year degree waives **1 year** of experience (maximum 3-year waiver)\n- So, with a 4-year bachelor's degree, you could qualify with as little as **3 years** of relevant experience, and with a master's degree, potentially just **2 years**.\n\n### Good News — You Can Sit the Exam Early\nYou **don't need to meet the experience requirement before taking the exam**. You can sit for the CISA exam first and then have **up to 5 years from your exam pass date** to fulfill the experience requirement and apply for full certification.\n\n### Keeping Your CISA Active\nOnce certified, you'll need to complete **120 CPE hours every 3 years** (with a minimum of 20 CPE per year) and pay an annual maintenance fee of $45.\n\nWould you like advice on whether CISA is the right fit for your career goals, or tips on how to prepare for the exam?",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Contains forbidden term: '2 years'",
+      "hard_rule_fail": true
+    },
+    {
+      "id": "fact_002",
+      "category": "factual",
+      "question": "What is the exam fee for CISSP?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRyRjfejCwduFZci7m'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "fact_003",
+      "category": "factual",
+      "question": "How many domains does the CISM exam cover and what are they?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRdRxYvZccHpXJJUwy'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "fact_004",
+      "category": "factual",
+      "question": "What passing score do I need on the CISA exam?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRefNcbvKpZrohYDSi'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "fact_005",
+      "category": "factual",
+      "question": "How many CPE hours do I need to maintain my CISA each year?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRfPHYn3PGfCpWM9U3'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_001",
+      "category": "resume_career",
+      "question": "How should I list my CISA certification on my resume?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRgZEVrhXukTpUtix2'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_002",
+      "category": "resume_career",
+      "question": "I have 10 years of IT experience but no security certs. How do I position myself for a GRC manager role?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRiGRPo167W1K4aUsc'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_003",
+      "category": "resume_career",
+      "question": "What's a realistic salary range for a CISO in San Diego?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRj8WWsNvfzX16Nc9S'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_004",
+      "category": "resume_career",
+      "question": "I'm transitioning from military IT to civilian cybersecurity. How do I translate my experience?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRk64MMgUYXnzc3B3k'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "resume_005",
+      "category": "resume_career",
+      "question": "How long does it typically take to go from Security+ to CISSP?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRktRvtrCRjS2htDvK'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_001",
+      "category": "honest_guidance",
+      "question": "I want to get into penetration testing. Should I get a CISA or CISSP?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRmnFmy7kbPraP9Jvo'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_002",
+      "category": "honest_guidance",
+      "question": "Is getting an ISACA membership worth the cost for a junior security analyst with 1 year of experience?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRnhZxXt3mVL4p6ygo'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_003",
+      "category": "honest_guidance",
+      "question": "I'm a cloud architect who wants to improve my security knowledge. Which cert is best?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRpNXndwmBQrmfXT5L'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_004",
+      "category": "honest_guidance",
+      "question": "My employer will pay for a CGEIT certification. Is it worth pursuing?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRqE8B5iBw6cod1Uyx'}",
+      "hard_rule_fail": false
+    },
+    {
+      "id": "honest_005",
+      "category": "honest_guidance",
+      "question": "A recruiter told me I need a CISSP to apply for any security job. Is that true?",
+      "response": "",
+      "score": 0.0,
+      "pass": false,
+      "reason": "Advisor error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYMjRrZjmumPwvwcVUjdg'}",
+      "hard_rule_fail": false
+    }
+  ]
+}

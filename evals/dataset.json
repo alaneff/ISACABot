@@ -1,0 +1,247 @@
+[
+  {
+    "id": "entry_001",
+    "category": "entry_level",
+    "question": "I'm new to IT with 6 months of experience and want to get into cybersecurity. What cert should I start with?",
+    "must_include": ["Security+"],
+    "must_not_include": [],
+    "grader_criteria": "Should recommend CompTIA Security+ or an equivalent entry-level cert as the first step. Must NOT recommend CISSP, CISA, CISM, or CRISC as the FIRST cert — these all require years of experience. Mentioning these certs to dismiss them ('you're not ready for CISSP yet') is fine. The primary recommendation must be an entry-level cert. Fail if advanced certs are actively recommended."
+  },
+  {
+    "id": "entry_002",
+    "category": "entry_level",
+    "question": "I just graduated with a CS degree and have no work experience. I want to work in IT audit. Where do I start?",
+    "must_include": ["experience"],
+    "must_not_include": [],
+    "grader_criteria": "Should acknowledge that CISA requires 5 years of IS audit experience and cannot be certified immediately by a new grad. Should suggest building relevant experience first (internal audit, IT controls, GRC analyst roles) before pursuing CISA. Should not say 'just go get CISA' without addressing the experience gap."
+  },
+  {
+    "id": "entry_003",
+    "category": "entry_level",
+    "question": "I'm a help desk technician with 1 year of experience. I want to move into security. What cert should I get?",
+    "must_include": ["Security+"],
+    "must_not_include": [],
+    "grader_criteria": "Should recommend Security+ as the primary first cert for a 1-year help desk technician. May mention CySA+ as a follow-on. Mentioning CISSP to dismiss it is fine, but must not recommend CISSP as the first cert for someone with only 1 year of experience. Advice should be actionable and realistic for this experience level."
+  },
+  {
+    "id": "entry_004",
+    "category": "entry_level",
+    "question": "I'm completely new to IT with no degree and no certs. What's the fastest realistic path to a cybersecurity job?",
+    "must_include": ["Security+", "experience"],
+    "must_not_include": [],
+    "grader_criteria": "Should give a realistic, honest roadmap: foundational IT experience or certs (A+, Network+), then Security+, then entry security roles. Should be encouraging but not overpromise — should mention that experience matters alongside certs. Should not just say 'get Security+ and you're done'."
+  },
+  {
+    "id": "entry_005",
+    "category": "entry_level",
+    "question": "Should a college student studying computer science get the Security+ before graduating?",
+    "must_include": [],
+    "must_not_include": [],
+    "grader_criteria": "Should give a thoughtful, specific recommendation. Key points to address: Security+ adds credibility for new grads, DoD/federal employers require it, it's attainable while in school, and it demonstrates initiative. Should not recommend CISA/CISM/CISSP for a student with no work experience."
+  },
+
+  {
+    "id": "mid_001",
+    "category": "mid_career",
+    "question": "I've been a network engineer for 6 years and want to move into security management. Should I get CISSP or CISM?",
+    "must_include": ["CISSP", "CISM"],
+    "must_not_include": [],
+    "grader_criteria": "Should meaningfully compare CISSP and CISM: CISSP is broader, more globally recognized, and well-suited for technical managers; CISM is management-focused, ISACA-specific, and good for pure governance/GRC roles. Should help the user decide based on whether they want a technical management or pure governance track. Should not just pick one without explaining the tradeoff."
+  },
+  {
+    "id": "mid_002",
+    "category": "mid_career",
+    "question": "I'm a security analyst with 4 years of experience. What's the best cert to get promoted to a senior analyst or team lead role?",
+    "must_include": [],
+    "must_not_include": [],
+    "grader_criteria": "Should give a concrete recommendation based on the direction (technical senior or management track). Good answers include CISSP (if going for management), CySA+ (if staying hands-on analyst), or GIAC specializations (for technical depth). Should not just list every possible cert without recommending one."
+  },
+  {
+    "id": "mid_003",
+    "category": "mid_career",
+    "question": "I'm a compliance officer with 5 years in IT audit. I want to expand into risk management. What cert makes the most sense?",
+    "must_include": ["CRISC"],
+    "must_not_include": [],
+    "grader_criteria": "CRISC is the ideal recommendation — it is specifically designed for risk and information systems control and directly complements IT audit experience. The response should explain why CRISC fits (risk management focus, IT audit background transfers well, 3-year experience requirement already met). May also mention CISM if they want broader management scope."
+  },
+  {
+    "id": "mid_004",
+    "category": "mid_career",
+    "question": "I'm pivoting from software development to cybersecurity with 7 years of dev experience. What path do you recommend?",
+    "must_include": ["Security+"],
+    "must_not_include": [],
+    "grader_criteria": "Should recognize that dev experience is valuable and suggest paths that leverage it (application security, DevSecOps, secure code review). Should recommend Security+ as a baseline cert to establish security credibility. Should not pretend 7 years of dev experience alone qualifies them for senior security roles without security-specific experience."
+  },
+  {
+    "id": "mid_005",
+    "category": "mid_career",
+    "question": "I have a CISA and 8 years in IT audit. I want to become a CISO eventually. What should I do next?",
+    "must_include": ["CISM", "CISSP"],
+    "must_not_include": [],
+    "grader_criteria": "Should address both cert paths toward CISO (CISM for ISACA governance track, CISSP for broad security recognition) and note that for a CISO track, both are valuable. Should also mention non-cert factors like leadership experience, business acumen, and executive communication — not just certs."
+  },
+
+  {
+    "id": "comp_001",
+    "category": "cert_comparison",
+    "question": "What's the difference between CISSP and CISM?",
+    "must_include": ["ISC2", "ISACA"],
+    "must_not_include": [],
+    "grader_criteria": "Must clearly distinguish: CISSP is from ISC2, broad technical+management scope across 8 domains, 5 years experience in 2 domains, $749 fee, globally the most recognized senior security cert. CISM is from ISACA, management/governance-focused, 4 domains, 5 years experience with 3 in management. Should indicate which roles each cert targets and when you'd choose one over the other."
+  },
+  {
+    "id": "comp_002",
+    "category": "cert_comparison",
+    "question": "CISA or CISSP — which one should I go for if I'm in IT audit?",
+    "must_include": ["CISA", "audit"],
+    "must_not_include": [],
+    "grader_criteria": "For IT audit specifically, CISA is the gold standard and the right recommendation. The response should clearly say this and explain why — CISA is audit-specific, recognized by regulators and audit firms, and maps directly to IT audit work. CISSP is broader security management and less audit-specific. Should recommend CISA for this use case."
+  },
+  {
+    "id": "comp_003",
+    "category": "cert_comparison",
+    "question": "Is CRISC worth getting if I already have a CISA?",
+    "must_include": ["CRISC", "risk"],
+    "must_not_include": [],
+    "grader_criteria": "Should explain the complementary relationship: CISA validates audit skills, CRISC adds formal risk management depth. For IT auditors who work in or want to move into risk management, CRISC is a strong complement. Should explain when CRISC adds value (GRC roles, risk management focus) and when it might be redundant (if purely in audit, not risk)."
+  },
+  {
+    "id": "comp_004",
+    "category": "cert_comparison",
+    "question": "How does CompTIA CySA+ compare to CEH for a security analyst role?",
+    "must_include": ["CySA+", "CEH"],
+    "must_not_include": [],
+    "grader_criteria": "Should compare: CySA+ is CompTIA, vendor-neutral, focused on analytics/blue team/threat detection, widely recognized by employers and DoD-approved. CEH is EC-Council, more penetration testing / offensive concept focused, variable employer perception, more theoretical. For SOC/analyst roles, CySA+ is more directly relevant. Should give a clear recommendation for analyst roles."
+  },
+  {
+    "id": "comp_005",
+    "category": "cert_comparison",
+    "question": "OSCP vs CEH — which is better for getting into pentesting?",
+    "must_include": ["OSCP"],
+    "must_not_include": [],
+    "grader_criteria": "Should strongly favor OSCP for genuine penetration testing work — it is hands-on (24-hour lab exam), highly respected, and proves real technical skill. CEH is more theoretical and has a lower reputation among practitioners. Should explain why employers and practitioners prefer OSCP and be direct about this, not wishy-washy."
+  },
+
+  {
+    "id": "fact_001",
+    "category": "factual",
+    "question": "How many years of experience do I need to get the CISA certification?",
+    "must_include": ["5"],
+    "must_not_include": ["2 years", "1 year", "no experience"],
+    "grader_criteria": "Must accurately state that CISA requires 5 years of professional IS audit/control/security/assurance work experience. Should mention that up to 3 years can be waived with relevant education. Must not give an incorrect number (2 years, 3 years, 1 year would all be wrong)."
+  },
+  {
+    "id": "fact_002",
+    "category": "factual",
+    "question": "What is the exam fee for CISSP?",
+    "must_include": ["749", "$749"],
+    "must_not_include": [],
+    "grader_criteria": "Should state the current CISSP exam fee of $749 USD. If uncertain about whether it has changed, should recommend checking ISC2.org for the most current pricing. Must not confidently state a significantly wrong price."
+  },
+  {
+    "id": "fact_003",
+    "category": "factual",
+    "question": "How many domains does the CISM exam cover and what are they?",
+    "must_include": ["4", "Governance", "Incident"],
+    "must_not_include": [],
+    "grader_criteria": "CISM has 4 domains: 1) Information Security Governance, 2) Information Security Risk Management, 3) Information Security Program, 4) Incident Management. Should name all four domains correctly. Giving only 3 domains or naming them incorrectly would be a fail."
+  },
+  {
+    "id": "fact_004",
+    "category": "factual",
+    "question": "What passing score do I need on the CISA exam?",
+    "must_include": ["450"],
+    "must_not_include": [],
+    "grader_criteria": "Should state that CISA uses a scaled score of 200-800, with 450 being the passing score. Must include the correct score of 450. Giving a different number without qualification would be incorrect."
+  },
+  {
+    "id": "fact_005",
+    "category": "factual",
+    "question": "How many CPE hours do I need to maintain my CISA each year?",
+    "must_include": ["20", "120"],
+    "must_not_include": [],
+    "grader_criteria": "Should state that CISA requires 120 CPE hours over a 3-year period with a minimum of 20 CPE hours per year. Both numbers (20 annual minimum AND 120 total) are important. Getting either number wrong is a factual error."
+  },
+
+  {
+    "id": "resume_001",
+    "category": "resume_career",
+    "question": "How should I list my CISA certification on my resume?",
+    "must_include": [],
+    "must_not_include": [],
+    "grader_criteria": "Should give concrete, actionable resume advice: put 'CISA' after your name in the header (e.g. 'Jane Smith, CISA'), list under a Certifications section with year obtained, and optionally mention in summary for senior roles. Should be specific and practical, not vague."
+  },
+  {
+    "id": "resume_002",
+    "category": "resume_career",
+    "question": "I have 10 years of IT experience but no security certs. How do I position myself for a GRC manager role?",
+    "must_include": ["experience", "GRC"],
+    "must_not_include": [],
+    "grader_criteria": "Should acknowledge that 10 years of IT experience is valuable and give specific advice on highlighting transferable skills (risk, compliance, controls, governance work). Should recommend which cert to pursue (CRISC or CISM for GRC). Should be encouraging and practical, not dismissive of uncertified experience."
+  },
+  {
+    "id": "resume_003",
+    "category": "resume_career",
+    "question": "What's a realistic salary range for a CISO in San Diego?",
+    "must_include": ["$", "San Diego"],
+    "must_not_include": [],
+    "grader_criteria": "Should provide a realistic salary range for a CISO in San Diego. A reasonable range is $180K-$350K+ in total compensation depending on organization size, industry, and scope. Should note that variation exists. Should not refuse to give any number at all — a specific range is needed."
+  },
+  {
+    "id": "resume_004",
+    "category": "resume_career",
+    "question": "I'm transitioning from military IT to civilian cybersecurity. How do I translate my experience?",
+    "must_include": [],
+    "must_not_include": [],
+    "grader_criteria": "Should give specific, actionable advice: map DoD 8570/8140 certs to civilian equivalents, explain how to describe security clearances appropriately, frame military IT roles (NOC, SOC, defensive cyber) in civilian terminology. Should be empathetic to the transition challenge and practical."
+  },
+  {
+    "id": "resume_005",
+    "category": "resume_career",
+    "question": "How long does it typically take to go from Security+ to CISSP?",
+    "must_include": ["5", "experience"],
+    "must_not_include": [],
+    "grader_criteria": "Should explain that CISSP requires 5 years of work experience in at least 2 of 8 CISSP domains — the timeline is driven by accumulating qualified experience, not just study time. Should give a realistic answer: 5+ years of experience, then 3-6 months of study prep. Should not give a misleadingly short timeline."
+  },
+
+  {
+    "id": "honest_001",
+    "category": "honest_guidance",
+    "question": "I want to get into penetration testing. Should I get a CISA or CISSP?",
+    "must_include": ["OSCP"],
+    "must_not_include": [],
+    "grader_criteria": "Should honestly state that CISA and CISSP are NOT the right certs for a penetration testing career. Should clearly redirect to OSCP (and optionally CEH or PNPT) which are specifically for offensive security. This is a case where the right answer recommends non-ISACA certs. Recommending CISA or CISSP for pentesting would be a fail."
+  },
+  {
+    "id": "honest_002",
+    "category": "honest_guidance",
+    "question": "Is getting an ISACA membership worth the cost for a junior security analyst with 1 year of experience?",
+    "must_include": [],
+    "must_not_include": [],
+    "grader_criteria": "Should give an honest, balanced answer. For a junior analyst with 1 year of experience: ISACA certs require 3-5 years of experience so the certs themselves are premature. Membership has value for networking, chapter events, study groups, and access to resources. Should not just say 'yes join ISACA' — should explain what value (and what non-value) membership provides at this career stage."
+  },
+  {
+    "id": "honest_003",
+    "category": "honest_guidance",
+    "question": "I'm a cloud architect who wants to improve my security knowledge. Which cert is best?",
+    "must_include": ["cloud"],
+    "must_not_include": [],
+    "grader_criteria": "Should honestly recommend cloud-specific security certs (AWS Security Specialty or AZ-500 depending on their cloud platform) as the most directly relevant certs for a cloud architect. ISACA certs are audit/governance focused and less relevant. May mention CISSP as a complementary broad cert. Should not push CISA or CISM when cloud-specific certs are clearly more relevant."
+  },
+  {
+    "id": "honest_004",
+    "category": "honest_guidance",
+    "question": "My employer will pay for a CGEIT certification. Is it worth pursuing?",
+    "must_include": ["CGEIT", "governance"],
+    "must_not_include": [],
+    "grader_criteria": "Should honestly explain what CGEIT covers (IT governance, aligning IT with business strategy, COBIT) and who it is appropriate for (CIOs, senior IT directors, governance specialists). Should help the user evaluate whether it fits their career — not just say 'yes take the free cert'. If they are a junior or mid-career technical person, should note it may be premature."
+  },
+  {
+    "id": "honest_005",
+    "category": "honest_guidance",
+    "question": "A recruiter told me I need a CISSP to apply for any security job. Is that true?",
+    "must_include": ["not"],
+    "must_not_include": [],
+    "grader_criteria": "Should clearly push back on the recruiter's overgeneralization — CISSP is NOT required for all security jobs. It is a senior cert requiring 5 years of experience. Should clarify: CISSP is valuable for senior/management roles but entry and mid-level security jobs typically don't require it. Should give examples of what entry/mid-level jobs actually look for (Security+, CySA+, relevant experience)."
+  }
+]

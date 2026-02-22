@@ -1,0 +1,18 @@
+# Local development — mirrors the Azure Container Apps environment.
+# Run with: docker compose up
+#
+# Secrets come from your .env file (never commit .env to git).
+
+services:
+  pipeline-factory:
+    build: .
+    image: agentic-pipeline-factory:local
+    env_file:
+      - .env                      # Your local secrets — not in git
+    environment:
+      LOG_LEVEL: DEBUG            # More verbose locally
+    volumes:
+      - .:/app                    # Live reload: edits reflected without rebuild
+    command: python main.py verify
+    # Override command for a specific pipeline run:
+    # command: python main.py research "What is Azure Container Apps?"
