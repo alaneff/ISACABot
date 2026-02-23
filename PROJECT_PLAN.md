@@ -5,7 +5,7 @@ cybersecurity certifications, advance their careers, and find employment — wit
 to prevent abuse.
 
 **Date:** 2026-02-21
-**Status:** Phase A (Hardening) + Phase B1/B2 (Knowledge Quality) complete. See roadmap below for current task status.
+**Status:** Phase A complete. Phase B1/B2 complete. Phase D1/D2/D3 + E2 complete. See roadmap below for current task status.
 
 ---
 
@@ -35,7 +35,10 @@ to prevent abuse.
 | Eval suite (30 cases) | ✓ Working | 100% pass rate on tested categories |
 | Honest advice philosophy | ✓ Strong | Recommends best cert, not just ISACA certs |
 | CLI interface | ✓ Working | `python main.py isaca-sd` |
-| FastAPI layer skeleton | ✓ Exists | `api/` with Azure AD B2C auth stubs |
+| REST API | ✓ Working | `api/app.py` — full pipeline behind `/api/chat` |
+| Web chat UI | ✓ Working | `api/static/index.html` — served at `/` by FastAPI |
+| Beta auth (API key) | ✓ Working | `X-API-Key` header; set `API_KEY` in `.env` |
+| CI eval (GitHub Actions) | ✓ Working | Weekly on Mondays; fails on regression below 90% |
 
 ### What Is Missing or Fragile
 
@@ -50,7 +53,7 @@ to prevent abuse.
 | ~~Orchestrator confidence score unused~~ | ~~Medium~~ | **Fixed (Phase A5)** — falls back to "general" if confidence < 0.5 |
 | ~~get_cert_facts() DB has 15 of 35 certs~~ | ~~Medium~~ | **Fixed (Phase B1)** — expanded to 30 certs; 5 KB files still pending |
 | No user feedback mechanism | Medium | Open — Phase D4 |
-| No web UI | Medium | Open — Phase D |
+| ~~No web UI~~ | ~~Medium~~ | **Fixed (Phase D3)** — `api/static/index.html`, served at `/` |
 | Static KB — no refresh process | Low | Open — Phase B5/E4 |
 | Job search agent is web-only | Low | Open — acceptable for now |
 
@@ -257,56 +260,68 @@ flowchart LR
 
 ### Phase D — User Interface
 **Target: Real users can access the bot without the CLI.**
+**Status: D1/D2/D3 complete (beta-ready). D4/D5/D6 open.**
 
-| # | Task | Effort | Priority |
-|---|------|--------|----------|
-| D1 | Finalize FastAPI endpoints: `POST /chat`, `GET /health`, `GET /session/{id}` | 2 days | High |
-| D2 | Complete Azure AD B2C integration — ISACA SD member login (or simpler: email + OTP) | 3 days | High |
-| D3 | Build minimal web chat UI — plain HTML/JS or React — connects to FastAPI | 3 days | High |
-| D4 | Add user feedback buttons (👍 / 👎) per response — log to App Insights | 1 day | Medium |
-| D5 | Add "cite your source" — include KB chunk titles in response metadata | 2 days | Medium |
-| D6 | Consider Microsoft Teams bot integration — ISACA SD may already use Teams | 2 days | Low |
+| # | Task | Status |
+|---|------|--------|
+| D1 | Finalize FastAPI endpoints: `POST /chat`, `GET /health` | **Done** — `api/app.py` wired to `ISACASdPipeline._run_turn()` |
+| D2 | Auth — ISACA SD member login | **Done (beta)** — API key mode (`X-API-Key`); Azure AD B2C ready for production when needed |
+| D3 | Build minimal web chat UI | **Done** — `api/static/index.html`; served at `/`; `?key=` URL param for beta access |
+| D4 | Add user feedback buttons (👍 / 👎) per response — log to App Insights | Open |
+| D5 | Add "cite your source" — include KB chunk titles in response metadata | Open |
+| D6 | Consider Microsoft Teams bot integration — ISACA SD may already use Teams | Open — Low priority |
 
-**Verify:** End-to-end test from browser through Azure AD B2C, through FastAPI, to advisor response.
+**To run locally:**
+```bash
+# Set API_KEY in .env, then:
+uvicorn api.app:app --reload
+# Open: http://localhost:8000/?key=<API_KEY>
+```
+
+**Next gate:** Real beta users testing the bot and providing feedback.
 
 ---
 
 ### Phase E — Observability & Continuous Improvement
 **Target: Data-driven quality improvement loop.**
+**Status: E2 complete. E1/E3–E6 open.**
 
-| # | Task | Effort | Priority |
-|---|------|--------|----------|
-| E1 | Set up Azure Application Insights dashboard — daily active users, pass-through rate, route distribution, top rejected queries | 2 days | High |
-| E2 | Weekly eval run — automate `python main.py eval` in CI (GitHub Actions) and alert on regressions | 1 day | High |
-| E3 | Expand eval dataset to 60 cases — add factual accuracy, salary_career, honest_guidance, job_search categories | 2 days | Medium |
-| E4 | Monthly KB freshness review — check cert costs/exam updates against official sources, update markdown + re-embed | Ongoing | Medium |
-| E5 | Thumbs-down analysis — monthly review of flagged responses, update KB or agent prompts accordingly | Ongoing | Medium |
-| E6 | A/B eval: test prompt changes against baseline score before deploying | 2 days | Low |
+| # | Task | Status |
+|---|------|--------|
+| E1 | Set up Azure Application Insights dashboard — daily active users, pass-through rate, route distribution, top rejected queries | Open |
+| E2 | Weekly eval run in CI — automate `python main.py eval`, fail on regression | **Done** — `.github/workflows/eval.yml`; runs Mondays; `--min-pass-rate 0.90` |
+| E3 | Expand eval dataset to 60 cases — add factual accuracy, salary_career, honest_guidance, job_search categories | Open |
+| E4 | Monthly KB freshness review — check cert costs/exam updates against official sources, update markdown | Ongoing |
+| E5 | Thumbs-down analysis — monthly review of flagged responses, update KB or agent prompts accordingly | Open — depends on D4 |
+| E6 | A/B eval: test prompt changes against baseline score before deploying | Open — Low priority |
 
 ---
 
 ## 5. Technology Stack
 
-### Current (Keep)
-| Component | Technology |
-|---|---|
-| LLM provider | Anthropic (direct API, not Azure Foundry) |
-| Orchestration / routing | claude-haiku-4-5-20251001 |
-| Specialist agents | claude-sonnet-4-6 |
-| Agent framework | Microsoft `agent-framework-anthropic` |
-| API layer | FastAPI |
-| Auth | Azure AD B2C |
-| Deployment | Azure Container Apps |
+### Current (Deployed)
+| Component | Technology | Notes |
+|---|---|---|
+| LLM provider | Anthropic direct API | Not Azure Foundry |
+| Orchestration / routing | claude-haiku-4-5-20251001 | Safety agent + orchestrator |
+| Specialist agents | claude-sonnet-4-6 | 5 specialists |
+| Agent framework | Microsoft `agent-framework-anthropic` | |
+| API layer | FastAPI + uvicorn | `api/app.py` |
+| Auth (beta) | API key (`X-API-Key` header) | Set `API_KEY` in `.env` |
+| Auth (production) | Azure AD B2C JWT (RS256) | Ready; needs B2C tenant config |
+| Rate limiting | `slowapi` | 20 req/hr keyed on JWT sub or IP |
+| Injection pre-filter | Python `re` (regex) | 12 patterns, zero LLM cost |
+| Audit logging | Python `logging` (JSON per turn) | No PII; ready for App Insights sink |
+| Web UI | Static HTML/JS | Served at `/` by FastAPI |
+| CI eval | GitHub Actions | Weekly + manual; fails on regression |
+| Deployment target | Azure Container Apps | Dockerfile ready |
 
-### Add for Production
+### Still Needed for Production
 | Component | Technology | Reason |
 |---|---|---|
-| Semantic search | Azure AI Search (vector + BM25 hybrid) | Best-in-class hybrid retrieval; already in Azure ecosystem |
-| Embeddings | Azure OpenAI `text-embedding-3-small` | Low cost, fast, high quality |
-| Session store | Azure Cache for Redis | Persistent, shared across instances, TTL built-in |
-| Rate limiting | `slowapi` (FastAPI middleware) | Simple, per-user throttling without external infra |
-| Audit logging | Azure Application Insights | Structured, queryable, integrates with Azure Monitor |
-| Injection pre-filter | Python `re` (regex) — no new dep | Zero latency, no LLM cost, catches obvious attacks |
+| Session store | Azure Cache for Redis | Persist sessions across restarts / instances |
+| Observability | Azure Application Insights | Queryable audit logs, usage dashboards |
+| Semantic search | Azure AI Search (vector + BM25 hybrid) | Deferred — no measured retrieval failures yet |
 
 ### Considered & Not Recommended
 | Technology | Why Not |
@@ -396,12 +411,12 @@ This is a core differentiator from generic AI chatbots. It must be preserved in 
 | **A — Hardening** | Regex pre-filter, fail-closed safety, rate limiting, audit logs, error handling | **COMPLETE** |
 | **B — Knowledge** | Expand cert DB (15→30), salary JSON, vector search (deferred) | **Partial** — B1/B2 done; B3 deferred; B5/B6 open |
 | **C — Sessions** | Redis session store, conversation summarization | Not started |
-| **D — UI** | Web chat, Azure AD B2C, user feedback | Not started |
-| **E — Observability** | Dashboards, CI eval, KB refresh process | Not started |
+| **D — UI** | Web chat, API/beta auth, user feedback | **Partial** — D1/D2/D3 done (beta-ready); D4/D5 open |
+| **E — Observability** | Dashboards, CI eval, KB refresh process | **Partial** — E2 done; E1/E3–E6 open |
 
-**Phase C** depends on a working API (Phase D in progress simultaneously).
-**Phase D** needs persistent sessions (Phase C) to work well.
-**Phase E** runs alongside D and beyond.
+**Phase C** (Redis sessions) is the next critical path item — sessions currently reset on API restart.
+**Phase D4/D5** (feedback + source citations) can follow C.
+**Phase E** observability runs continuously alongside other phases.
 
 ---
 

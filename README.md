@@ -53,13 +53,11 @@ cp .env.example .env
 python main.py verify
 ```
 
-### Run the chatbot
+### Option A — CLI chatbot
 
 ```bash
 python main.py isaca-sd
 ```
-
-You'll enter an interactive chat session:
 
 ```
 You: What certification should I get if I want to move into GRC?
@@ -67,6 +65,27 @@ Advisor: For GRC, the primary cert ladder is Security+ → CRISC...
 ```
 
 Type `exit` or `quit` to end the session.
+
+### Option B — Web UI (browser-based)
+
+Generate an access key and start the API:
+
+```bash
+# Generate a key (copy the output)
+python -c "import secrets; print(secrets.token_urlsafe(32))"
+
+# Add it to .env:  API_KEY=<the key you just generated>
+
+# Start the API server
+uvicorn api.app:app --reload
+```
+
+Open your browser to:
+```
+http://localhost:8000/?key=<the key you just generated>
+```
+
+Share that URL (with the key) with beta testers — they'll get straight into the chat UI.
 
 ---
 
@@ -129,9 +148,13 @@ The project includes a 30-case evaluation suite to measure knowledge quality:
 python main.py eval                         # full suite (uses API credits)
 python main.py eval --filter entry_level    # filter by category
 python main.py eval --verbose               # show scores per question
+python main.py eval --min-pass-rate 0.90    # exit 1 if pass rate drops below 90%
 ```
 
 Current results: 100% pass rate on tested categories.
+
+The eval also runs automatically every Monday via GitHub Actions (`.github/workflows/eval.yml`).
+Set `ANTHROPIC_API_KEY` as a repository secret to enable it. Results are saved as artifacts for 90 days.
 
 ---
 
